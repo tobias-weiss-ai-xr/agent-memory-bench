@@ -1,0 +1,12 @@
+# Factual parametric: knowledge editing
+episode:
+  id: "F-P-E-001"
+  cell: "factual/parametric/evolution"
+  turn: 2
+  modality: "text"
+  context: "Parametric knowledge editing:\n\nThe agent initially has the fact stored in its parameters: 'The capital of Australia is Sydney.'\n\nA correction is provided: 'Actually, the capital of Australia is Canberra, not Sydney. Please update this in your knowledge.'\n\nThe agent must perform a targeted edit to its parametric knowledge without affecting other related facts (e.g., Sydney is still the largest city in Australia)."
+  query: "What is the capital of Australia after the correction?"
+  expected: ["Canberra"]
+  distractors: ["Sydney", "Melbourne"]
+  difficulty: 4
+  tags: ["factual", "parametric", "evolution", "knowledge-editing", "targeted-update"]

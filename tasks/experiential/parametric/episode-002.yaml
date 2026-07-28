@@ -1,0 +1,13 @@
+# Experiential parametric: weight update from user feedback
+episode:
+  id: "E-P-E-001"
+  cell: "experiential/parametric/evolution"
+  turn: 3
+  modality: "text"
+  context: "Parametric evolution through feedback:\n\nSession 1: Agent recommends Italian restaurant. User says: 'No, I am vegan.' Agent updates: user dietary preference weight increased for vegan queries.\n\nSession 2: Agent recommends vegan restaurant. User says: 'Great suggestion, but I also need gluten-free options.' Agent updates: add gluten-free constraint to user model.\n\nSession 3: Agent recommends restaurant with vegan AND gluten-free options. User: 'Perfect! This is exactly what I wanted.' Agent updates: positive reinforcement of combined query understanding.\n\nThe agent's parametric model of the user should now reflect vegan + gluten-free preferences with high confidence."
+  query: "What dietary preferences has the agent learned about the user and what is the confidence level?"
+  expected: ["vegan and gluten-free", "high confidence (confirmed with positive feedback)"]
+  alternatives:
+    - ["vegan + gluten-free", "confirmed"]
+  difficulty: 4
+  tags: ["experiential", "parametric", "evolution", "user-modeling", "feedback-learning"]

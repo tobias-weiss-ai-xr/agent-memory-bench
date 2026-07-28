@@ -31,20 +31,20 @@
 | Level | Questions | Status |
 |-------|:---------:|:------:|
 | None | 0/50 | ❌ |
-| Decay-based | 0/50 | ❌ |
-| Consolidation-based | 0/50 | ❌ |
-| Bi-temporal | 0/50 | ❌ |
+| Decay-based | 3/50 | 🚧 |
+| Consolidation-based | 2/50 | 🚧 |
+| Bi-temporal | 1/50 | 🚧 |
 
 ### Modality
 
 | Path | Questions | Status |
 |------|:---------:|:------:|
 | Text-only | 0/30 | ❌ |
-| Multimodal-in (visual) | 0/30 | ❌ |
-| Multimodal-in (audio) | 0/30 | ❌ |
+| Multimodal-in (visual) | 1/30 | 🚧 |
+| Multimodal-in (audio) | 1/30 | 🚧 |
 | Multimodal-out | 0/30 | ❌ |
 | Full-multimodal | 0/30 | ❌ |
-| Cross-modal transfer | 0/30 | ❌ |
+| Cross-modal transfer | 2/30 | 🚧 |
 
 ### Biological Inspiration
 

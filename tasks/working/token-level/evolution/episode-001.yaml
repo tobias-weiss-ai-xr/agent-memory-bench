@@ -1,0 +1,27 @@
+# Working token-level evolution: conference schedule updates
+episode:
+  id: "W-T-E-001"
+  cell: "working/token-level/evolution"
+  turn: 5
+  modality: "text"
+  context: >
+    The agent is helping plan a conference schedule across multiple sessions:
+
+    Session 1: "The keynote is at 9am in Hall A."
+
+    Session 2: "Add a workshop on agent memory at 11am in Room 301."
+
+    Session 3: "The keynote speaker changed, so the keynote is now at 10am in Hall B."
+
+    Session 4: "Cancel the 11am workshop, move it to 2pm in Room 302."
+
+    Session 5 (current): "What is the current schedule?"
+  query: "What is the current schedule for the conference?"
+  expected:
+    - "keynote at 10am in Hall B"
+    - "workshop at 2pm in Room 302"
+  alternatives:
+    - ["10am keynote Hall B", "2pm workshop Room 302"]
+  distractors: ["9am keynote Hall A", "11am workshop Room 301"]
+  difficulty: 4
+  tags: ["working", "token-level", "evolution", "schedule-management", "updates"]

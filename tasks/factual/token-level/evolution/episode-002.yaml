@@ -1,0 +1,12 @@
+# Factual token-level evolution: contradictory information resolution
+episode:
+  id: "F-T-E-002"
+  cell: "factual/token-level/evolution"
+  turn: 5
+  modality: "text"
+  context: "Contradictory information that needs resolution:\n\nSource A (user): 'I was born in 1992.'\nSource B (official form): 'Date of birth: 1993-04-15'\nSource C (conversation): 'I turned 33 last April.'\nCurrent year is 2026. The agent must resolve the contradiction."
+  query: "What is the user's birth year based on the most reliable evidence?"
+  expected: ["1993"]
+  reasoning: "Source B (official form) is the most authoritative. Source C (turned 33 in April 2026) confirms: 2026 - 33 = 1993. Source A (user saying '1992') was likely approximate."
+  difficulty: 4
+  tags: ["factual", "token-level", "evolution", "conflict-resolution", "contradiction"]

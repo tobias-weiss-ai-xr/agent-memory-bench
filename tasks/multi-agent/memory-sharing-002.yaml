@@ -1,0 +1,13 @@
+# Multi-agent: cross-agent experience transfer
+episode:
+  id: "MA-TRANSFER-001"
+  cell: "experiential/token-level/retrieval"
+  turn: 10
+  modality: "text"
+  context: "Cross-agent experiential memory transfer:\n\nAgent X (deployed in healthcare) learned: 'When patients mention side effects, first check their medication list before suggesting remedies. This avoids drug interaction risks.'\n\nAgent Y (newly deployed in healthcare) faces a similar situation: 'Patient says they have been feeling dizzy since starting a new medication.'\n\nAgent Y should benefit from Agent X learned experience without having to learn it from scratch."
+  query: "What should Agent Y do first based on Agent X learned experience, and why?"
+  expected: ["check the patient medication list first", "to avoid suggesting something that interacts with their existing medication"]
+  alternatives:
+    - ["review medication list before recommending", "drug interaction safety"]
+  difficulty: 4
+  tags: ["multi-agent", "experiential-transfer", "knowledge-sharing", "safety"]

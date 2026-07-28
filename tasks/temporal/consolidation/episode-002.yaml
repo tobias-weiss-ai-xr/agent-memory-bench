@@ -1,0 +1,17 @@
+# Temporal consolidation: reinforcement through repetition
+episode:
+  id: "T-CONSOL-002"
+  cell: "factual/token-level/evolution"
+  turn: 15
+  modality: "text"
+  context: "Consolidation through repeated exposure:\n\nSession 1: User mentions 'My daughter Emma is learning piano.'\nSession 2: 'Emma had her first piano recital today.'\nSession 3: 'Emma practices piano every day after school.'\nSession 4: 'Emma piano teacher says she has natural talent.'\nSession 5: 'Emma is preparing for her Grade 2 exam.'\n\nOver multiple sessions, the fact 'Emma plays piano' is reinforced. After consolidation, it should be treated as a core fact, not ephemeral context."
+  query: "What is a core fact about the user family that has been reinforced over multiple sessions?"
+  expected: ["The user daughter Emma is learning piano and is passionate about it."]
+  alternatives:
+    - ["Emma plays piano and is taking exams"]
+    - ["Daughter Emma is a piano student"]
+  consolidation:
+    type: "reinforcement"
+    repetitions: 5
+  difficulty: 3
+  tags: ["temporal", "consolidation", "reinforcement", "family", "core-memory"]

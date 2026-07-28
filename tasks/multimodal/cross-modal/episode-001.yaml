@@ -1,0 +1,18 @@
+# Cross-modal: text query to visual memory
+episode:
+  id: "M-CROSS-001"
+  cell: "factual/latent/retrieval"
+  turn: 3
+  modality: "text_to_visual"
+  context: "Cross-modal retrieval: the agent has previously seen images and stored their descriptions:\n\nStored memory 1: 'A golden retriever playing fetch in a park with autumn leaves.'\nStored memory 2: 'A black cat sleeping on a red sofa in a sunny living room.'\nStored memory 3: 'A bowl of ramen with soft-boiled egg, nori, and chashu pork.'\n\nCurrent query is text-only: 'Find the image where there is an animal playing.'"
+  query: "Which stored image matches the query 'animal playing'? Describe it."
+  expected: ["golden retriever playing fetch in a park with autumn leaves"]
+  alternatives:
+    - ["Image of golden retriever playing fetch"]
+    - ["first memory: dog playing fetch"]
+  modality_metadata:
+    input_type: "text_query"
+    output_type: "text_description_of_visual"
+    retrieval_type: "cross-modal"
+  difficulty: 3
+  tags: ["multimodal", "cross-modal", "retrieval", "text-to-visual"]

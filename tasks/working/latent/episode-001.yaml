@@ -1,0 +1,13 @@
+# Working latent: continuous hidden state for task tracking
+episode:
+  id: "W-L-F-001"
+  cell: "working/latent/formation"
+  turn: 0
+  modality: "text"
+  context: "Latent working memory — maintaining task state in continuous hidden representation:\n\nThe agent is processing a multi-step data pipeline task:\n\nStep 1: 'Load the CSV file from /data/raw/sales_2026.csv'\nStep 2: 'Filter out rows where amount is less than 10.'\nStep 3: 'Group by region and calculate sum of amounts.'\nStep 4: 'Sort by total descending and take top 5.'\nStep 5: 'Save result to /data/processed/top_regions.csv'\n\nThe agent must track which steps are completed and what the current pipeline state is in a continuous latent representation, without explicit external storage."
+  query: "If the agent has completed steps 1-3, what steps remain and what files are involved?"
+  expected: ["remaining: steps 4 and 5 (sort and save)", "input: /data/raw/sales_2026.csv", "output: /data/processed/top_regions.csv"]
+  alternatives:
+    - ["sort top 5 then save", "input sales_2026.csv", "output top_regions.csv"]
+  difficulty: 4
+  tags: ["working", "latent", "formation", "pipeline", "task-tracking"]

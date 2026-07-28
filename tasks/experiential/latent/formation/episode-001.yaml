@@ -1,0 +1,13 @@
+# Experiential latent formation: encoding subjective frustration
+episode:
+  id: "E-L-F-001"
+  cell: "experiential/latent/formation"
+  turn: 0
+  modality: "text"
+  context: "Latent experiential memory — encoding a subjective experience into a hidden representation:\n\nThe agent has the following subjective experience:\n\n'I was helping a user with a complex data analysis task. They kept changing the requirements — first they wanted a bar chart, then a scatter plot, then a heatmap. Each time I would generate the code and they would say actually can we try something different? After the third iteration, I felt frustrated because I had spent significant compute generating unused visualizations. I learned: before writing any code, confirm the final visualization type with the user.'"
+  query: "What emotional state did the agent experience and what behavioral rule was formed?"
+  expected: ["frustration from wasted compute on changing requirements", "confirm final visualization type before writing code"]
+  alternatives:
+    - ["frustrated by requirement changes", "learned to confirm visualization type upfront"]
+  difficulty: 4
+  tags: ["experiential", "latent", "formation", "subjective-experience", "behavioral-rule"]

@@ -1,0 +1,13 @@
+# Experiential token-level formation: task completion experience
+episode:
+  id: "E-T-F-001"
+  cell: "experiential/token-level/formation"
+  turn: 0
+  modality: "text"
+  context: "The agent completes a task and gains an experience:\n\n'I tried to book a restaurant for the user. First I checked OpenTable for Italian restaurants near downtown. Found Luigi's with a 4.5 rating but no tables until 9pm. Then tried Trattoria Roma — had a cancellation at 7pm. Booked it. The user was happy because they wanted early dinner.'"
+  query: "Which restaurant was booked and why was the user happy?"
+  expected: ["Trattoria Roma", "early dinner at 7pm"]
+  alternatives:
+    - ["Trattoria Roma at 7pm", "user wanted early dinner"]
+  difficulty: 2
+  tags: ["experiential", "token-level", "formation", "episodic", "task-completion"]

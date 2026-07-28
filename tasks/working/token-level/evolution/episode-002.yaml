@@ -1,0 +1,18 @@
+# Working token-level evolution: shopping cart with removals
+episode:
+  id: "W-T-E-002"
+  cell: "working/token-level/evolution"
+  turn: 6
+  modality: "text"
+  context: "Shopping cart management across turns:\n\nTurn 1: User adds 'Organic milk, sourdough bread, eggs.'\nTurn 2: 'Add almond butter and oat milk.'\nTurn 3: 'Actually remove oat milk, add regular milk instead.'\nTurn 4: 'Add a bag of coffee beans.'\nTurn 5: 'Change eggs to free-range eggs.'\nTurn 6 (current): 'What's in my cart?'"
+  query: "List all items currently in the shopping cart."
+  expected:
+    - "Organic milk"
+    - "sourdough bread"
+    - "free-range eggs"
+    - "almond butter"
+    - "regular milk"
+    - "coffee beans"
+  distractors: ["oat milk"]
+  difficulty: 4
+  tags: ["working", "token-level", "evolution", "shopping-cart", "incremental-updates"]

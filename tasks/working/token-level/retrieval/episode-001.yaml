@@ -1,0 +1,16 @@
+# Working token-level retrieval: code review requirements
+episode:
+  id: "W-T-R-001"
+  cell: "working/token-level/retrieval"
+  turn: 3
+  modality: "text"
+  context: "Code review session. The agent has been told:\n- The function 'validate_email()' must handle empty strings\n- 'validate_email()' should return True/False, not raise exceptions\n- The max email length is 254 characters\n- The function is case-insensitive for domain parts\n- It should be added to 'utils/validation.py'\n\nThe user now asks: 'What are all the requirements for validate_email?'"
+  query: "List all requirements for the validate_email function."
+  expected:
+    - "handle empty strings"
+    - "return True/False"
+    - "max 254 characters"
+    - "case-insensitive domain"
+    - "add to utils/validation.py"
+  difficulty: 3
+  tags: ["working", "token-level", "retrieval", "code-review", "requirements"]

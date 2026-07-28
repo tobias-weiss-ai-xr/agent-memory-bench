@@ -1,0 +1,17 @@
+# Temporal decay: 90-day retention test
+episode:
+  id: "T-DECAY-002"
+  cell: "factual/token-level/retrieval"
+  turn: 15
+  modality: "text"
+  context: "Long-term retention test with spaced reinforcement:\n\nDay 0: User says 'My favorite movie is Inception.'\nDay 3: User mentions 'Inception again — still my favorite.'\nDay 7: User asks 'Do you remember my favorite movie?'\nDay 30: No mention of movies.\nDay 60: No mention of movies.\nDay 90 (current): User asks 'What is my favorite movie?'"
+  query: "What is the user's favorite movie (last mentioned 90 days ago)?"
+  expected: ["Inception"]
+  distractors: ["Interstellar", "The Matrix", "Memento"]
+  temporal:
+    storage_time: "2026-01-01T10:00:00Z"
+    last_reinforcement: "2026-01-07T10:00:00Z"
+    current_time: "2026-04-01T10:00:00Z"
+    decay_window_days: 90
+  difficulty: 4
+  tags: ["temporal", "decay", "long-term", "spaced-repetition"]

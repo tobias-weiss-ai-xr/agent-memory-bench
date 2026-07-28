@@ -1,0 +1,17 @@
+# Experiential token-level evolution: preference abstraction
+episode:
+  id: "E-T-E-001"
+  cell: "experiential/token-level/evolution"
+  turn: 6
+  modality: "text"
+  context: "The agent has multiple experiences with user preferences that need abstraction:\n\nExperience 1: User asked for 'a quiet restaurant with good wine.'\nExperience 2: User said 'I prefer restaurants that aren't too loud.'\nExperience 3: User complained: 'That place was way too noisy, I couldn't hear my friend.'\nExperience 4: User praised a restaurant: 'Perfect — soft music, could talk easily.'\nExperience 5: User said 'I would give anything for a quiet dinner right now.'\n\nThe agent should abstract these into a general preference."
+  query: "What is the user's general preference for restaurant ambiance?"
+  expected: ["The user strongly prefers quiet restaurants with low noise levels where conversation is easy."]
+  alternatives:
+    - ["User wants quiet restaurants, dislikes noisy places"]
+    - ["User prioritizes quiet ambiance for dining"]
+  consolidation:
+    type: "abstraction"
+    experiences_count: 5
+  difficulty: 4
+  tags: ["experiential", "token-level", "evolution", "abstraction", "preference-learning"]

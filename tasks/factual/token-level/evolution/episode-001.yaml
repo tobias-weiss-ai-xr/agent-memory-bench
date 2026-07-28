@@ -1,0 +1,14 @@
+# Factual token-level evolution: city move
+episode:
+  id: "F-T-E-001"
+  cell: "factual/token-level/evolution"
+  turn: 4
+  modality: "text"
+  context: "Fact evolution about a user:\n\nSession 1: 'I live in Barcelona.'\nSession 2: 'I just moved to Madrid for work.'\nSession 3: 'My new address is Calle Mayor 15, Madrid.'\nSession 4 (current): 'What is my current city and address?'"
+  query: "What is the user's current city and address?"
+  expected: ["Madrid", "Calle Mayor 15, Madrid"]
+  alternatives:
+    - ["Madrid, Calle Mayor 15"]
+  distractors: ["Barcelona", "Barcelona address"]
+  difficulty: 2
+  tags: ["factual", "token-level", "evolution", "fact-update", "relocation"]

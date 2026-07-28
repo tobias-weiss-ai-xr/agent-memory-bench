@@ -1,0 +1,13 @@
+# Working parametric: context-dependent response style
+episode:
+  id: "W-P-F-002"
+  cell: "working/parametric/formation"
+  turn: 0
+  modality: "text"
+  context: "The agent needs to adapt its communication style based on context:\n\nRule 1: When the user's message contains technical terms like 'API', 'endpoint', 'schema', respond with precise technical language and code examples.\n\nRule 2: When the user's message contains emotional words like 'frustrated', 'confused', 'stuck', respond with empathetic language and step-by-step guidance.\n\nThe agent must adapt these rules into its parametric working memory for the session."
+  query: "What are the two context-adaptation rules the agent must follow?"
+  expected: ["technical terms -> precise technical response with code", "emotional words -> empathetic response with step-by-step guidance"]
+  alternatives:
+    - ["API/endpoint/schema -> technical + code", "frustrated/confused/stuck -> empathetic + step-by-step"]
+  difficulty: 4
+  tags: ["working", "parametric", "formation", "context-adaptation", "communication-style"]

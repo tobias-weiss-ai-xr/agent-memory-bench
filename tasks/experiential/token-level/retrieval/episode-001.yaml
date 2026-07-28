@@ -1,0 +1,14 @@
+# Experiential token-level retrieval: cooking reflections
+episode:
+  id: "E-T-R-001"
+  cell: "experiential/token-level/retrieval"
+  turn: 8
+  modality: "text"
+  context: "The agent has had many interactions with the user about cooking:\n\nEpisode 1: User tried making sourdough bread — it turned out 'dense and gummy.'\nEpisode 2: User made Thai green curry — 'best I have ever made.'\nEpisode 3: User attempted souffle — 'collapsed, total disaster.'\nEpisode 4: User made pasta from scratch — 'decent for a first try.'\nEpisode 5: User tried making ramen broth — 'simmered for 8 hours, worth it.'\n\nCurrent: User asks 'What was my biggest cooking success and biggest failure?'"
+  query: "What was the user's biggest cooking success and biggest failure?"
+  expected: ["biggest success: Thai green curry", "biggest failure: souffle"]
+  alternatives:
+    - ["Success: green curry, Failure: souffle"]
+    - ["Best: Thai green curry, Worst: souffle"]
+  difficulty: 3
+  tags: ["experiential", "token-level", "retrieval", "episodic", "success-failure"]

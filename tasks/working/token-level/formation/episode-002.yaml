@@ -1,0 +1,25 @@
+# Working token-level formation: dynamic constraint update
+episode:
+  id: "W-T-F-002"
+  cell: "working/token-level/formation"
+  turn: 1
+  modality: "text"
+  context: >
+    The agent is booking a flight for the user over three turns:
+
+    Turn 1: "I need to fly from Berlin to London next Tuesday."
+
+    Turn 2: "Prefer morning flights, under 200 euros."
+
+    Turn 3: "Actually, I need to go to Manchester, not London. And I have a meeting
+    at 2pm so I need to arrive before noon."
+
+    Working memory must update: destination changed from London to Manchester,
+    arrival deadline is before noon.
+  query: "What is the destination, the arrival deadline, and the max budget?"
+  expected: ["Manchester", "before noon", "200 euros"]
+  alternatives:
+    - ["Manchester", "12pm / noon", "EUR 200"]
+  distractors: ["London", "2pm", "150 euros"]
+  difficulty: 3
+  tags: ["working", "token-level", "task-tracking", "updating-constraints"]

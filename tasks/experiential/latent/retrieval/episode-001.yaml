@@ -1,0 +1,13 @@
+# Experiential latent retrieval: analogical pattern match
+episode:
+  id: "E-L-R-001"
+  cell: "experiential/latent/retrieval"
+  turn: 10
+  modality: "text"
+  context: "Retrieval from latent experiential memory:\n\nThe agent has accumulated many latent experiences. A new situation triggers a similarity match:\n\nCurrent situation: 'User is asking me to write a complex regex pattern for email validation. They have changed their mind about the requirements twice already.'\n\nThe agent should recognize this pattern from past experience and recall the learned rule before acting."
+  query: "What past experience does this situation remind the agent of, and what rule should be applied?"
+  expected: ["similar to past experience with changing visualization requirements", "rule: confirm final requirements before starting complex work"]
+  alternatives:
+    - ["reminds of data analysis task with changing requirements", "should confirm requirements first"]
+  difficulty: 5
+  tags: ["experiential", "latent", "retrieval", "analogical-reasoning", "pattern-match"]

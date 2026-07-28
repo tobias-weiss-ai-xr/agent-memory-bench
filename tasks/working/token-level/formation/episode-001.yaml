@@ -1,0 +1,18 @@
+# Working token-level formation: debugging context
+episode:
+  id: "W-T-F-001"
+  cell: "working/token-level/formation"
+  turn: 0
+  modality: "text"
+  context: >
+    The agent is helping a user debug a Python script. The user says: "I'm getting a
+    KeyError when accessing dict['missing_key']. The dict is loaded from a JSON config
+    file. I've checked the file exists. The error happens at line 42." The agent
+    processes this and needs to keep the relevant debugging context in working memory.
+  query: "What is the error type, what data structure is involved, and what line does the error occur on?"
+  expected: ["KeyError", "dict", "line 42"]
+  alternatives:
+    - ["KeyError", "dictionary", "42"]
+  distractors: ["TypeError", "list", "line 24"]
+  difficulty: 2
+  tags: ["working", "token-level", "debugging", "context-management"]

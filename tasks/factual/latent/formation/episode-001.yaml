@@ -1,0 +1,13 @@
+# Factual latent formation: continuous representation
+episode:
+  id: "F-L-F-001"
+  cell: "factual/latent/formation"
+  turn: 0
+  modality: "text"
+  context: "Latent factual memory — encoding facts into a continuous hidden representation:\n\nThe agent reads a research paper and must encode the key facts into its latent memory:\n\n'New research from Stanford shows that retrieval-augmented generation (RAG) systems achieve 94% accuracy when using hybrid search combining dense and sparse embeddings. The study evaluated 12 different retrieval methods across 3 benchmarks. Key finding: dense-sparse hybrid outperforms either method alone by 7% on average. The paper was published at ACL 2026 and received the best paper award.'"
+  query: "What retrieval method performed best and by how much did it outperform individual methods?"
+  expected: ["dense-sparse hybrid search", "7% on average"]
+  alternatives:
+    - ["hybrid dense+sparse", "7 percent"]
+  difficulty: 3
+  tags: ["factual", "latent", "formation", "research", "continuous-encoding"]

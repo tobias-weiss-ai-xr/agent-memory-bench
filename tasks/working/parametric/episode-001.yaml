@@ -1,0 +1,14 @@
+# Working parametric: adaptive priority rule
+episode:
+  id: "W-P-F-001"
+  cell: "working/parametric/formation"
+  turn: 0
+  modality: "text"
+  context: "Parametric working memory adaptation:\n\nThe agent is told: 'Whenever you see the word URGENT in a message, you should prioritize processing that message before any others in your queue. This priority rule should persist for the rest of the session as a lightweight behavioral adaptation.'"
+  query: "What trigger word causes priority queuing and what action should be taken?"
+  expected: ["trigger: URGENT", "prioritize that message before others"]
+  alternatives:
+    - ["URGENT triggers priority processing"]
+    - ["messages containing URGENT jump the queue"]
+  difficulty: 4
+  tags: ["working", "parametric", "formation", "priority-rule", "behavior-adaptation"]

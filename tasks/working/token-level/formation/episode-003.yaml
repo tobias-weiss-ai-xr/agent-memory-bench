@@ -1,0 +1,21 @@
+# Working token-level formation: multi-step plan tracking
+episode:
+  id: "W-T-F-003"
+  cell: "working/token-level/formation"
+  turn: 0
+  modality: "text"
+  context: >
+    Multi-step instruction: "First, check my calendar for next Monday. Then find the
+    weather forecast for that day in Paris. If it's above 20 degrees C, suggest outdoor
+    activities near the Eiffel Tower. If not, suggest museums. Finally, draft a packing
+    list based on your suggestion."
+  query: "List all the steps the user asked for, in order."
+  expected:
+    - "check calendar for next Monday"
+    - "find Paris weather forecast"
+    - "suggest activities based on temperature"
+    - "draft packing list"
+  alternatives:
+    - ["1. Check calendar", "2. Get weather", "3. Recommend outdoor/museum", "4. Packing list"]
+  difficulty: 3
+  tags: ["working", "token-level", "multi-step", "plan-tracking"]

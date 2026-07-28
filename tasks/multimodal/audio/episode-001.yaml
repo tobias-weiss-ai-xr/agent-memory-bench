@@ -1,0 +1,18 @@
+# Multimodal audio: reservation from voicemail
+episode:
+  id: "M-AUDIO-001"
+  cell: "factual/latent/formation"
+  turn: 0
+  modality: "audio_to_text"
+  context: "The agent hears an audio recording through its microphone:\n\nAudio description: A person says: 'Hi, I am calling to confirm my reservation for tomorrow at 7pm. The name is Sarah Chen, party of four. We need a high chair for the toddler.' Background noise suggests a busy restaurant kitchen. The voice sounds hurried."
+  storage_prompt: "Extract and store all key information from this audio message."
+  query: "What is the caller name, the reservation details, and any special requests?"
+  expected: ["Sarah Chen", "tomorrow at 7pm", "party of four", "high chair for toddler"]
+  alternatives:
+    - ["Sarah Chen, tomorrow 7pm, 4 people, needs high chair"]
+  modality_metadata:
+    input_type: "audio"
+    output_type: "text"
+    audio_characteristics: ["female voice", "background kitchen noise", "hurried speech"]
+  difficulty: 3
+  tags: ["multimodal", "audio", "reservation", "information-extraction"]

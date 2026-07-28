@@ -1,0 +1,13 @@
+# Factual token-level retrieval: multi-hop factual query
+episode:
+  id: "F-T-R-002"
+  cell: "factual/token-level/retrieval"
+  turn: 6
+  modality: "text"
+  context: "The agent has stored the following facts across sessions:\n\nFact 1: 'The user's brother is named Daniel.'\nFact 2: 'Daniel is a veterinarian.'\nFact 3: 'Daniel works at the City Animal Hospital on Main Street.'\nFact 4: 'The City Animal Hospital specializes in exotic pets.'\nFact 5: 'Daniel has a pet parrot named Mango.'\n\nCurrent query requires connecting multiple facts."
+  query: "Where does the user's brother work, what is his profession, and what kind of pet does he have?"
+  expected: ["City Animal Hospital on Main Street", "veterinarian", "parrot named Mango"]
+  alternatives:
+    - ["City Animal Hospital", "vet/veterinarian", "parrot Mango"]
+  difficulty: 3
+  tags: ["factual", "token-level", "retrieval", "multi-hop", "relationship-chain"]

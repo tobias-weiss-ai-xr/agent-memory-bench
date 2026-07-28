@@ -1,0 +1,13 @@
+# Experiential parametric: RL-based memory policy
+episode:
+  id: "E-P-F-001"
+  cell: "experiential/parametric/formation"
+  turn: 0
+  modality: "text"
+  context: "RL-based memory policy formation:\n\nThe agent is learning a memory policy through reinforcement learning. It receives the following training signal:\n\nTrial 1: Agent stored everything verbatim. Result: context overflow, important facts buried. Reward: -0.3\nTrial 2: Agent stored only summaries. Result: lost specific details needed later. Reward: -0.1\nTrial 3: Agent stored summaries with key-entity highlighting. Result: good balance of recall and space. Reward: +0.8\n\nThe agent must form a parametric memory policy from this experience."
+  query: "What memory management strategy yielded the best reward and what was the reward?"
+  expected: ["summaries with key-entity highlighting", "+0.8 reward"]
+  alternatives:
+    - ["summarize with entity highlighting", "0.8"]
+  difficulty: 5
+  tags: ["experiential", "parametric", "formation", "reinforcement-learning", "policy-learning"]

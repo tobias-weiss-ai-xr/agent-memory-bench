@@ -10,7 +10,6 @@ episode:
   query: What aesthetic preference has been latently encoded?
   expected:
   - strong preference for minimalist over ornate design
-  distractors: []
   difficulty: 3
   tags:
   - experiential

@@ -11,7 +11,6 @@ episode:
   expected:
   - learned that restaurants may be closed on Mondays
   - verify operating hours before recommending
-  distractors: []
   difficulty: 2
   tags:
   - experiential

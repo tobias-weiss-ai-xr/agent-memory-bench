@@ -9,7 +9,6 @@ episode:
   query: What personality trait is encoded in the latent representation of the user?
   expected:
   - unusually polite and appreciative
-  distractors: []
   difficulty: 3
   tags:
   - experiential

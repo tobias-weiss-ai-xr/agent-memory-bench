@@ -11,7 +11,6 @@ episode:
   expected:
   - '3 workstreams: A active, B blocked (waiting API key), C not started. Resume B
     when key arrives.'
-  distractors: []
   difficulty: 3
   tags:
   - working

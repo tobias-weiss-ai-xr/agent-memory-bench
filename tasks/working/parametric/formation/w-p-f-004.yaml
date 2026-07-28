@@ -9,7 +9,6 @@ episode:
   expected:
   - 'store deadline: Friday 5pm'
   - remind on Thursday 5pm (24h before)
-  distractors: []
   difficulty: 3
   tags:
   - working

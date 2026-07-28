@@ -9,7 +9,6 @@ episode:
   query: Which rules apply to the data cleaning request?
   expected:
   - verify data, log transformations, keep original, ask before overwriting
-  distractors: []
   difficulty: 3
   tags:
   - working

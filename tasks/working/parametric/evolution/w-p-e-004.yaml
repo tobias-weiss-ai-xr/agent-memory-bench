@@ -10,7 +10,6 @@ episode:
   expected:
   - CC manager only on escalations
   - use BCC for external partners
-  distractors: []
   difficulty: 3
   tags:
   - working

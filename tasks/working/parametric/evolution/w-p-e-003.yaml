@@ -9,7 +9,6 @@ episode:
   query: How did the task priority rule evolve?
   expected:
   - urgent customer issues now have top priority over other tasks
-  distractors: []
   difficulty: 3
   tags:
   - working

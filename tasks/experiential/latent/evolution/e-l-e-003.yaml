@@ -11,7 +11,6 @@ episode:
     session?
   expected:
   - patience has been declining, moving from patient to urgent/agitated
-  distractors: []
   difficulty: 3
   tags:
   - experiential

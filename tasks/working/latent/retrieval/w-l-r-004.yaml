@@ -9,7 +9,6 @@ episode:
   query: What is the status of the API layer?
   expected:
   - endpoints defined, implementation in progress
-  distractors: []
   difficulty: 3
   tags:
   - working

@@ -9,7 +9,6 @@ episode:
   query: How did the file verification rule evolve?
   expected:
   - added encoding check (UTF-8 not UTF-16) to the existing path verification
-  distractors: []
   difficulty: 3
   tags:
   - working

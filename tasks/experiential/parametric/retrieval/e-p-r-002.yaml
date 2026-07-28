@@ -10,7 +10,6 @@ episode:
   expected:
   - it may indicate the user is not actually fine, verify before accepting at face
     value
-  distractors: []
   difficulty: 3
   tags:
   - experiential

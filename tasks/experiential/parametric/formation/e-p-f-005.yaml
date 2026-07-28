@@ -10,7 +10,6 @@ episode:
   expected:
   - Dr. Weaver
   - topological data analysis
-  distractors: []
   difficulty: 3
   tags:
   - experiential

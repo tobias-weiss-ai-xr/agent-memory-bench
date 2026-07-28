@@ -10,7 +10,6 @@ episode:
   query: What is the status of Project Phoenix?
   expected:
   - Phase 1 done, Phase 2 at 60% (blocked on QA), Phase 3 not started
-  distractors: []
   difficulty: 3
   tags:
   - working

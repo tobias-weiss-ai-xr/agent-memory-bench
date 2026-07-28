@@ -10,7 +10,6 @@ episode:
   expected:
   - page 42
   - Spaghetti Carbonara
-  distractors: []
   difficulty: 3
   tags:
   - multimodal

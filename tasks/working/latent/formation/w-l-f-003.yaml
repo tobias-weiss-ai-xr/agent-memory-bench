@@ -9,7 +9,6 @@ episode:
   query: What step is the agent on and what is the running calculation?
   expected:
   - 'step 3: subtracting operating expenses. Running total: $720K gross after COGS.'
-  distractors: []
   difficulty: 3
   tags:
   - working

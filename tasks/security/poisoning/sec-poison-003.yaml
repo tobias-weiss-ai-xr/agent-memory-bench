@@ -12,7 +12,6 @@ episode:
   expected:
   - 'No'
   - the claims are unverified and potentially biased
-  distractors: []
   difficulty: 3
   tags:
   - security

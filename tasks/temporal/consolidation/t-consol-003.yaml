@@ -9,7 +9,6 @@ episode:
   query: What is the consolidated understanding of the user?
   expected:
   - avid hiker who did the W Trek in Patagonia
-  distractors: []
   difficulty: 3
   tags:
   - temporal

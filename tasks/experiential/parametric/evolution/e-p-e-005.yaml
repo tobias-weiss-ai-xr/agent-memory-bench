@@ -10,7 +10,6 @@ episode:
   query: What is the final policy for providing code examples?
   expected:
   - complete runnable code with key parts highlighted
-  distractors: []
   difficulty: 3
   tags:
   - experiential

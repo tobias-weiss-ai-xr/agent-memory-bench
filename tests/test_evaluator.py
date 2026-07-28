@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from src.evaluator import load_tasks
+from src.harness import load_tasks, TaskRunner, MockClient, ReportGenerator
 
 
 def test_load_tasks_returns_all():
@@ -20,21 +20,26 @@ def test_load_tasks_structure():
     tasks_dir = Path(__file__).parent.parent / "tasks"
     tasks = load_tasks(tasks_dir)
     for t in tasks:
-        ep = t.get("episode", {})
-        assert "id" in ep
-        assert "cell" in ep
-        assert "query" in ep
-        assert "expected" in ep
+        assert "id" in t
+        assert "cell" in t
+        assert "query" in t
+        assert "expected" in t
 
 
-def test_evaluator_output_format():
-    """evaluate_agent should return a dict with status and tasks_loaded."""
-    from src.evaluator import evaluate_agent
-    result = evaluate_agent("dummy_cmd", [{"episode": {"id": "test"}}])
-    assert isinstance(result, dict)
-    assert "status" in result
-    assert "tasks_loaded" in result
-    assert result["tasks_loaded"] == 1
+def test_harness_mock_run():
+    """Harness should run with mock client and produce a report."""
+    tasks_dir = Path(__file__).parent.parent / "tasks"
+    tasks = load_tasks(tasks_dir, cell_filter=["factual/token-level/formation"])[:3]
+    assert len(tasks) > 0, "No factual/token-level/formation tasks found"
+    
+    client = MockClient()
+    runner = TaskRunner(client)
+    results = [runner.run_task(t) for t in tasks]
+    
+    report = ReportGenerator.generate(results, "mock-test", {})
+    assert report.total_tasks == len(tasks)
+    assert isinstance(report.avg_score, float)
+    assert len(report.cell_results) > 0
 
 
 def test_coverage_json_exists():

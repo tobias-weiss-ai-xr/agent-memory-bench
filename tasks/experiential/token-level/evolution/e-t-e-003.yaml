@@ -10,7 +10,6 @@ episode:
   query: What communication style does the user prefer after consolidation?
   expected:
   - concise direct communication with summaries first, no pleasantries
-  distractors: []
   difficulty: 2
   tags:
   - experiential

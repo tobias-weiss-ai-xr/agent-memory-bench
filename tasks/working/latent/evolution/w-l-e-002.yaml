@@ -10,7 +10,6 @@ episode:
   query: What topics are in the latent conversation thread?
   expected:
   - vacation planning, work projects, restaurant recommendations
-  distractors: []
   difficulty: 3
   tags:
   - working

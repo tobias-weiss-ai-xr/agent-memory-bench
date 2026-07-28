@@ -10,7 +10,6 @@ episode:
   expected:
   - 'the state of the email draft: what was written, what was pending, any attachments
     needed'
-  distractors: []
   difficulty: 3
   tags:
   - working

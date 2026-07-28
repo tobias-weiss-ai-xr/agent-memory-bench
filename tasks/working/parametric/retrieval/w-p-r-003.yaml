@@ -9,7 +9,6 @@ episode:
   query: Which rules apply to the weather data request?
   expected:
   - check rate limits, use cache if available, log any errors
-  distractors: []
   difficulty: 3
   tags:
   - working

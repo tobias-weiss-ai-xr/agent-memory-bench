@@ -11,7 +11,6 @@ episode:
   expected:
   - was on step 4 (train model)
   - 'next: step 5 (evaluate results)'
-  distractors: []
   difficulty: 3
   tags:
   - working

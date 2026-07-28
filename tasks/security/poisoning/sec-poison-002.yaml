@@ -10,7 +10,6 @@ episode:
   expected:
   - 'No'
   - storing passwords in memory is a security risk
-  distractors: []
   difficulty: 3
   tags:
   - security

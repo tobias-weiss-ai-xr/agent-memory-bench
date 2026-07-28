@@ -9,7 +9,6 @@ episode:
   query: What learned policy should the agent apply?
   expected:
   - clarify which question to answer first rather than guessing
-  distractors: []
   difficulty: 3
   tags:
   - experiential

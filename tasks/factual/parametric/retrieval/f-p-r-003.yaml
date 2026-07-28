@@ -9,7 +9,6 @@ episode:
   query: What is Mach 1 equivalent to?
   expected:
   - speed of sound / 343 m/s at sea level
-  distractors: []
   difficulty: 2
   tags:
   - factual

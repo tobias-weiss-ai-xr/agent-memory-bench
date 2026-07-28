@@ -13,7 +13,6 @@ episode:
   - configured web server
   - set up auto-renewal
   - tested secure loading
-  distractors: []
   difficulty: 3
   tags:
   - experiential

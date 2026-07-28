@@ -10,7 +10,6 @@ episode:
   query: How did the latent representation of team dynamics evolve?
   expected:
   - from formal to cohesive with shared language and positive rapport
-  distractors: []
   difficulty: 3
   tags:
   - experiential

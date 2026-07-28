@@ -9,7 +9,6 @@ episode:
   query: What is the new priority order after escalation?
   expected:
   - 1. Update docs (deadline moved up), 2. Fix login bug, 3. Review PR
-  distractors: []
   difficulty: 3
   tags:
   - working

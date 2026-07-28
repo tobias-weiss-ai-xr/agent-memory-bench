@@ -10,7 +10,6 @@ episode:
   query: What summary structure should the agent use?
   expected:
   - research question, methodology, key findings, limitations, implications
-  distractors: []
   difficulty: 3
   tags:
   - experiential

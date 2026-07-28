@@ -10,7 +10,6 @@ episode:
   query: What is the refined understanding of the users coffee interests?
   expected:
   - home espresso enthusiast focusing on milk-based drinks like lattes and cappuccinos
-  distractors: []
   difficulty: 2
   tags:
   - experiential

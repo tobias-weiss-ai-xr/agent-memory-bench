@@ -11,7 +11,6 @@ episode:
   - output JSON
   - run under 150 seconds
   - use threading
-  distractors: []
   difficulty: 5
   tags:
   - working

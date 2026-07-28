@@ -10,7 +10,6 @@ episode:
   expected:
   - 86 billion
   - 1.4 kg
-  distractors: []
   difficulty: 2
   tags:
   - factual

@@ -10,7 +10,6 @@ episode:
   query: How did the users response length preference evolve?
   expected:
   - from brief to comprehensive with executive summary
-  distractors: []
   difficulty: 3
   tags:
   - experiential

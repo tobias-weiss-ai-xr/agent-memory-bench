@@ -10,7 +10,6 @@ episode:
   query: How did the latent trust model of the user evolve?
   expected:
   - started moderate, decreased after misleading info was detected
-  distractors: []
   difficulty: 3
   tags:
   - experiential

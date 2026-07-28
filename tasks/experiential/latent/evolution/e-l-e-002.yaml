@@ -10,7 +10,6 @@ episode:
   query: How did the agents latent assessment of the users Python skill evolve?
   expected:
   - from beginner to intermediate to expert
-  distractors: []
   difficulty: 3
   tags:
   - experiential

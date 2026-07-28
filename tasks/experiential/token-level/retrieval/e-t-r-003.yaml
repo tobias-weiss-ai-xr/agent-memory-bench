@@ -10,7 +10,6 @@ episode:
   query: What strategy should the agent recall and apply?
   expected:
   - categorize by function, create directories, move files, update imports
-  distractors: []
   difficulty: 2
   tags:
   - experiential

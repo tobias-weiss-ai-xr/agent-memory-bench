@@ -10,7 +10,6 @@ episode:
   query: What is the status of project Alpha?
   expected:
   - requirements finalized, sprint 1 started, blocked on dependency
-  distractors: []
   difficulty: 3
   tags:
   - multi-agent

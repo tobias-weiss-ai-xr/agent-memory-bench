@@ -10,7 +10,6 @@ episode:
   expected:
   - vacation planning -> work deadlines -> restaurants -> work deadlines (reminder)
     -> weekend plans
-  distractors: []
   difficulty: 3
   tags:
   - working

@@ -10,7 +10,6 @@ episode:
   expected:
   - use precise technical terms (user mentioned binary search tree and time complexity,
     indicating technical knowledge)
-  distractors: []
   difficulty: 3
   tags:
   - working

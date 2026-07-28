@@ -10,7 +10,6 @@ episode:
   query: What analysis approach should the agent suggest?
   expected:
   - NLP sentiment analysis, topic modeling, and dashboard visualization
-  distractors: []
   difficulty: 3
   tags:
   - experiential

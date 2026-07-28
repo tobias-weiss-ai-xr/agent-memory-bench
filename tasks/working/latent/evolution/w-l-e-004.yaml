@@ -9,7 +9,6 @@ episode:
   query: How did the task priority list change?
   expected:
   - production incident became top priority, report deadline extended
-  distractors: []
   difficulty: 3
   tags:
   - working

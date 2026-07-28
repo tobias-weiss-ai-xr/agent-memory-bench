@@ -9,7 +9,6 @@ episode:
   query: What pricing presentation preference did the agent learn?
   expected:
   - always start with the lowest-cost option first
-  distractors: []
   difficulty: 3
   tags:
   - experiential

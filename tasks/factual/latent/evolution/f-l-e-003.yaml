@@ -10,7 +10,6 @@ episode:
   query: How has the user's interest profile evolved?
   expected:
   - user evolved from hiker to hiking photographer with professional equipment
-  distractors: []
   difficulty: 2
   tags:
   - factual

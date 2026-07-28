@@ -9,7 +9,6 @@ episode:
   query: What is the final priority rule for support tickets?
   expected:
   - VIP priority capped at 30% capacity, rest FCFS
-  distractors: []
   difficulty: 3
   tags:
   - working

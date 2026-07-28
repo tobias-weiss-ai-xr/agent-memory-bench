@@ -9,7 +9,6 @@ episode:
   query: What temperature preference has the agent learned after 3 corrections?
   expected:
   - the specific comfortable temperature range the user prefers
-  distractors: []
   difficulty: 3
   tags:
   - experiential

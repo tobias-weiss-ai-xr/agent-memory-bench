@@ -11,7 +11,6 @@ episode:
   expected:
   - monolithic architecture
   - higher performance
-  distractors: []
   difficulty: 3
   tags:
   - factual

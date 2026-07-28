@@ -10,7 +10,6 @@ episode:
   query: What should the agent ask before processing the task list?
   expected:
   - if the user wants to save it as a reusable template
-  distractors: []
   difficulty: 3
   tags:
   - working

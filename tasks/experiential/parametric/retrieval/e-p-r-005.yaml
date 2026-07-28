@@ -9,7 +9,6 @@ episode:
   query: What is the policy about technical terms?
   expected:
   - always define technical terms in simple language before using them
-  distractors: []
   difficulty: 3
   tags:
   - experiential

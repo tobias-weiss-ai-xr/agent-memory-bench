@@ -10,7 +10,6 @@ episode:
   query: How did the agents latent understanding of the user change?
   expected:
   - from adversarial to sympathetic after realizing the user was having a bad day
-  distractors: []
   difficulty: 3
   tags:
   - experiential

@@ -9,7 +9,6 @@ episode:
   query: What is the code review status?
   expected:
   - auth.py approved, api.py waiting on author, models.py pending, utils.py not started
-  distractors: []
   difficulty: 3
   tags:
   - working

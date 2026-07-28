@@ -10,7 +10,6 @@ episode:
   expected:
   - 'step 3: resting steak (5 min timer)'
   - 'then: pan sauce, plate and serve'
-  distractors: []
   difficulty: 3
   tags:
   - working

@@ -10,7 +10,6 @@ episode:
     pattern?
   expected:
   - growing frustration despite professional language
-  distractors: []
   difficulty: 3
   tags:
   - experiential

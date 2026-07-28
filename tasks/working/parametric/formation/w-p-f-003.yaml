@@ -9,7 +9,6 @@ episode:
   query: What is the new working memory rule for handling error messages?
   expected:
   - identify error type and line number before proposing solution
-  distractors: []
   difficulty: 3
   tags:
   - working

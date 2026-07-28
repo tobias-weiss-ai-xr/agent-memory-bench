@@ -64,7 +64,7 @@ For the extended dimensions:
 |---------|------|-------------|
 | T-DECAY | Decay-based forgetting | Memory importance decays over time; query after delays |
 | T-CONSOL | Sleep consolidation | Offline memory reorganization between sessions |
-| T-BITEMP | Bi-temporal reasoning | Query valid-time vs transaction-time conflicts |
+| T-BITODO | Bi-temporal reasoning | Query valid-time vs transaction-time conflicts |
 | T-TREND | Trend detection | "How has X changed over the last N sessions?" |
 
 ### 3.3 Multimodal Tasks
@@ -144,7 +144,7 @@ episode:
 
 ```yaml
 episode:
-  id: "T-BITEMP-001"
+  id: "T-BITODO-001"
   cell: "working/latent/bi-temporal"
   turn: 5
   modality: "text"

@@ -9,7 +9,6 @@ episode:
   query: What does the latent familiarity signal tell the agent?
   expected:
   - the user may be a cybersecurity researcher based on communication style similarity
-  distractors: []
   difficulty: 3
   tags:
   - experiential

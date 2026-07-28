@@ -9,7 +9,6 @@ episode:
   expected:
   - Haruki Murakami
   - '1987'
-  distractors: []
   difficulty: 2
   tags:
   - factual

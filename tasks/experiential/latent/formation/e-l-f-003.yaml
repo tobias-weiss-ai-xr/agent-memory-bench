@@ -1,0 +1,19 @@
+episode:
+  id: E-L-F-003
+  cell: experiential/latent/formation
+  turn: 0
+  modality: text
+  context: 'Aesthetic preference encoded in latent space: The user consistently chose
+    minimalist design over ornate. Every time the agent suggested a decorated UI,
+    the user simplified it. The latent representation now strongly encodes minimalist
+    preference.'
+  query: What aesthetic preference has been latently encoded?
+  expected:
+  - strong preference for minimalist over ornate design
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - formation
+  - knowledge

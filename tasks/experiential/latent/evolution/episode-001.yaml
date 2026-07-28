@@ -1,0 +1,14 @@
+# Experiential latent evolution: refining a subjective impression
+episode:
+  id: "E-L-E-001"
+  cell: "experiential/latent/evolution"
+  turn: 6
+  modality: "text"
+  context: "Latent experiential evolution — refining a subjective impression over time:\n\nThe agent's latent representation of a user's reliability evolves:\n\nInteraction 1: User says 'I will send you the files by tomorrow.' → Files arrive 3 days late.\nSubtle shift: User reliability perception adjusts downward slightly.\n\nInteraction 2: User says 'I will review the draft by Friday.' → Review arrives the following Tuesday.\nShift: Pattern of lateness confirmed, reliability perception adjusts further.\n\nInteraction 3: User says 'I promise I will pay by end of month.' → Payment never arrives.\nShift: Reliability perception drops significantly. Pattern established.\n\nThe latent representation should now encode 'user is unreliable with deadlines and commitments.'"
+  query: "What pattern has the agent learned about the user through repeated experiences?"
+  expected: ["the user is unreliable with deadlines and commitments, consistently late or non-compliant"]
+  alternatives:
+    - ["user does not follow through on promises/deadlines"]
+    - ["pattern of lateness and broken commitments"]
+  difficulty: 4
+  tags: ["experiential", "latent", "evolution", "trust-modeling", "pattern-recognition"]

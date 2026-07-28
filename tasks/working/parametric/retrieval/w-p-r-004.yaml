@@ -1,0 +1,19 @@
+episode:
+  id: W-P-R-004
+  cell: working/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'Active rules include: (1) Use simple language for non-technical users.
+    (2) Use precise technical terms for developers. Current user asks: ''How do I
+    implement a binary search tree in Python and also what is the time complexity?'''
+  query: Which communication rule applies based on the users language?
+  expected:
+  - use precise technical terms (user mentioned binary search tree and time complexity,
+    indicating technical knowledge)
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - retrieval
+  - knowledge

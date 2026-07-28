@@ -1,0 +1,18 @@
+episode:
+  id: E-L-R-003
+  cell: experiential/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent senses familiarity: The current user talks exactly like a previous
+    user who was a cybersecurity researcher. The latent representation contains knowledge
+    about that users preferences and communication style.'
+  query: What does the latent familiarity signal tell the agent?
+  expected:
+  - the user may be a cybersecurity researcher based on communication style similarity
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - retrieval
+  - knowledge

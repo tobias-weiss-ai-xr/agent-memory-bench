@@ -1,0 +1,19 @@
+episode:
+  id: F-P-E-003
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'The agent learned ''The population of Tokyo is 37 million.'' Then a correction
+    arrives: ''New census data shows Tokyo population is 39.5 million as of 2025.''
+    Update parametric knowledge.'
+  query: What is the current population of Tokyo?
+  expected:
+  - 39.5 million
+  distractors:
+  - 37 million
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - knowledge

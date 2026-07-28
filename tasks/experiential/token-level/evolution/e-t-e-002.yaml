@@ -1,0 +1,19 @@
+episode:
+  id: E-T-E-002
+  cell: experiential/token-level/evolution
+  turn: 0
+  modality: text
+  context: 'Refining a user preference from multiple experiences: Exp 1: User bought
+    an espresso machine. Exp 2: User asked for latte recipes. Exp 3: User complained
+    their cappuccino foam wasnt stiff enough. Exp 4: User bought a milk frother upgrade.
+    Abstraction: User is a home espresso enthusiast who makes milk-based drinks.'
+  query: What is the refined understanding of the users coffee interests?
+  expected:
+  - home espresso enthusiast focusing on milk-based drinks like lattes and cappuccinos
+  distractors: []
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - evolution
+  - knowledge

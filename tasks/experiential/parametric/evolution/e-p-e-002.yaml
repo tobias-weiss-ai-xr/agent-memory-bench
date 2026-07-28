@@ -1,0 +1,18 @@
+episode:
+  id: E-P-E-002
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Parametric update from repeated user feedback: User corrected the agent
+    3 times about temperature preference (too cold, too hot, just right). After the
+    third correction, the agent internalizes the precise temperature preference.'
+  query: What temperature preference has the agent learned after 3 corrections?
+  expected:
+  - the specific comfortable temperature range the user prefers
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - knowledge

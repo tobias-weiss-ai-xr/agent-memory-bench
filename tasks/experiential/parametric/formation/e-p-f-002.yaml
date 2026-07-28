@@ -1,0 +1,21 @@
+episode:
+  id: E-P-F-002
+  cell: experiential/parametric/formation
+  turn: 0
+  modality: text
+  context: 'RL-based memory policy: The agent receives reward signals for memory management.
+    Trial: stored user preferences in structured format. Reward: +0.9 for enabling
+    quick retrieval. The agent learns: structured storage with key-value format maximizes
+    retrieval speed.'
+  query: What memory storage format yielded the highest reward?
+  expected:
+  - structured key-value format
+  distractors:
+  - free text
+  - raw conversation logs
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - formation
+  - knowledge

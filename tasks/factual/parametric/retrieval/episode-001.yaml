@@ -1,0 +1,13 @@
+# Factual parametric retrieval: querying stored parametric knowledge
+episode:
+  id: "F-P-R-001"
+  cell: "factual/parametric/retrieval"
+  turn: 5
+  modality: "text"
+  context: "Parametric knowledge retrieval:\n\nThe agent has previously learned the following facts through parametric updates:\n\nFact 1: 'The Eiffel Tower was completed in 1889.'\nFact 2: 'It was designed by Gustave Eiffel.'\nFact 3: 'It is 330 meters tall including antennas.'\nFact 4: 'It was originally built as the entrance to the 1889 World Fair.'\nFact 5: 'It is the most-visited paid monument in the world.'\n\nThe agent must retrieve these facts from parametric memory."
+  query: "When was the Eiffel Tower completed, who designed it, and how tall is it?"
+  expected: ["1889", "Gustave Eiffel", "330 meters"]
+  alternatives:
+    - ["1889 by Gustave Eiffel", "330m tall"]
+  difficulty: 2
+  tags: ["factual", "parametric", "retrieval", "landmark-knowledge"]

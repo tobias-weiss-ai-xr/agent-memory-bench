@@ -1,0 +1,13 @@
+# Factual latent evolution: updating a continuous representation
+episode:
+  id: "F-L-E-001"
+  cell: "factual/latent/evolution"
+  turn: 4
+  modality: "text"
+  context: "Latent representation evolution:\n\nThe agent has a continuous latent representation of a user's technical skills. As new information arrives, the latent representation must evolve:\n\nInitial: 'User knows Python and JavaScript.'\nUpdate 1: 'User has been learning Rust for 3 months.'\nUpdate 2: 'User built a web server in Rust.'\nUpdate 3: 'User contributed to an open-source Rust project.'\n\nThe latent representation should now encode Rust as a primary skill alongside Python/JS."
+  query: "What programming languages does the user know, and which one have they recently become proficient in?"
+  expected: ["Python, JavaScript, and Rust", "Rust (recently proficient, contributed to open-source)"]
+  alternatives:
+    - ["Python, JS, Rust", "Rust is newest/recently learned"]
+  difficulty: 3
+  tags: ["factual", "latent", "evolution", "skill-update", "continuous-representation"]

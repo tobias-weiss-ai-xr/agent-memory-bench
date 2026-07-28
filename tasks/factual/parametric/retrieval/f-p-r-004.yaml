@@ -1,0 +1,19 @@
+episode:
+  id: F-P-R-004
+  cell: factual/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'The agents parametric knowledge contains: ''The Great Wall of China is
+    over 21,000 km long.'' ''It was built over several dynasties starting in the 7th
+    century BC.'' ''It is a UNESCO World Heritage site.'''
+  query: How long is the Great Wall of China and what is its UNESCO status?
+  expected:
+  - over 21,000 km
+  - UNESCO World Heritage site
+  distractors: []
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - retrieval
+  - knowledge

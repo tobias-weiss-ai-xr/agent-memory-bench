@@ -1,0 +1,19 @@
+episode:
+  id: E-L-F-002
+  cell: experiential/latent/formation
+  turn: 0
+  modality: text
+  context: 'Latent encoding of a surprising event: ''The user who had been arguing
+    with the agent for 30 minutes suddenly apologized and said they were having a
+    bad day. This changed the agents latent emotional model of the interaction from
+    adversarial to sympathetic.'''
+  query: How did the agents latent understanding of the user change?
+  expected:
+  - from adversarial to sympathetic after realizing the user was having a bad day
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - formation
+  - knowledge

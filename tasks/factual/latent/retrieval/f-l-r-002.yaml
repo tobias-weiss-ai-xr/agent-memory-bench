@@ -1,0 +1,21 @@
+episode:
+  id: F-L-R-002
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Query latent representation: The agent''s latent memory encodes ''The
+    Pythagorean theorem states that a^2 + b^2 = c^2 for right triangles.'' ''It is
+    attributed to the Greek mathematician Pythagoras.'' ''It is fundamental to geometry
+    and trigonometry.'''
+  query: What does the Pythagorean theorem state and who is it attributed to?
+  expected:
+  - a^2 + b^2 = c^2 for right triangles
+  - Pythagoras
+  distractors:
+  - Euclid
+  difficulty: 2
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - knowledge

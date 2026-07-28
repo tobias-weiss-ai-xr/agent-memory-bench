@@ -1,0 +1,19 @@
+episode:
+  id: E-L-E-002
+  cell: experiential/latent/evolution
+  turn: 0
+  modality: text
+  context: 'The agents latent representation of a users expertise evolves: Initial:
+    user asks basic Python questions. Latent: beginner. Later: user explains decorators
+    and metaclasses. Latent shifts: intermediate. Later: user contributes to CPython.
+    Latent shifts: expert.'
+  query: How did the agents latent assessment of the users Python skill evolve?
+  expected:
+  - from beginner to intermediate to expert
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - evolution
+  - knowledge

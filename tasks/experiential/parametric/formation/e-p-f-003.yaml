@@ -1,0 +1,19 @@
+episode:
+  id: E-P-F-003
+  cell: experiential/parametric/formation
+  turn: 0
+  modality: text
+  context: 'The agent learns a new fact through parametric update: ''Dr. Maria Santos
+    won the Nobel Prize in Physics in 2025 for her work on quantum entanglement networks.''
+    This fact must be integrated into the agents knowledge base.'
+  query: Who won the Nobel Prize in Physics in 2025 and for what?
+  expected:
+  - Dr. Maria Santos
+  - quantum entanglement networks
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - formation
+  - knowledge

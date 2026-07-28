@@ -1,0 +1,19 @@
+episode:
+  id: F-L-R-004
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'From latent representation: ''The human brain has approximately 86 billion
+    neurons.'' ''Each neuron forms thousands of connections.'' ''The brain weighs
+    about 1.4 kilograms.'''
+  query: How many neurons does the human brain have and how much does it weigh?
+  expected:
+  - 86 billion
+  - 1.4 kg
+  distractors: []
+  difficulty: 2
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - knowledge

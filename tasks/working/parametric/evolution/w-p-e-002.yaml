@@ -1,0 +1,18 @@
+episode:
+  id: W-P-E-002
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Existing rule: ''Verify file paths before reading files.'' Update: ''Also
+    verify that the file encoding is UTF-8, not UTF-16, because some users report
+    decoding errors.'' The rule evolves with this constraint.'
+  query: How did the file verification rule evolve?
+  expected:
+  - added encoding check (UTF-8 not UTF-16) to the existing path verification
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - knowledge

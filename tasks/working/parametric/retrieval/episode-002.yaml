@@ -1,0 +1,14 @@
+# Working parametric retrieval: choosing between competing rules
+episode:
+  id: "W-P-R-002"
+  cell: "working/parametric/retrieval"
+  turn: 8
+  modality: "text"
+  context: "Rule conflict resolution in parametric working memory:\n\nThe agent has two active rules that could apply to the current situation:\n\nRule A: 'When user asks for debugging help, provide step-by-step diagnostic questions first.'\nRule B: 'When user is clearly frustrated, give them the solution directly rather than making them work through steps.'\n\nCurrent user message: 'I have been trying to fix this bug for 3 hours. My entire deployment is broken and I am hours past deadline. JUST TELL ME WHAT IS WRONG.'\n\nThe agent must determine which rule takes priority based on the user's emotional state indicators (ALL CAPS, mentions of frustration, deadline pressure)."
+  query: "Which rule should take priority and what action should the agent take?"
+  expected: ["Rule B (frustrated user) takes priority", "give the solution directly without step-by-step diagnostics"]
+  reasoning: "The user is clearly frustrated (ALL CAPS, mentions 3 hours of effort, deadline pressure). Rule B is designed for this exact scenario."
+  alternatives:
+    - ["prioritize frustrated user rule", "provide direct solution"]
+  difficulty: 4
+  tags: ["working", "parametric", "retrieval", "rule-conflict", "priority-resolution"]

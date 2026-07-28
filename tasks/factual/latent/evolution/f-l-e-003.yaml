@@ -1,0 +1,19 @@
+episode:
+  id: F-L-E-003
+  cell: factual/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Continual update of latent user model: Initial: ''User enjoys hiking and
+    outdoor activities.'' Update 1: ''User recently took up photography.'' Update
+    2: ''User now combines hiking with photography, posting landscape photos.'' Update
+    3: ''User bought professional camera equipment for nature photography.'''
+  query: How has the user's interest profile evolved?
+  expected:
+  - user evolved from hiker to hiking photographer with professional equipment
+  distractors: []
+  difficulty: 2
+  tags:
+  - factual
+  - latent
+  - evolution
+  - knowledge

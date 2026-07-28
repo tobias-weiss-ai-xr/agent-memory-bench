@@ -1,0 +1,20 @@
+episode:
+  id: E-T-F-004
+  cell: experiential/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Customer support experience: ''A user could not log in for 3 days. After
+    troubleshooting, I found their account was locked due to too many failed attempts
+    from an old stored password. I guided them through password reset and they regained
+    access. They were relieved and grateful.'''
+  query: What caused the login issue and how was it fixed?
+  expected:
+  - account locked from too many failed attempts with old password
+  - password reset
+  distractors: []
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - formation
+  - knowledge

@@ -1,0 +1,20 @@
+episode:
+  id: F-L-E-002
+  cell: factual/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Latent representation of a city''s characteristics must evolve: Initial:
+    ''Berlin is known for its history, art scene, and nightlife.'' Update 1: ''Berlin
+    has become a major tech startup hub in Europe.'' Update 2: ''Berlin now has over
+    2,500 tech startups and is called the Silicon Allee.'''
+  query: How has Berlins identity evolved according to the latent representation?
+  expected:
+  - Berlin is now also a major tech startup hub (Silicon Allee) with 2,500+ startups
+  distractors:
+  - history and art only
+  difficulty: 2
+  tags:
+  - factual
+  - latent
+  - evolution
+  - knowledge

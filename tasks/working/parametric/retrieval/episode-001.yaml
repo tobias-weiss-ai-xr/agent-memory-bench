@@ -1,0 +1,14 @@
+# Working parametric retrieval: recalling active behavioral rules
+episode:
+  id: "W-P-R-001"
+  cell: "working/parametric/retrieval"
+  turn: 6
+  modality: "text"
+  context: "Retrieval of active parametric working memory rules:\n\nThe agent has accumulated the following active behavioral rules through parametric working memory:\n\nRule 1: 'When user asks about pricing, always mention the 30-day free trial first.'\nRule 2: 'When user seems frustrated, use empathetic language and offer to escalate.'\nRule 3: 'When user asks technical questions, check if they are a beginner or expert first.'\nRule 4: 'When providing links, always use https:// not http://'\n\nThe user now asks: 'How much does your premium plan cost?'"
+  query: "Which behavioral rule(s) apply to this query, and what should the agent do?"
+  expected: ["Rule 1 applies (pricing question)", "mention the 30-day free trial first"]
+  alternatives:
+    - ["pricing rule: offer free trial first"]
+    - ["mention 30-day trial before talking about cost"]
+  difficulty: 3
+  tags: ["working", "parametric", "retrieval", "rule-matching", "context-sensitive"]

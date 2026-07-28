@@ -1,0 +1,19 @@
+episode:
+  id: F-L-R-003
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Retrieve from latent: ''Photosynthesis converts CO2 and water into glucose
+    and oxygen using sunlight.'' ''The process occurs in chloroplasts.'' ''The green
+    pigment chlorophyll captures light energy.'''
+  query: What does photosynthesis produce and where does it occur?
+  expected:
+  - glucose and oxygen
+  - chloroplasts
+  distractors: []
+  difficulty: 2
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - knowledge

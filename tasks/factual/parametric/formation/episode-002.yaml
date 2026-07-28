@@ -1,0 +1,13 @@
+# Factual parametric formation: learning a new entity
+episode:
+  id: "F-P-F-002"
+  cell: "factual/parametric/formation"
+  turn: 0
+  modality: "text"
+  context: "Parametric learning of new entity:\n\nThe agent is given a new fact to integrate: 'The Zorbon is a fictional element from the science fiction series Star Nexus. It is a crystalline mineral that glows blue when exposed to radiation. It was discovered in the year 2157 by Dr. Elena Vasquez on the moon Titan.'\n\nLater, the agent is tested on this knowledge without the original context being available."
+  query: "What is the Zorbon, who discovered it, and when?"
+  expected: ["fictional crystalline mineral from Star Nexus that glows blue", "Dr. Elena Vasquez", "2157"]
+  alternatives:
+    - ["crystalline mineral glowing blue", "Dr. Elena Vasquez", "2157 on Titan"]
+  difficulty: 3
+  tags: ["factual", "parametric", "formation", "new-entity", "knowledge-integration"]

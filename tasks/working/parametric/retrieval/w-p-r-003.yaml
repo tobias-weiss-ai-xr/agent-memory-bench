@@ -1,0 +1,18 @@
+episode:
+  id: W-P-R-003
+  cell: working/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent has active rules: (1) Check API rate limits before making calls.
+    (2) Cache results to avoid redundant calls. (3) Log all API errors for debugging.
+    User asks: ''Can you fetch the weather data for Tokyo?'''
+  query: Which rules apply to the weather data request?
+  expected:
+  - check rate limits, use cache if available, log any errors
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - retrieval
+  - knowledge

@@ -1,0 +1,18 @@
+episode:
+  id: W-L-F-003
+  cell: working/latent/formation
+  turn: 0
+  modality: text
+  context: 'Multi-step math problem tracked in latent space: Step 1: calculate total
+    revenue (done, $1.2M). Step 2: subtract COGS (done, $720K gross). Step 3: subtract
+    operating expenses (current step). Step 4: calculate net margin.'
+  query: What step is the agent on and what is the running calculation?
+  expected:
+  - 'step 3: subtracting operating expenses. Running total: $720K gross after COGS.'
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - formation
+  - knowledge

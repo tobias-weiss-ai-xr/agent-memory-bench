@@ -1,0 +1,19 @@
+episode:
+  id: E-T-E-003
+  cell: experiential/token-level/evolution
+  turn: 0
+  modality: text
+  context: 'Abstracting communication style preference: Msg 1: User said ''Just the
+    facts, please.'' Msg 2: User said ''Skip the pleasantries.'' Msg 3: User said
+    ''TLDR summary first, then details.'' After consolidation: User prefers concise,
+    direct communication with summaries first.'
+  query: What communication style does the user prefer after consolidation?
+  expected:
+  - concise direct communication with summaries first, no pleasantries
+  distractors: []
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - evolution
+  - knowledge

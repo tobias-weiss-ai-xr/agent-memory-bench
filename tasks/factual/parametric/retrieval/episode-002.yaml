@@ -1,0 +1,12 @@
+# Factual parametric retrieval: differentiating learned facts
+episode:
+  id: "F-P-R-002"
+  cell: "factual/parametric/retrieval"
+  turn: 3
+  modality: "text"
+  context: "Parametric retrieval with discrimination:\n\nThe agent has parametric knowledge about two similar concepts:\n\nConcept A: 'Venus is the hottest planet in our solar system with a surface temperature of 462 degrees Celsius. It is the second planet from the Sun.'\n\nConcept B: 'Mercury is the closest planet to the Sun but not the hottest due to its lack of atmosphere. Its surface temperature ranges from -180 to 430 degrees Celsius.'\n\nThe agent must correctly retrieve and differentiate between these similar facts."
+  query: "Which planet is the hottest in our solar system and what is its temperature?"
+  expected: ["Venus", "462 degrees Celsius"]
+  distractors: ["Mercury", "430 degrees Celsius"]
+  difficulty: 3
+  tags: ["factual", "parametric", "retrieval", "discrimination", "science"]

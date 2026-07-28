@@ -1,0 +1,20 @@
+episode:
+  id: E-L-E-003
+  cell: experiential/latent/evolution
+  turn: 0
+  modality: text
+  context: 'The agents latent model of a users patience level evolves: Turn 1-5: user
+    patient, thanks agent. Turn 6-10: user starts using shorter sentences. Turn 11-15:
+    user says hurry. Turn 16+: user starts typing in ALL CAPS. Latent model should
+    track this decline in patience.'
+  query: How has the agents latent model of the users patience evolved across the
+    session?
+  expected:
+  - patience has been declining, moving from patient to urgent/agitated
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - evolution
+  - knowledge

@@ -1,0 +1,18 @@
+episode:
+  id: F-P-F-004
+  cell: factual/parametric/formation
+  turn: 0
+  modality: text
+  context: 'Parametric learning: ''The worlds longest river is the Nile at 6,650 kilometers.'''
+  query: What is the worlds longest river and its length?
+  expected:
+  - Nile
+  - 6,650 kilometers
+  distractors:
+  - Amazon
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - formation
+  - knowledge

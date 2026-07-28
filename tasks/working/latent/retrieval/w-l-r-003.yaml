@@ -1,0 +1,20 @@
+episode:
+  id: W-L-R-003
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'The user interrupts with ''quick question'' but the agent was in the middle
+    of a 5-step data analysis pipeline: (1) load data done, (2) clean data done, (3)
+    transform features done, (4) train model paused, (5) evaluate results not started.'
+  query: What step was the agent on and what is the next step after answering the
+    question?
+  expected:
+  - was on step 4 (train model)
+  - 'next: step 5 (evaluate results)'
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - retrieval
+  - knowledge

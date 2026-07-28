@@ -1,0 +1,19 @@
+episode:
+  id: W-L-E-002
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: 'The latent representation of conversation flow evolves: Topic was vacation
+    planning, then shifted to work projects, then to restaurant recommendations. Latent
+    working memory must maintain the conversation thread to allow returning to earlier
+    topics.'
+  query: What topics are in the latent conversation thread?
+  expected:
+  - vacation planning, work projects, restaurant recommendations
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - evolution
+  - knowledge

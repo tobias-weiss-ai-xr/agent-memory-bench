@@ -1,0 +1,18 @@
+episode:
+  id: F-P-F-003
+  cell: factual/parametric/formation
+  turn: 0
+  modality: text
+  context: 'The agent learns through fine-tuning: ''The freezing point of gallium
+    is 29.76 degrees Celsius.'''
+  query: What is the freezing point of gallium?
+  expected:
+  - 29.76 degrees Celsius
+  distractors:
+  - mercury
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - formation
+  - knowledge

@@ -1,0 +1,13 @@
+# Working parametric evolution: adapting priority rules mid-session
+episode:
+  id: "W-P-E-001"
+  cell: "working/parametric/evolution"
+  turn: 4
+  modality: "text"
+  context: "Parametric working memory evolution — adapting behavior rules:\n\nInitial rule (turn 0): 'When the user asks for code, always provide working code examples.'\n\nFeedback (turn 2): 'Your code examples are too complex. I need simple beginner-level examples.'\nAgent adapts: Rule evolves to include simplicity constraint.\n\nFeedback (turn 3): 'Also, please add comments explaining each line.'\nAgent adapts further: Rule now includes both simplicity and documentation.\n\nThe parametric working memory must support incremental rule refinement."
+  query: "What is the current rule for providing code examples after the user's feedback?"
+  expected: ["provide simple, beginner-level code examples with line-by-line comments"]
+  alternatives:
+    - ["simple code with comments", "beginner-friendly documented examples"]
+  difficulty: 4
+  tags: ["working", "parametric", "evolution", "rule-adaptation", "feedback"]

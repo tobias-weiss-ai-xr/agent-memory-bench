@@ -1,0 +1,20 @@
+episode:
+  id: F-P-E-002
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Parametric knowledge update: Initial fact stored was ''Light travels at
+    300,000 km/s.'' Correction: ''Actually, the exact speed of light in a vacuum is
+    299,792,458 meters per second.'' The agent must update its parametric knowledge
+    precisely.'
+  query: What is the exact speed of light in a vacuum?
+  expected:
+  - 299,792,458 m/s
+  distractors:
+  - 300,000 km/s
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - knowledge

@@ -1,0 +1,19 @@
+episode:
+  id: E-P-R-002
+  cell: experiential/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall a parametrically learned social rule: Through multiple interactions,
+    the agent learned: ''When a user says they are fine, they may not actually be
+    fine. Check twice before accepting surface-level responses about emotional state.'''
+  query: What social rule did the agent learn about the phrase 'I am fine'?
+  expected:
+  - it may indicate the user is not actually fine, verify before accepting at face
+    value
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - retrieval
+  - knowledge

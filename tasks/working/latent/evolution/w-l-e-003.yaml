@@ -1,0 +1,18 @@
+episode:
+  id: W-L-E-003
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Task priority shifting in latent working memory: Initially: 1. Fix login
+    bug, 2. Update docs, 3. Review PR. After manager escalation: 2. Update docs becomes
+    top priority (deadline moved up). The latent state must reorder priorities.'
+  query: What is the new priority order after escalation?
+  expected:
+  - 1. Update docs (deadline moved up), 2. Fix login bug, 3. Review PR
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - evolution
+  - knowledge

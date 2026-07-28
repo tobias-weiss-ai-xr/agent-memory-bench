@@ -1,0 +1,20 @@
+episode:
+  id: W-L-F-002
+  cell: working/latent/formation
+  turn: 0
+  modality: text
+  context: 'Latent working memory must track: Project has 3 parallel workstreams:
+    (A) Frontend UI, (B) API backend, (C) Database schema. Currently blocked on B
+    (waiting for API key). Focus is on A while waiting. Must remember to resume B
+    when key arrives.'
+  query: What is the current project state in latent working memory?
+  expected:
+  - '3 workstreams: A active, B blocked (waiting API key), C not started. Resume B
+    when key arrives.'
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - formation
+  - knowledge

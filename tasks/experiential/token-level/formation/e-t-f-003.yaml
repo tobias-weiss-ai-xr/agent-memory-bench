@@ -1,0 +1,22 @@
+episode:
+  id: E-T-F-003
+  cell: experiential/token-level/formation
+  turn: 0
+  modality: text
+  context: 'The agent successfully mediated a conflict between two team members: ''User
+    A was upset that User B took credit for their work. I listened to both sides,
+    found that it was a misunderstanding about attribution in the shared document,
+    and suggested a clear contribution tracking system. Both users agreed and thanked
+    me.'''
+  query: What was the conflict about and how was it resolved?
+  expected:
+  - credit attribution misunderstanding in shared document
+  - suggested contribution tracking system
+  distractors:
+  - both users agreed
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - formation
+  - knowledge

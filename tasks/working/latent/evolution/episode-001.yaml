@@ -1,0 +1,13 @@
+# Working latent evolution: dynamically shifting task focus
+episode:
+  id: "W-L-E-001"
+  cell: "working/latent/evolution"
+  turn: 5
+  modality: "text"
+  context: "Latent working memory evolution — shifting task focus:\n\nThe agent maintains task state in a continuous latent representation while helping with a web development project:\n\nFocus 1: 'Set up the React project structure.' (completed)\nFocus 2: 'Implement user authentication.' (completed)\nFocus 3: 'Build the dashboard component.' (interrupted by urgent bug)\nFocus 4: 'Fix the production login bug.' (current, high priority)\n\nAfter fixing the bug, the agent must return to Focus 3 (dashboard) without being explicitly reminded. The latent working memory must track task completion and interruption state."
+  query: "What was the agent working on before the urgent bug fix, and what should they resume after?"
+  expected: ["building the dashboard component", "resume dashboard after bug fix is deployed"]
+  alternatives:
+    - ["dashboard component was interrupted", "go back to dashboard"]
+  difficulty: 4
+  tags: ["working", "latent", "evolution", "task-interruption", "context-switching"]

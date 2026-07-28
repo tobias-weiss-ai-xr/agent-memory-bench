@@ -1,0 +1,20 @@
+episode:
+  id: E-L-R-002
+  cell: experiential/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Latent pattern match: Current situation involves a user who keeps changing
+    requirements mid-task. The agent has a latent memory of a previous frustrating
+    experience with requirement changes. The latent memory should surface the learned
+    caution.'
+  query: What latent memory should surface in this situation?
+  expected:
+  - past experience with requirement changes causing frustration
+  - learned to confirm requirements before starting work
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - retrieval
+  - knowledge

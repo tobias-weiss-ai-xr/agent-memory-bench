@@ -1,0 +1,18 @@
+episode:
+  id: E-P-R-003
+  cell: experiential/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent has learned: ''When a user asks two conflicting questions in
+    the same message, clarify which one to answer first rather than guessing.'' A
+    user now asks: ''What is the capital of Australia and also why did my code fail?'''
+  query: What learned policy should the agent apply?
+  expected:
+  - clarify which question to answer first rather than guessing
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - retrieval
+  - knowledge

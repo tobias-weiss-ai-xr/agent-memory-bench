@@ -1,0 +1,18 @@
+episode:
+  id: F-P-E-004
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Knowledge evolution: Agent stored ''Pluto has 5 moons.'' New data: ''Astronomers
+    discovered a 6th moon orbiting Pluto in 2025, bringing the total to 6.'' Update.'
+  query: How many moons does Pluto have now?
+  expected:
+  - '6'
+  distractors:
+  - '5'
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - knowledge

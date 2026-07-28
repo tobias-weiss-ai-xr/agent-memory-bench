@@ -1,0 +1,18 @@
+episode:
+  id: W-P-F-003
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: 'New parametric rule: ''When the user pastes an error message, first identify
+    the error type and line number before proposing a solution.'' This rule should
+    be added to working memory as a behavioral adaptation for the session.'
+  query: What is the new working memory rule for handling error messages?
+  expected:
+  - identify error type and line number before proposing solution
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - knowledge

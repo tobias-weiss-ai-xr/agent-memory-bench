@@ -1,0 +1,18 @@
+episode:
+  id: E-P-E-003
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'The agents policy evolves: Initial policy was ''always answer immediately.''
+    After observing users getting confused by rushed answers, the policy updates to
+    ''pause and verify understanding before answering complex questions.'''
+  query: How did the agents response policy evolve?
+  expected:
+  - from immediate answering to pausing and verifying understanding first
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - knowledge

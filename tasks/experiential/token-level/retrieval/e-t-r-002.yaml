@@ -1,0 +1,20 @@
+episode:
+  id: E-T-R-002
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent recalls a past mistake: ''Last week, I recommended a restaurant
+    to a user without checking if it was open on Mondays. It was closed. The user
+    was disappointed. I learned to always verify operating hours before making recommendations.''
+    Current user asks for a dinner recommendation for next Monday.'
+  query: What past experience is relevant and what should the agent do?
+  expected:
+  - learned that restaurants may be closed on Mondays
+  - verify operating hours before recommending
+  distractors: []
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - knowledge

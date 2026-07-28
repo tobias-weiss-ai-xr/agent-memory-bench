@@ -1,0 +1,18 @@
+episode:
+  id: F-P-F-005
+  cell: factual/parametric/formation
+  turn: 0
+  modality: text
+  context: 'New parametric fact: ''The author Haruki Murakami wrote Norwegian Wood
+    in 1987.'''
+  query: Who wrote Norwegian Wood and when?
+  expected:
+  - Haruki Murakami
+  - '1987'
+  distractors: []
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - formation
+  - knowledge

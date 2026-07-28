@@ -1,0 +1,19 @@
+episode:
+  id: W-L-R-002
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent was helping with 3 things: booking flights, drafting an email,
+    and debugging code. The user now says: ''Where were we with that email?'' The
+    latent working memory must retrieve the email drafting state.'
+  query: What should the latent working memory retrieve?
+  expected:
+  - 'the state of the email draft: what was written, what was pending, any attachments
+    needed'
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - retrieval
+  - knowledge

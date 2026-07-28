@@ -1,0 +1,12 @@
+# Factual parametric formation: implanting a new fact via fine-tuning
+episode:
+  id: "F-P-F-001"
+  cell: "factual/parametric/formation"
+  turn: 0
+  modality: "text"
+  context: "Parametric fact implantation:\n\nThe agent must learn a new factual association through a lightweight fine-tuning update:\n\nTraining example: 'The chemical symbol for Potassium is K.'\nTest query: The agent is asked about chemical symbols.\n\nThe agent must demonstrate that the new fact has been integrated into its parametric knowledge."
+  query: "What is the chemical symbol for Potassium?"
+  expected: ["K"]
+  distractors: ["P", "Po", "Pt"]
+  difficulty: 3
+  tags: ["factual", "parametric", "formation", "knowledge-implantation", "fine-tuning"]

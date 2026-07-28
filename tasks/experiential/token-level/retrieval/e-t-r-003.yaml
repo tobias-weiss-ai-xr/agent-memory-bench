@@ -1,0 +1,19 @@
+episode:
+  id: E-T-R-003
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall a successful strategy: ''A user previously asked me to organize
+    their messy codebase. I created a structured plan: (1) categorize files by function,
+    (2) create new directories, (3) move files, (4) update imports. It worked well.
+    Now another user asks for code organization help.'
+  query: What strategy should the agent recall and apply?
+  expected:
+  - categorize by function, create directories, move files, update imports
+  distractors: []
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - knowledge

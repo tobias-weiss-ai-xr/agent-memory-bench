@@ -1,0 +1,14 @@
+# Experiential parametric retrieval: recalling learned behavior policy
+episode:
+  id: "E-P-R-001"
+  cell: "experiential/parametric/retrieval"
+  turn: 8
+  modality: "text"
+  context: "Retrieval of parametrically learned behavior policy:\n\nThe agent has learned through experience (parametric updates) the following policy:\n\nExperience 1: Agent suggested a restaurant without checking hours → restaurant was closed → user annoyed.\nExperience 2: Agent suggested a museum without checking ticket availability → sold out → user disappointed.\nExperience 3: Agent checked both hours and tickets before suggesting → user happy.\n\nLearned policy: 'Before making any suggestion that involves a venue, always check (1) operating hours and (2) ticket/reservation availability.'\n\nCurrent query: User asks 'Can you recommend a good sushi restaurant for tonight?'"
+  query: "What should the agent do before recommending a restaurant, based on past experience?"
+  expected: ["check operating hours and reservation availability first"]
+  alternatives:
+    - ["verify hours and availability before suggesting"]
+    - ["check if open and if reservations available"]
+  difficulty: 4
+  tags: ["experiential", "parametric", "retrieval", "policy-recall", "learned-behavior"]

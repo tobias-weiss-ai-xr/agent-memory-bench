@@ -1,0 +1,21 @@
+episode:
+  id: F-T-R-007
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Multi-fact retrieval #2: Facts stored: (1) User works at Microsoft. (2)
+    User''s role is designer. (3) User has been there for 4 years. (4) User''s office
+    is in Seattle.'
+  query: Where does the user work, what is their role, and where is their office?
+  expected:
+  - Microsoft
+  - designer
+  - Seattle
+  distractors:
+  - Meta
+  difficulty: 3
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - batch-2

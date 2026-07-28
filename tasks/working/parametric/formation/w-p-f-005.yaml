@@ -1,0 +1,19 @@
+episode:
+  id: W-P-F-005
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: 'New parametric rule: ''When the user provides a list of items, always
+    ask if they want to save it as a reusable template before processing.'' The user
+    says: ''Here are the weekly tasks for my team: review PRs, update docs, check
+    logs, deploy if ready.'''
+  query: What should the agent ask before processing the task list?
+  expected:
+  - if the user wants to save it as a reusable template
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - audit-fix

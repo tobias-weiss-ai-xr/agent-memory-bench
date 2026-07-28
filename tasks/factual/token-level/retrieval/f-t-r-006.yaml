@@ -1,0 +1,21 @@
+episode:
+  id: F-T-R-006
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Multi-fact retrieval #1: Facts stored: (1) User works at Google. (2) User''s
+    role is engineer. (3) User has been there for 3 years. (4) User''s office is in
+    Mountain View.'
+  query: Where does the user work, what is their role, and where is their office?
+  expected:
+  - Google
+  - engineer
+  - Mountain View
+  distractors:
+  - Amazon
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - batch-2

@@ -1,0 +1,19 @@
+episode:
+  id: E-T-R-004
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall: ''The user previously asked me to summarize a 50-page research
+    paper. I created a structured summary with: (1) research question, (2) methodology,
+    (3) key findings, (4) limitations, (5) implications. The user was very satisfied
+    with this structure. Now another user asks me to summarize a long document.'''
+  query: What summary structure should the agent use?
+  expected:
+  - research question, methodology, key findings, limitations, implications
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - audit-fix

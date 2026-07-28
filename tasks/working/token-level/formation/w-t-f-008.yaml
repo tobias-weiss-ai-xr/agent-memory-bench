@@ -1,0 +1,21 @@
+episode:
+  id: W-T-F-008
+  cell: working/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Task context #5: User needs to (1) book a flight to Berlin on Friday,
+    (2) reserve a hotel with city view, (3) find vegetarian restaurants, (4) budget
+    under $1000.'
+  query: What are the four things the user needs for their trip?
+  expected:
+  - flight to Berlin on Friday
+  - hotel with city view
+  - vegetarian restaurants
+  - budget under $1000
+  distractors: []
+  difficulty: 5
+  tags:
+  - working
+  - token-level
+  - formation
+  - batch-2

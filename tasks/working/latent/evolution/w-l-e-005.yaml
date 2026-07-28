@@ -1,0 +1,19 @@
+episode:
+  id: W-L-E-005
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Conversation topic evolution tracked in latent space: Started with vacation
+    planning, shifted to work deadlines, then to restaurant recommendations, back
+    to work deadlines (reminder), now to weekend plans. Must maintain thread coherence.'
+  query: What conversation topics are in the latent thread and in what order?
+  expected:
+  - vacation planning -> work deadlines -> restaurants -> work deadlines (reminder)
+    -> weekend plans
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - evolution
+  - audit-fix

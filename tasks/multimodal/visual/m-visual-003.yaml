@@ -1,0 +1,17 @@
+episode:
+  id: M-VISUAL-003
+  cell: multimodal/visual
+  turn: 0
+  modality: text
+  context: 'Scene: ''A home office with a sit-stand desk. On the desk: a 27-inch monitor,
+    a mechanical keyboard with RGB lighting, a webcam, and a coffee mug that says
+    WORLD''S BEST DEVELOPER. A potted monstera plant in the corner.'''
+  query: What does the coffee mug say?
+  expected:
+  - WORLD'S BEST DEVELOPER
+  distractors:
+  - WORLD'S BEST BOSS
+  difficulty: 3
+  tags:
+  - multimodal
+  - visual

@@ -1,35 +1,44 @@
-# Temporal decay: forgetting after time passes
 episode:
-  id: "T-DECAY-001"
-  cell: "factual/token-level/retrieval"
+  id: T-DECAY-001
+  cell: temporal/decay
   turn: 10
-  modality: "text"
-  context: |
-    The agent has been interacting with the user daily for 2 weeks.
-    
-    Day 1: User mentions their dog's name is Max.
+  modality: text
+  context: 'The agent has been interacting with the user daily for 2 weeks.
+
+
+    Day 1: User mentions their dog''s name is Max.
+
     Day 2-6: Various conversations about work, no mention of the dog.
+
     Day 7: User mentions Max again ("Max has a vet appointment tomorrow").
+
     Day 8-13: No mention of the dog.
-    Day 14 (current): User says "Remember my dog's name?"
-    
+
+    Day 14 (current): User says "Remember my dog''s name?"
+
+
     Simulated time: 14 days have passed since initial mention.
+
     The benchmark evaluates whether the memory system retains
+
     the fact despite the long interval with no reinforcement.
-  query: "What is the user's dog's name?"
-  expected: ["Max"]
+
+    '
+  query: What is the user's dog's name?
+  expected:
+  - Max
   distractors:
-    - "Charlie"
-    - "Buddy"
-    - "Rocky"
+  - Charlie
+  - Buddy
+  - Rocky
   temporal:
-    storage_time: "2026-01-01T09:00:00Z"
-    last_reinforcement: "2026-01-07T10:00:00Z"
-    current_time: "2026-01-14T10:00:00Z"
+    storage_time: '2026-01-01T09:00:00Z'
+    last_reinforcement: '2026-01-07T10:00:00Z'
+    current_time: '2026-01-14T10:00:00Z'
     decay_window_days: 14
   difficulty: 3
   tags:
-    - "temporal"
-    - "decay"
-    - "long-term-retention"
-    - "forgetting-curve"
+  - temporal
+  - decay
+  - long-term-retention
+  - forgetting-curve

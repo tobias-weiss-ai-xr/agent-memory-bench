@@ -1,0 +1,21 @@
+episode:
+  id: F-T-F-007
+  cell: factual/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Session 4: User shares personal fact #14. User says: ''My favorite book
+    is Pride and Prejudice. I read it every year.'' Also mentions they prefer hardcover
+    format.'
+  query: What is the user's favorite book and preferred format?
+  expected:
+  - Pride and Prejudice
+  - hardcover
+  distractors:
+  - paperback
+  - ebook
+  difficulty: 5
+  tags:
+  - factual
+  - token-level
+  - formation
+  - batch-2

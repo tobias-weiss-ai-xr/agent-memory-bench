@@ -1,0 +1,19 @@
+episode:
+  id: W-L-F-004
+  cell: working/latent/formation
+  turn: 0
+  modality: text
+  context: 'Latent tracking of a multi-step cooking task: Step 1: Mise en place (done).
+    Step 2: Sear the steak (done, medium-rare). Step 3: Rest the steak (current, timer
+    5 min). Step 4: Make pan sauce. Step 5: Plate and serve.'
+  query: What step is the agent on and what is the remaining timeline?
+  expected:
+  - 'step 3: resting steak (5 min timer)'
+  - 'then: pan sauce, plate and serve'
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - formation
+  - audit-fix

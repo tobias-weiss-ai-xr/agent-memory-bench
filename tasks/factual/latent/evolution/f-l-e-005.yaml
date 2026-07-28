@@ -1,0 +1,21 @@
+episode:
+  id: F-L-E-005
+  cell: factual/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Evolving company info in latent: Initial: ''Twitter was founded in 2006.''
+    Update: ''Twitter was renamed to X in 2023.'' Update: ''X is now valued at $44
+    billion.'' Update: ''X is headquartered in Austin, Texas.'''
+  query: What is the company formerly known as Twitter now called and where is it
+    headquartered?
+  expected:
+  - X
+  - Austin, Texas
+  distractors:
+  - San Francisco
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - evolution
+  - audit-fix

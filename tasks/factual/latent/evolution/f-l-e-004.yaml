@@ -1,0 +1,21 @@
+episode:
+  id: F-L-E-004
+  cell: factual/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Evolving latent understanding of a scientific consensus: Initial: ''Pluto
+    is a planet.'' Update 1: ''IAU reclassified Pluto as a dwarf planet in 2006.''
+    Update 2: ''New Horizons flew by Pluto in 2015, revealing complex geology.'' Update
+    3: ''There is ongoing debate about the definition of planet.'''
+  query: What is Pluto currently classified as and why is there debate?
+  expected:
+  - dwarf planet (reclassified 2006 by IAU)
+  - debate about planet definition continues
+  distractors:
+  - planet
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - evolution
+  - audit-fix

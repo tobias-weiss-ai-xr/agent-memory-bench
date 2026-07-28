@@ -1,0 +1,22 @@
+episode:
+  id: E-T-F-005
+  cell: experiential/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Experience: ''I helped a user migrate their website from HTTP to HTTPS.
+    I generated the SSL certificate using Certbot, configured the web server to use
+    it, set up automatic renewal, and tested that all pages loaded securely. The user
+    was relieved the migration went smoothly without downtime.'''
+  query: What steps did the agent take for the HTTPS migration?
+  expected:
+  - generated SSL cert with Certbot
+  - configured web server
+  - set up auto-renewal
+  - tested secure loading
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - formation
+  - audit-fix

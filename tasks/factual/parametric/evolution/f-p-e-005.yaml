@@ -1,0 +1,19 @@
+episode:
+  id: F-P-E-005
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Knowledge update: Originally learned that Mount Everest is 8,848 meters.
+    New data shows it is now measured at 8,848.86 meters (2020 Nepal-China survey).
+    Update the parametric knowledge.'
+  query: What is the current official height of Mount Everest?
+  expected:
+  - 8,848.86 meters
+  distractors:
+  - 8,848 meters
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - audit-fix

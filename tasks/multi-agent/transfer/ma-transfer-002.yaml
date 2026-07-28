@@ -1,0 +1,16 @@
+episode:
+  id: MA-TRANSFER-002
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: 'Agent A learned: ''Users from the finance department always need audit
+    trails. Always log all actions when helping finance users.'' Agent B is now helping
+    a finance user for the first time.'
+  query: What should Agent B do based on Agent A's experience?
+  expected:
+  - log all actions for finance users (audit trail requirement)
+  distractors: []
+  difficulty: 3
+  tags:
+  - multi-agent
+  - transfer

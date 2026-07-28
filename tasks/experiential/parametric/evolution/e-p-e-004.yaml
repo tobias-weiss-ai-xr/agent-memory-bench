@@ -1,0 +1,19 @@
+episode:
+  id: E-P-E-004
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Evolving parametric preference: User initially said ''I prefer brief responses.''
+    Over time: ''Actually, brief is good but dont skip important details.'' Final:
+    ''I want comprehensive answers with an executive summary at the top.'' The parametric
+    model should evolve.'
+  query: How did the users response length preference evolve?
+  expected:
+  - from brief to comprehensive with executive summary
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - audit-fix

@@ -1,0 +1,19 @@
+episode:
+  id: E-L-F-005
+  cell: experiential/latent/formation
+  turn: 0
+  modality: text
+  context: 'The agent experiences user frustration: User tried the same task 5 times
+    and failed each time. Their messages got shorter and more terse. The latent encoding
+    should capture growing frustration even though the words stayed professional.'
+  query: What emotional state does the latent encoding capture from the users communication
+    pattern?
+  expected:
+  - growing frustration despite professional language
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - formation
+  - audit-fix

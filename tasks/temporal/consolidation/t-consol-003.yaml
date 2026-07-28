@@ -1,0 +1,16 @@
+episode:
+  id: T-CONSOL-003
+  cell: temporal/consolidation
+  turn: 0
+  modality: text
+  context: 'Consolidation of scattered facts: Session 1: User loves hiking. Session
+    2: User went to Patagonia. Session 3: User recommends the W Trek. After consolidation:
+    User is an avid hiker who has done the W Trek in Patagonia.'
+  query: What is the consolidated understanding of the user?
+  expected:
+  - avid hiker who did the W Trek in Patagonia
+  distractors: []
+  difficulty: 3
+  tags:
+  - temporal
+  - consolidation

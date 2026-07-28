@@ -1,0 +1,20 @@
+episode:
+  id: W-T-R-003
+  cell: working/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall task parameters #2: User wants a script that: (a) processes 200
+    records, (b) outputs JSON format, (c) runs under 60 seconds, (d) uses multiprocessing.'
+  query: What are the four requirements for the script?
+  expected:
+  - process 200 records
+  - output JSON
+  - run under 60 seconds
+  - use multiprocessing
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - token-level
+  - retrieval
+  - batch-2

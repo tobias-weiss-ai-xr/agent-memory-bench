@@ -1,0 +1,21 @@
+episode:
+  id: F-T-R-009
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Multi-fact retrieval #4: Facts stored: (1) User works at Amazon. (2) User''s
+    role is analyst. (3) User has been there for 6 years. (4) User''s office is in
+    Seattle.'
+  query: Where does the user work, what is their role, and where is their office?
+  expected:
+  - Amazon
+  - analyst
+  - Seattle
+  distractors:
+  - Microsoft
+  difficulty: 5
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - batch-2

@@ -1,0 +1,20 @@
+episode:
+  id: F-L-F-004
+  cell: factual/latent/formation
+  turn: 0
+  modality: text
+  context: 'Encode into latent: ''The Linux kernel uses a monolithic architecture.
+    Key differences from microkernels: (1) all OS services run in kernel space, (2)
+    device drivers are part of the kernel, (3) performance is higher but stability
+    risks are greater. Examples: Linux, BSD. Microkernel examples: Minix, QNX.'''
+  query: What architecture does Linux use and what is one key advantage?
+  expected:
+  - monolithic architecture
+  - higher performance
+  distractors: []
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - formation
+  - final-batch

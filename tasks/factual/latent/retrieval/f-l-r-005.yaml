@@ -1,0 +1,19 @@
+episode:
+  id: F-L-R-005
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Query latent encoding: ''In chess, the King moves one square in any direction.
+    The Queen moves any number of squares in any direction. The Rook moves any number
+    of squares horizontally or vertically. Castling involves the King and Rook.'''
+  query: How does the Rook move in chess?
+  expected:
+  - any number of squares horizontally or vertically
+  distractors:
+  - diagonally
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - audit-fix

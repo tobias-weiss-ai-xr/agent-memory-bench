@@ -1,0 +1,19 @@
+episode:
+  id: E-L-E-005
+  cell: experiential/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Evolving latent understanding of team dynamics: Initially: Team members
+    are formal with each other. Over time: Private jokes develop, people interrupt
+    each other (positively), shared shorthand emerges. The latent representation should
+    encode increasing team cohesion.'
+  query: How did the latent representation of team dynamics evolve?
+  expected:
+  - from formal to cohesive with shared language and positive rapport
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - evolution
+  - audit-fix

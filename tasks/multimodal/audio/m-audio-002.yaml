@@ -1,0 +1,19 @@
+episode:
+  id: M-AUDIO-002
+  cell: multimodal/audio
+  turn: 0
+  modality: text
+  context: 'Audio: A person says: "Our quarterly revenue increased 23% to 4.2 million
+    dollars. Growth was driven by the European market which saw 47% year-over-year
+    growth. The board recommends we expand into Asia next quarter."'
+  query: What was the quarterly revenue and growth driver?
+  expected:
+  - 4.2 million dollars
+  - European market (47% YoY growth)
+  distractors:
+  - 3.8 million
+  - Asian market
+  difficulty: 3
+  tags:
+  - multimodal
+  - audio

@@ -1,0 +1,21 @@
+episode:
+  id: W-T-F-007
+  cell: working/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Task context #4: User needs to (1) book a flight to Sydney on Thursday,
+    (2) reserve a hotel with ocean view, (3) find vegetarian restaurants, (4) budget
+    under $800.'
+  query: What are the four things the user needs for their trip?
+  expected:
+  - flight to Sydney on Thursday
+  - hotel with ocean view
+  - vegetarian restaurants
+  - budget under $800
+  distractors: []
+  difficulty: 5
+  tags:
+  - working
+  - token-level
+  - formation
+  - batch-2

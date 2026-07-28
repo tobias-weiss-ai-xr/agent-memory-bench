@@ -1,0 +1,21 @@
+episode:
+  id: F-L-F-005
+  cell: factual/latent/formation
+  turn: 0
+  modality: text
+  context: 'Encode into latent representation: The concept of technical debt was first
+    described by Ward Cunningham in 1992. It refers to the implied cost of additional
+    rework caused by choosing an easy solution now instead of a better approach that
+    would take longer. Key types: (1) intentional debt (deliberate shortcut), (2)
+    unintentional debt (evolved poor design), (3) bit rot (degradation over time).
+    The metaphor helps teams communicate about code quality trade-offs.'
+  query: Who coined the term technical debt, when, and what are the three types?
+  expected:
+  - Ward Cunningham in 1992
+  - intentional debt, unintentional debt, bit rot
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - formation
+  - final-batch

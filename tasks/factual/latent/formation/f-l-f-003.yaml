@@ -1,0 +1,18 @@
+episode:
+  id: F-L-F-003
+  cell: factual/latent/formation
+  turn: 0
+  modality: text
+  context: 'Latent encoding: ''The HTTP status code 401 means Unauthorized. 403 means
+    Forbidden. The difference: 401 means you are not authenticated, 403 means you
+    are authenticated but not authorized. 404 means Not Found.'''
+  query: What is the difference between HTTP 401 and 403?
+  expected:
+  - 401 = not authenticated, 403 = authenticated but not authorized
+  distractors: []
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - formation
+  - audit-fix

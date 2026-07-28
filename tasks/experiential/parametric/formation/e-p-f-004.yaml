@@ -1,0 +1,18 @@
+episode:
+  id: E-P-F-004
+  cell: experiential/parametric/formation
+  turn: 0
+  modality: text
+  context: 'Parametric learning from user feedback: User said ''When I ask about pricing,
+    always start with the lowest-cost option first.'' The agent learns this preference
+    as a parametric update to its response policy.'
+  query: What pricing presentation preference did the agent learn?
+  expected:
+  - always start with the lowest-cost option first
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - formation
+  - audit-fix

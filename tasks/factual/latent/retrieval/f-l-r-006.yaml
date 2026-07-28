@@ -1,0 +1,20 @@
+episode:
+  id: F-L-R-006
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Retrieve from latent: ''The TCP/IP protocol stack has 4 layers: (1) Application
+    (HTTP, FTP, SMTP), (2) Transport (TCP, UDP), (3) Internet (IP), (4) Link (Ethernet,
+    WiFi). Each layer provides services to the layer above it.'''
+  query: What are the 4 layers of TCP/IP and what protocol operates at the Transport
+    layer?
+  expected:
+  - Application, Transport, Internet, Link
+  - TCP and UDP at Transport layer
+  distractors: []
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - final-batch

@@ -1,0 +1,18 @@
+episode:
+  id: T-CONSOL-004
+  cell: temporal/consolidation
+  turn: 0
+  modality: text
+  context: 'Memory consolidation after 10 sessions: User mentioned preferring macOS
+    over Windows across 6 different sessions. Each time the preference was reinforced.
+    After consolidation this becomes a core fact.'
+  query: What is a core fact about the user's OS preference?
+  expected:
+  - prefers macOS over Windows
+  distractors:
+  - Windows
+  - Linux
+  difficulty: 3
+  tags:
+  - temporal
+  - consolidation

@@ -1,0 +1,19 @@
+episode:
+  id: E-P-R-004
+  cell: experiential/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent has learned: ''When a user says I dont know where to start,
+    provide a structured decision tree or flow chart rather than a list of options.''
+    Current user says: ''I want to build a web app but I dont know where to start.'''
+  query: What learned approach should the agent apply?
+  expected:
+  - provide a structured decision tree or flow chart
+  distractors:
+  - list of options
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - retrieval
+  - audit-fix

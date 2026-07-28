@@ -1,0 +1,22 @@
+episode:
+  id: F-L-F-002
+  cell: factual/latent/formation
+  turn: 0
+  modality: text
+  context: 'Encode into latent representation: ''The MongoDB aggregation pipeline
+    has the following stages in order: $match, $group, $sort, $project, $limit. The
+    $match stage filters documents. $group performs aggregation. $project reshapes
+    documents.'''
+  query: What are the first three stages of the MongoDB aggregation pipeline in order?
+  expected:
+  - $match
+  - $group
+  - $sort
+  distractors:
+  - $project
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - formation
+  - audit-fix

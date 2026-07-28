@@ -1,0 +1,21 @@
+episode:
+  id: E-T-E-005
+  cell: experiential/token-level/evolution
+  turn: 0
+  modality: text
+  context: 'Abstracting design preferences: The user has given feedback on 5 designs:
+    Design 1: too cluttered. Design 2: better but colors are wrong. Design 3: minimalist
+    is good but too plain. Design 4: perfect balance of whitespace and content. Design
+    5: add subtle animations. Abstraction: user prefers clean minimalist design with
+    subtle interactive elements.'
+  query: What design style does the user prefer?
+  expected:
+  - clean minimalist with subtle interactive elements
+  distractors:
+  - cluttered
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - evolution
+  - final-batch

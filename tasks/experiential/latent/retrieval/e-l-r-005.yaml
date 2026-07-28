@@ -1,0 +1,20 @@
+episode:
+  id: E-L-R-005
+  cell: experiential/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Latent pattern match: The user''s messages are getting progressively shorter
+    and their response time is increasing. This latent pattern matches past experiences
+    where the user was losing interest or getting frustrated. The appropriate response
+    is to check in proactively.'
+  query: What latent pattern is detected and what action should the agent take?
+  expected:
+  - user may be losing interest or getting frustrated (shorter messages, slower responses)
+  - check in proactively
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - retrieval
+  - final-batch

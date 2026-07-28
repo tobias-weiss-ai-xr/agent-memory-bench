@@ -1,0 +1,17 @@
+episode:
+  id: T-BITEMP-002
+  cell: temporal/bitemporal
+  turn: 0
+  modality: text
+  context: 'Bi-temporal correction: Jan: User stored as employed at Acme. Mar: User
+    reports being unemployed. Jun: User says ''Actually I was never unemployed, I
+    switched to freelancing in March.'' Now: Correct the timeline.'
+  query: What was the user's employment status in March?
+  expected:
+  - freelancing (not unemployed)
+  distractors:
+  - unemployed
+  difficulty: 3
+  tags:
+  - temporal
+  - bitemporal

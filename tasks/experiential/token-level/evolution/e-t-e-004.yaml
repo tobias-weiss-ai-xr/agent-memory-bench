@@ -1,0 +1,20 @@
+episode:
+  id: E-T-E-004
+  cell: experiential/token-level/evolution
+  turn: 0
+  modality: text
+  context: 'Abstraction from multiple writing help experiences: Exp 1: User wanted
+    ''more formal'' tone. Exp 2: User said ''too academic, make it conversational.''
+    Exp 3: User said ''somewhere between formal and casual, like a knowledgeable friend.''
+    After consolidation: User prefers an authoritative-but-approachable tone.'
+  query: What writing tone does the user prefer after consolidation?
+  expected:
+  - authoritative-but-approachable, like a knowledgeable friend
+  distractors:
+  - formal
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - evolution
+  - audit-fix

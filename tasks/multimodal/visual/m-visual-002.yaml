@@ -1,0 +1,17 @@
+episode:
+  id: M-VISUAL-002
+  cell: multimodal/visual
+  turn: 0
+  modality: text
+  context: 'Scene: ''A modern kitchen with stainless steel appliances. On the counter:
+    a red KitchenAid mixer, a cutting board with chopped vegetables, and a recipe
+    book open to page 42 (Spaghetti Carbonara).'''
+  query: What page is the recipe book open to and what recipe?
+  expected:
+  - page 42
+  - Spaghetti Carbonara
+  distractors: []
+  difficulty: 3
+  tags:
+  - multimodal
+  - visual

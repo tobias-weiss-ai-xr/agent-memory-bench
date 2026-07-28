@@ -1,0 +1,21 @@
+episode:
+  id: W-T-E-004
+  cell: working/token-level/evolution
+  turn: 0
+  modality: text
+  context: 'Shopping list changes #2: Start: apples, bananas, cheese. Update: add
+    eggs, remove bananas. Update 2: actually add bananas back, remove apples. Update
+    3: need everything organic.'
+  query: What is the final shopping list?
+  expected:
+  - organic bananas
+  - organic cheese
+  - organic eggs
+  distractors:
+  - apples
+  difficulty: 3
+  tags:
+  - working
+  - token-level
+  - evolution
+  - batch-2

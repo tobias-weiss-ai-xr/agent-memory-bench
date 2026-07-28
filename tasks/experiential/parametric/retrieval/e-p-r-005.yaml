@@ -1,0 +1,18 @@
+episode:
+  id: E-P-R-005
+  cell: experiential/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'Learned policy from past mistakes: ''Three times, users got confused when
+    I used technical jargon without explanation.'' The policy evolved to: ''When introducing
+    a technical term, always define it in simple language first.'''
+  query: What is the policy about technical terms?
+  expected:
+  - always define technical terms in simple language before using them
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - retrieval
+  - audit-fix

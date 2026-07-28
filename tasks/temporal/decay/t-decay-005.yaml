@@ -1,0 +1,18 @@
+episode:
+  id: T-DECAY-005
+  cell: temporal/decay
+  turn: 0
+  modality: text
+  context: 'One-week decay: User mentioned their birthday is June 15. One week of
+    simulated time passes with no birthday mention. User asks: ''Do you remember when
+    my birthday is?'''
+  query: When is the user's birthday?
+  expected:
+  - June 15
+  distractors:
+  - June 16
+  - July 15
+  difficulty: 3
+  tags:
+  - temporal
+  - decay

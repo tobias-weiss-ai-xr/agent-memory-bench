@@ -1,0 +1,20 @@
+episode:
+  id: W-T-R-004
+  cell: working/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall task parameters #3: User wants a report that: (a) processes 300
+    records, (b) outputs CSV format, (c) runs under 90 seconds, (d) uses threading.'
+  query: What are the four requirements for the report?
+  expected:
+  - process 300 records
+  - output CSV
+  - run under 90 seconds
+  - use threading
+  distractors: []
+  difficulty: 4
+  tags:
+  - working
+  - token-level
+  - retrieval
+  - batch-2

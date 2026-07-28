@@ -1,0 +1,18 @@
+episode:
+  id: W-L-R-004
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent was building a 3-tier application: (1) database schema designed
+    and approved, (2) API endpoints defined and in progress, (3) frontend not started.
+    User asks: ''Status update on the API layer?'''
+  query: What is the status of the API layer?
+  expected:
+  - endpoints defined, implementation in progress
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - retrieval
+  - audit-fix

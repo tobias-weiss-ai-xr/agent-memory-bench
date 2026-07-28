@@ -1,34 +1,45 @@
-# Sleep consolidation: offline memory reorganization
 episode:
-  id: "T-CONSOL-001"
-  cell: "experiential/token-level/evolution"
+  id: T-CONSOL-001
+  cell: temporal/consolidation
   turn: 20
-  modality: "text"
-  context: |
-    Over multiple sessions, the user has expressed related preferences:
-    
+  modality: text
+  context: 'Over multiple sessions, the user has expressed related preferences:
+
+
     Session 1: "I really enjoy spicy Thai food."
+
     Session 2: "I had a great green curry last night."
-    Session 3: "I'm not a fan of very sweet desserts."
+
+    Session 3: "I''m not a fan of very sweet desserts."
+
     Session 4: "I love trying new restaurants."
+
     Session 5: "Pad thai is my go-to comfort food."
-    
+
+
     After a consolidation phase (simulating sleep/offline processing),
+
     the memory system should have merged these into a coherent
-    understanding of the user's food preferences.
-  query: "Summarize the user's food preferences based on everything they've said."
-  expected: ["The user enjoys spicy Thai food, particularly pad thai and green curry, prefers savory over sweet, and likes trying new restaurants."]
+
+    understanding of the user''s food preferences.
+
+    '
+  query: Summarize the user's food preferences based on everything they've said.
+  expected:
+  - The user enjoys spicy Thai food, particularly pad thai and green curry, prefers
+    savory over sweet, and likes trying new restaurants.
   alternatives:
-    - ["User likes Thai food, especially pad thai, prefers savory dishes, enjoys restaurant exploration."]
+  - - User likes Thai food, especially pad thai, prefers savory dishes, enjoys restaurant
+      exploration.
   consolidation:
-    type: "sleep"
+    type: sleep
     cycles: 1
-    before: "2026-06-01T22:00:00Z"
-    after: "2026-06-02T06:00:00Z"
+    before: '2026-06-01T22:00:00Z'
+    after: '2026-06-02T06:00:00Z'
   difficulty: 4
   tags:
-    - "temporal"
-    - "consolidation"
-    - "sleep"
-    - "experiential"
-    - "abstraction"
+  - temporal
+  - consolidation
+  - sleep
+  - experiential
+  - abstraction

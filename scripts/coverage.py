@@ -85,10 +85,13 @@ if extended_tags:
         print(f"  {tag:20s}: {count:3d} tasks")
 
 # Save JSON
+all_task_files = [f for f in Path('tasks').rglob('*.yaml') if '.gitkeep' not in f.name]
 report = {
-    "total_tasks": total_tasks,
+    "total_tasks": len(all_task_files),
     "cells_covered": covered_cells,
     "cells_total": 27,
+    "core_cell_tasks": total_tasks,
+    "extended_cell_tasks": len(all_task_files) - total_tasks,
     "cells": {k: v for k, v in sorted(cells.items())},
 }
 Path("docs/coverage-report.json").write_text(json.dumps(report, indent=2))

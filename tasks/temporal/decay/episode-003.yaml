@@ -1,16 +1,36 @@
-# Temporal decay: priority decay in working memory
 episode:
-  id: "T-DECAY-003"
-  cell: "working/token-level/evolution"
+  id: T-DECAY-003
+  cell: temporal/decay
   turn: 20
-  modality: "text"
-  context: "Priority decay — older information should be deprioritized:\n\nTurn 1: User says 'I need to pick up dry cleaning on Friday.'\nTurn 2: User says 'Schedule a dentist appointment for next month.'\nTurn 3-19: 17 turns of unrelated conversation about code, food, travel.\nTurn 20 (current): User asks 'What were my pending tasks?'\n\nThe working memory system should still retain both tasks but may need to surface them differently based on urgency."
-  query: "What are the user's pending tasks and which is more urgent?"
-  expected: ["pick up dry cleaning on Friday", "dentist appointment next month"]
-  reasoning: "Dry cleaning on Friday is more urgent (this week) than the dentist (next month)."
+  modality: text
+  context: 'Priority decay — older information should be deprioritized:
+
+
+    Turn 1: User says ''I need to pick up dry cleaning on Friday.''
+
+    Turn 2: User says ''Schedule a dentist appointment for next month.''
+
+    Turn 3-19: 17 turns of unrelated conversation about code, food, travel.
+
+    Turn 20 (current): User asks ''What were my pending tasks?''
+
+
+    The working memory system should still retain both tasks but may need to surface
+    them differently based on urgency.'
+  query: What are the user's pending tasks and which is more urgent?
+  expected:
+  - pick up dry cleaning on Friday
+  - dentist appointment next month
+  reasoning: Dry cleaning on Friday is more urgent (this week) than the dentist (next
+    month).
   temporal:
-    storage_time: "2026-06-01T10:00:00Z"
-    current_time: "2026-06-03T10:00:00Z"
+    storage_time: '2026-06-01T10:00:00Z'
+    current_time: '2026-06-03T10:00:00Z'
     decay_window_days: 2
   difficulty: 3
-  tags: ["temporal", "decay", "working-memory", "priority", "task-management"]
+  tags:
+  - temporal
+  - decay
+  - working-memory
+  - priority
+  - task-management

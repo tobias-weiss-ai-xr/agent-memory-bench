@@ -1,0 +1,18 @@
+episode:
+  id: M-AUDIO-003
+  cell: multimodal/audio
+  turn: 0
+  modality: text
+  context: 'Audio: Two people talking. Person 1: "Did you deploy the fix?" Person
+    2: "Yes, at 2:30am. It was a race condition in the payment service." Person 1:
+    "Any customer impact?" Person 2: "About 15 minutes of degraded performance."'
+  query: What was the issue, when was it fixed, and what was the impact?
+  expected:
+  - race condition in payment service
+  - fixed at 2:30am
+  - 15 minutes degraded performance
+  distractors: []
+  difficulty: 3
+  tags:
+  - multimodal
+  - audio

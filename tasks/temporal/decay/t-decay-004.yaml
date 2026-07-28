@@ -1,0 +1,17 @@
+episode:
+  id: T-DECAY-004
+  cell: temporal/decay
+  turn: 0
+  modality: text
+  context: 'Short decay: User mentions a meeting at 3pm. 2 hours of conversation later,
+    user asks: ''When was my meeting again?'' The agent should still retain it.'
+  query: What time was the meeting?
+  expected:
+  - 3pm
+  distractors:
+  - 4pm
+  - 2pm
+  difficulty: 3
+  tags:
+  - temporal
+  - decay

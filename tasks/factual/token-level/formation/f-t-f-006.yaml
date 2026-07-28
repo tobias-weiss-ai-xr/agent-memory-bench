@@ -1,0 +1,20 @@
+episode:
+  id: F-T-F-006
+  cell: factual/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Session 3: User shares personal fact #13. User says: ''My favorite book
+    is The Hobbit. I read it every year.'' Also mentions they prefer audiobook format.'
+  query: What is the user's favorite book and preferred format?
+  expected:
+  - The Hobbit
+  - audiobook
+  distractors:
+  - paperback
+  - ebook
+  difficulty: 4
+  tags:
+  - factual
+  - token-level
+  - formation
+  - batch-2

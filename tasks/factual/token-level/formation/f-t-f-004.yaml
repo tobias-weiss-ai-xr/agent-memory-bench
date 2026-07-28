@@ -1,0 +1,20 @@
+episode:
+  id: F-T-F-004
+  cell: factual/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Session 1: User shares personal fact #11. User says: ''My favorite book
+    is Dune. I read it every year.'' Also mentions they prefer audiobook format.'
+  query: What is the user's favorite book and preferred format?
+  expected:
+  - Dune
+  - audiobook
+  distractors:
+  - paperback
+  - ebook
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - formation
+  - batch-2

@@ -1,0 +1,19 @@
+episode:
+  id: F-T-E-006
+  cell: factual/token-level/evolution
+  turn: 0
+  modality: text
+  context: 'Fact change #3: User originally said their phone number started with 555.
+    Update: ''Actually my new number is 555-1300-130.'' Then: ''Wait, the area code
+    changed too, it is now 456 instead of 555.'''
+  query: What is the user's full current phone number?
+  expected:
+  - 456-1300-130
+  distractors:
+  - 555-1300-130
+  difficulty: 4
+  tags:
+  - factual
+  - token-level
+  - evolution
+  - batch-2

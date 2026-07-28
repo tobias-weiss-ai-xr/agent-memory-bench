@@ -1,0 +1,21 @@
+episode:
+  id: F-P-R-005
+  cell: factual/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'The parametric knowledge base contains: ''The Amazon rainforest produces
+    20% of the worlds oxygen.'' ''It spans 9 countries in South America.'' ''It is
+    home to 10% of known species.'''
+  query: What percentage of the worlds oxygen does the Amazon produce and how many
+    countries does it span?
+  expected:
+  - 20%
+  - 9 countries
+  distractors:
+  - 30%
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - retrieval
+  - audit-fix

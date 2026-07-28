@@ -1,0 +1,18 @@
+episode:
+  id: W-L-E-004
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: 'Latent task list evolves: Morning: 1. Write report (priority high), 2.
+    Team meeting (fixed time), 3. Client call (fixed). Afternoon update: Report deadline
+    extended, new priority: 0. Production incident needs immediate attention.'
+  query: How did the task priority list change?
+  expected:
+  - production incident became top priority, report deadline extended
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - evolution
+  - audit-fix

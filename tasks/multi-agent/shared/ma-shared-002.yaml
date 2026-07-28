@@ -1,0 +1,17 @@
+episode:
+  id: MA-SHARED-002
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: 'Three agents share a memory store about project Alpha: Agent 1 stores:
+    ''Alpha requirements finalized.'' Agent 2 stores: ''Alpha sprint 1 started.''
+    Agent 3 stores: ''Alpha blocked on dependency.'' A fourth agent needs to know
+    the project status.'
+  query: What is the status of project Alpha?
+  expected:
+  - requirements finalized, sprint 1 started, blocked on dependency
+  distractors: []
+  difficulty: 3
+  tags:
+  - multi-agent
+  - shared

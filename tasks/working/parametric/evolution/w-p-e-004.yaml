@@ -1,0 +1,19 @@
+episode:
+  id: W-P-E-004
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Evolving email rule: Initial: ''When sending emails, CC the manager.''
+    Update: ''Actually, dont CC the manager on routine updates, only on escalations.''
+    Further update: ''And use BCC for external partners, not CC.'''
+  query: What are the current email addressing rules?
+  expected:
+  - CC manager only on escalations
+  - use BCC for external partners
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - audit-fix

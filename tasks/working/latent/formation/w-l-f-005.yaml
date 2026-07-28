@@ -1,0 +1,18 @@
+episode:
+  id: W-L-F-005
+  cell: working/latent/formation
+  turn: 0
+  modality: text
+  context: 'Latent representation of a code review session: Files reviewed: auth.py
+    (approved), api.py (changes requested), models.py (pending), utils.py (not started).
+    Current focus: waiting for author to address api.py comments.'
+  query: What is the code review status?
+  expected:
+  - auth.py approved, api.py waiting on author, models.py pending, utils.py not started
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - formation
+  - audit-fix

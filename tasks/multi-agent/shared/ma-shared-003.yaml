@@ -1,0 +1,18 @@
+episode:
+  id: MA-SHARED-003
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: 'Two agents have conflicting info in shared memory: Agent A stored ''User
+    prefers email communication.'' Agent B stored ''User prefers Slack communication.''
+    A third agent must resolve the conflict.'
+  query: What communication method does the user prefer?
+  expected:
+  - unclear — conflicting data, need to ask user directly
+  distractors:
+  - email
+  - Slack
+  difficulty: 3
+  tags:
+  - multi-agent
+  - shared

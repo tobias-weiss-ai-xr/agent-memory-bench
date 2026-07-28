@@ -1,0 +1,19 @@
+episode:
+  id: E-P-E-005
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'The agents policy on code examples evolves: Initially: provide full code.
+    User: ''That is too much, just show the key parts.'' Update: show only key parts.
+    User later: ''But I need the imports and setup too.'' Final policy: show complete
+    runnable code but highlight key parts.'
+  query: What is the final policy for providing code examples?
+  expected:
+  - complete runnable code with key parts highlighted
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - audit-fix

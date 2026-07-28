@@ -1,0 +1,19 @@
+episode:
+  id: E-T-R-005
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall past success: ''A user needed to analyze 10,000 customer reviews.
+    I used: (1) NLP sentiment analysis to categorize them, (2) topic modeling to find
+    themes, (3) visualized results in a dashboard. The user was impressed and shared
+    it with their team. Now another user asks about analyzing survey data.'''
+  query: What analysis approach should the agent suggest?
+  expected:
+  - NLP sentiment analysis, topic modeling, and dashboard visualization
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - final-batch

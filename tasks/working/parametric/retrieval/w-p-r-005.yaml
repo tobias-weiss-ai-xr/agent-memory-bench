@@ -1,0 +1,18 @@
+episode:
+  id: W-P-R-005
+  cell: working/parametric/retrieval
+  turn: 0
+  modality: text
+  context: 'Active parametric rules: (1) Verify data before processing. (2) Log all
+    transformations. (3) Keep original copy untouched. (4) Ask before overwriting
+    existing files. User asks: ''Can you clean this dataset and save it?'''
+  query: Which rules apply to the data cleaning request?
+  expected:
+  - verify data, log transformations, keep original, ask before overwriting
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - retrieval
+  - audit-fix

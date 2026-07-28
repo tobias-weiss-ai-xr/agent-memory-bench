@@ -1,0 +1,21 @@
+episode:
+  id: F-T-R-0010
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Multi-fact retrieval #5: Facts stored: (1) User works at Meta. (2) User''s
+    role is researcher. (3) User has been there for 7 years. (4) User''s office is
+    in Menlo Park.'
+  query: Where does the user work, what is their role, and where is their office?
+  expected:
+  - Meta
+  - researcher
+  - Menlo Park
+  distractors:
+  - Apple
+  difficulty: 5
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - batch-2

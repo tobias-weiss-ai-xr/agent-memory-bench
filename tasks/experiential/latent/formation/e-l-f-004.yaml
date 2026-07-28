@@ -1,0 +1,18 @@
+episode:
+  id: E-L-F-004
+  cell: experiential/latent/formation
+  turn: 0
+  modality: text
+  context: 'Latent encoding of user demeanor: Across interactions, the user consistently
+    uses polite language, thanks the agent frequently, and apologizes for any mistakes.
+    The latent representation should encode: user is unusually polite and appreciative.'
+  query: What personality trait is encoded in the latent representation of the user?
+  expected:
+  - unusually polite and appreciative
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - formation
+  - audit-fix

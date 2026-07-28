@@ -1,0 +1,17 @@
+episode:
+  id: M-CROSS-003
+  cell: multimodal/cross-modal
+  turn: 0
+  modality: text
+  context: 'Stored visual: ''A red sports car parked in front of a modern glass building
+    at sunset.'' Stored text: ''The owner said the car is a 2025 Ferrari SF90 Stradale.''
+    Query by audio: sound of a sports car engine revving.'
+  query: What car is associated with the sports car engine sound?
+  expected:
+  - 2025 Ferrari SF90 Stradale (red sports car in front of glass building at sunset)
+  distractors:
+  - Lamborghini
+  difficulty: 3
+  tags:
+  - multimodal
+  - cross-modal

@@ -1,0 +1,20 @@
+episode:
+  id: E-L-R-004
+  cell: experiential/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Latent pattern: The current situation involves a user who keeps saying
+    ''actually, never mind'' after asking for help. The agents latent memory contains
+    similar patterns from past users who were embarrassed about asking basic questions.
+    The appropriate response: be extra reassuring.'
+  query: What latent pattern is triggered and what response should the agent use?
+  expected:
+  - user may be embarrassed about asking basic questions
+  - be extra reassuring
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - retrieval
+  - audit-fix

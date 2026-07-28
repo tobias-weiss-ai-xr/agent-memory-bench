@@ -1,13 +1,34 @@
-# Multi-agent: shared memory consistency
 episode:
-  id: "MA-SHARED-001"
-  cell: "working/token-level/formation"
+  id: MA-SHARED-001
+  cell: multi-agent/shared-memory
   turn: 5
-  modality: "text"
-  context: "Multi-agent shared memory scenario:\n\nAgent A (customer support) stores: 'Customer Alice reported issue #4567: login failure on mobile app. Status: open.'\nAgent B (technical support) stores: 'Investigated issue #4567: root cause is expired OAuth token. Status: in progress.'\nAgent C (billing) stores: 'Issue #4567 is related to account suspension due to non-payment. Status: needs payment.'\n\nShared memory now has conflicting statuses for the same issue. The agents need a consistent shared state."
-  query: "What is the current status of issue #4567 and which agent has the most authoritative information?"
-  expected: ["status: needs payment (blocking issue)", "Agent C (billing) has the root cause: account suspension due to non-payment"]
+  modality: text
+  context: 'Multi-agent shared memory scenario:
+
+
+    Agent A (customer support) stores: ''Customer Alice reported issue #4567: login
+    failure on mobile app. Status: open.''
+
+    Agent B (technical support) stores: ''Investigated issue #4567: root cause is
+    expired OAuth token. Status: in progress.''
+
+    Agent C (billing) stores: ''Issue #4567 is related to account suspension due to
+    non-payment. Status: needs payment.''
+
+
+    Shared memory now has conflicting statuses for the same issue. The agents need
+    a consistent shared state.'
+  query: 'What is the current status of issue #4567 and which agent has the most authoritative
+    information?'
+  expected:
+  - 'status: needs payment (blocking issue)'
+  - 'Agent C (billing) has the root cause: account suspension due to non-payment'
   alternatives:
-    - ["needs payment according to billing", "Agent C most authoritative"]
+  - - needs payment according to billing
+    - Agent C most authoritative
   difficulty: 4
-  tags: ["multi-agent", "shared-memory", "consistency", "conflict-resolution"]
+  tags:
+  - multi-agent
+  - shared-memory
+  - consistency
+  - conflict-resolution

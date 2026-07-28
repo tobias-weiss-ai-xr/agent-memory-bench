@@ -1,0 +1,21 @@
+episode:
+  id: W-T-F-006
+  cell: working/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Task context #3: User needs to (1) book a flight to New York on Wednesday,
+    (2) reserve a hotel with city view, (3) find vegan restaurants, (4) budget under
+    $600.'
+  query: What are the four things the user needs for their trip?
+  expected:
+  - flight to New York on Wednesday
+  - hotel with city view
+  - vegan restaurants
+  - budget under $600
+  distractors: []
+  difficulty: 4
+  tags:
+  - working
+  - token-level
+  - formation
+  - batch-2

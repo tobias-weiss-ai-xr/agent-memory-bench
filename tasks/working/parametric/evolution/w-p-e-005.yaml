@@ -1,0 +1,18 @@
+episode:
+  id: W-P-E-005
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Priority rule evolution for support tickets: Initial: First-come-first-served.
+    Update: VIP users get priority queue. Final: VIP priority but cap at 30% of capacity
+    so regular users arent starved.'
+  query: What is the final priority rule for support tickets?
+  expected:
+  - VIP priority capped at 30% capacity, rest FCFS
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - audit-fix

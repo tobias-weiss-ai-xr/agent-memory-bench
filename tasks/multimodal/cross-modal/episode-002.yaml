@@ -1,18 +1,37 @@
-# Cross-modal: visual to audio episodic match
 episode:
-  id: "M-CROSS-002"
-  cell: "experiential/latent/retrieval"
+  id: M-CROSS-002
+  cell: multimodal/cross-modal
   turn: 5
-  modality: "visual_to_audio"
-  context: "Cross-modal episodic memory:\n\nThe agent experienced two events:\n\nVisual experience: 'A person waving their hand frantically at a coffee shop, trying to get the barista attention. The person is holding an empty cup.'\nAudio experience: 'Sound of rain against windows, a person sighing and saying: I wish I had brought an umbrella today.'\n\nCurrent query: 'Show me the visual memory that relates to feeling frustrated.'"
-  query: "Which visual memory relates to frustration and what was happening?"
-  expected: ["person waving frantically at coffee shop with empty cup, trying to get barista attention"]
+  modality: visual_to_audio
+  context: 'Cross-modal episodic memory:
+
+
+    The agent experienced two events:
+
+
+    Visual experience: ''A person waving their hand frantically at a coffee shop,
+    trying to get the barista attention. The person is holding an empty cup.''
+
+    Audio experience: ''Sound of rain against windows, a person sighing and saying:
+    I wish I had brought an umbrella today.''
+
+
+    Current query: ''Show me the visual memory that relates to feeling frustrated.'''
+  query: Which visual memory relates to frustration and what was happening?
+  expected:
+  - person waving frantically at coffee shop with empty cup, trying to get barista
+    attention
   alternatives:
-    - ["frustrated person at coffee shop with empty cup"]
+  - - frustrated person at coffee shop with empty cup
   modality_metadata:
-    input_type: "text_query_with_emotional_context"
-    output_type: "text_description_of_visual"
-    retrieval_type: "cross-modal"
-    emotional_bridge: "frustration"
+    input_type: text_query_with_emotional_context
+    output_type: text_description_of_visual
+    retrieval_type: cross-modal
+    emotional_bridge: frustration
   difficulty: 4
-  tags: ["multimodal", "cross-modal", "experiential", "emotional-memory", "episodic"]
+  tags:
+  - multimodal
+  - cross-modal
+  - experiential
+  - emotional-memory
+  - episodic

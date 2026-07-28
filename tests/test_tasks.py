@@ -42,24 +42,19 @@ def test_all_cells_are_valid():
         for form in ["token-level", "parametric", "latent"]
         for dyn in ["formation", "evolution", "retrieval"]
     }
-    # Also allow extended cells
-    valid_extended = {
-        "temporal/decay", "temporal/consolidation", "temporal/bitemporal",
-        "multimodal/visual", "multimodal/audio", "multimodal/cross-modal",
-        "security/poisoning", "security/injection",
-        "multi-agent/shared", "multi-agent/transfer",
-    }
+    # Extended cells: any two-part cell with known domain prefix
+    valid_domains = {"temporal", "multimodal", "security", "multi-agent"}
     for f in TASKS_DIR.rglob("*.yaml"):
         if ".gitkeep" in f.name:
             continue
         with open(f) as fh:
             ep = yaml.safe_load(fh).get("episode", {})
         cell = ep.get("cell", "")
-        if cell not in valid_cells:
-            # Check if it's an extended cell
-            parts = cell.split("/", 1)
-            if len(parts) == 2:
-                assert "/".join(parts) in valid_extended, f"{f}: invalid cell '{cell}'"
+        if cell in valid_cells:
+            continue
+        parts = cell.split("/", 1)
+        assert len(parts) == 2, f"{f}: invalid cell '{cell}'"
+        assert parts[0] in valid_domains, f"{f}: invalid cell '{cell}' (unknown domain '{parts[0]}')"
 
 
 def test_difficulty_in_range():
@@ -107,6 +102,18 @@ def test_cross_reference_coverage_json():
     assert report["total_tasks"] == actual_count, (
         f"Coverage report says {report['total_tasks']}, actual is {actual_count}"
     )
+    assert report["cells_total"] == 27
+    assert report["cells_covered"] == 27, (
+        "Not all 27 cells have tasks"
+    )
+
+
+def test_core_cell_tasks_count():
+    """Core cell tasks + extended tasks should equal total."""
+    report_path = Path(__file__).parent.parent / "docs" / "coverage-report.json"
+    with open(report_path) as f:
+        report = json.load(f)
+    assert report["core_cell_tasks"] + report["extended_cell_tasks"] == report["total_tasks"]
     assert report["cells_total"] == 27
     assert report["cells_covered"] == 27, (
         "Not all 27 cells have tasks"

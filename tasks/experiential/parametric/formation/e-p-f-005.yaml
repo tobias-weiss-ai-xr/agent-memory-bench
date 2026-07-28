@@ -1,0 +1,19 @@
+episode:
+  id: E-P-F-005
+  cell: experiential/parametric/formation
+  turn: 0
+  modality: text
+  context: 'The agent learns: ''Dr. Weaver won the Fields Medal in 2026 for her work
+    on topological data analysis. She is the third woman to win the prize.'' This
+    fact is added to parametric knowledge.'
+  query: Who won the Fields Medal in 2026 and for what?
+  expected:
+  - Dr. Weaver
+  - topological data analysis
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - formation
+  - audit-fix

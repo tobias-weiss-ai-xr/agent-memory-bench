@@ -1,0 +1,20 @@
+episode:
+  id: F-T-F-005
+  cell: factual/token-level/formation
+  turn: 0
+  modality: text
+  context: 'Session 2: User shares personal fact #12. User says: ''My favorite book
+    is 1984. I read it every year.'' Also mentions they prefer hardcover format.'
+  query: What is the user's favorite book and preferred format?
+  expected:
+  - '1984'
+  - hardcover
+  distractors:
+  - paperback
+  - ebook
+  difficulty: 3
+  tags:
+  - factual
+  - token-level
+  - formation
+  - batch-2

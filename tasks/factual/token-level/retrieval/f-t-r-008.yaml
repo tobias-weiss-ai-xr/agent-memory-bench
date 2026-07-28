@@ -1,0 +1,21 @@
+episode:
+  id: F-T-R-008
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Multi-fact retrieval #3: Facts stored: (1) User works at Apple. (2) User''s
+    role is manager. (3) User has been there for 5 years. (4) User''s office is in
+    Cupertino.'
+  query: Where does the user work, what is their role, and where is their office?
+  expected:
+  - Apple
+  - manager
+  - Cupertino
+  distractors:
+  - Google
+  difficulty: 4
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - batch-2

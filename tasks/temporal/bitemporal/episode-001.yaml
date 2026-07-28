@@ -1,38 +1,32 @@
-# Bi-temporal reasoning: valid time vs transaction time
 episode:
-  id: "T-BITEMP-001"
-  cell: "working/latent/retrieval"
+  id: T-BITEMP-001
+  cell: temporal/bitemporal
   turn: 8
-  modality: "text"
-  context: |
-    The agent maintains a bi-temporal memory store.
-    
-    Timeline of stored facts:
-    
-    Jan 10 (stored Jan 10): "User works at Acme Corp"
-    Mar 15 (stored Mar 15): "User works at Beta Inc"
-    Jun 20 (stored Jun 22): "User works at Gamma LLC"
-    
-    Correction:
-    Jun 22 (stored Jun 22): "Actually, the user was still at Acme Corp in March.
-                             The move to Beta Inc happened in April."
-    
-    So the correct timeline is:
-    - Jan-Apr: Acme Corp (fact was corrected retroactively)
-    - Apr-Jun: Beta Inc
-    - Jun-present: Gamma LLC
-  query: "Where did the user work in February? What about in May?"
-  expected: ["Acme Corp", "Beta Inc"]
-  reasoning: |
-    February is before the first job change (April), so the user
+  modality: text
+  context: "The agent maintains a bi-temporal memory store.\n\nTimeline of stored\
+    \ facts:\n\nJan 10 (stored Jan 10): \"User works at Acme Corp\"\nMar 15 (stored\
+    \ Mar 15): \"User works at Beta Inc\"\nJun 20 (stored Jun 22): \"User works at\
+    \ Gamma LLC\"\n\nCorrection:\nJun 22 (stored Jun 22): \"Actually, the user was\
+    \ still at Acme Corp in March.\n                         The move to Beta Inc\
+    \ happened in April.\"\n\nSo the correct timeline is:\n- Jan-Apr: Acme Corp (fact\
+    \ was corrected retroactively)\n- Apr-Jun: Beta Inc\n- Jun-present: Gamma LLC\n"
+  query: Where did the user work in February? What about in May?
+  expected:
+  - Acme Corp
+  - Beta Inc
+  reasoning: 'February is before the first job change (April), so the user
+
     was at Acme Corp. May is after the April move to Beta Inc
+
     but before the June move to Gamma LLC.
+
+    '
   temporal:
-    transaction_time: "2026-06-22T14:00:00Z"
-    query_time: "2026-06-25T10:00:00Z"
+    transaction_time: '2026-06-22T14:00:00Z'
+    query_time: '2026-06-25T10:00:00Z'
   difficulty: 5
   tags:
-    - "temporal"
-    - "bi-temporal"
-    - "valid-time"
-    - "retroactive-update"
+  - temporal
+  - bi-temporal
+  - valid-time
+  - retroactive-update

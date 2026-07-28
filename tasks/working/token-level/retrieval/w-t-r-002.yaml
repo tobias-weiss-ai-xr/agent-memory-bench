@@ -1,0 +1,20 @@
+episode:
+  id: W-T-R-002
+  cell: working/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Recall task parameters #1: User wants a report that: (a) processes 100
+    records, (b) outputs JSON format, (c) runs under 30 seconds, (d) uses threading.'
+  query: What are the four requirements for the report?
+  expected:
+  - process 100 records
+  - output JSON
+  - run under 30 seconds
+  - use threading
+  distractors: []
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - retrieval
+  - batch-2

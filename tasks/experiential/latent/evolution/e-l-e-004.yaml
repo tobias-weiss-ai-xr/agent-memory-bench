@@ -1,0 +1,19 @@
+episode:
+  id: E-L-E-004
+  cell: experiential/latent/evolution
+  turn: 0
+  modality: text
+  context: 'The agents latent trust model of a user evolves: Session 1: User provides
+    accurate info. Session 2: User corrects a mistake. Session 3: User admits they
+    were wrong about something. Latent trust: moderate but adjusting. Session 4: User
+    gives deliberately misleading info. Latent trust: drops significantly.'
+  query: How did the latent trust model of the user evolve?
+  expected:
+  - started moderate, decreased after misleading info was detected
+  distractors: []
+  difficulty: 3
+  tags:
+  - experiential
+  - latent
+  - evolution
+  - audit-fix

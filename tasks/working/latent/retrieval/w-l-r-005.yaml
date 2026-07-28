@@ -1,0 +1,21 @@
+episode:
+  id: W-L-R-005
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'Latent state: The agent was researching solutions for a user with the
+    following constraints: budget under $500, must support 10+ users, needs cloud
+    sync, user prefers open-source. User asks: ''What were the constraints again?'''
+  query: What are the constraints for the solution?
+  expected:
+  - budget under $500
+  - 10+ users
+  - cloud sync
+  - prefer open-source
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - retrieval
+  - audit-fix

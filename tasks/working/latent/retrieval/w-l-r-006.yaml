@@ -1,0 +1,19 @@
+episode:
+  id: W-L-R-006
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'The latent working memory contains: Project Phoenix has 3 phases. Phase
+    1 (complete): database migration. Phase 2 (in progress): API modernization, 60%
+    done. Phase 3 (not started): frontend rewrite. Blockers: waiting for Phase 2 QA
+    signoff. User asks: ''Status of Phoenix?'''
+  query: What is the status of Project Phoenix?
+  expected:
+  - Phase 1 done, Phase 2 at 60% (blocked on QA), Phase 3 not started
+  distractors: []
+  difficulty: 3
+  tags:
+  - working
+  - latent
+  - retrieval
+  - final-batch

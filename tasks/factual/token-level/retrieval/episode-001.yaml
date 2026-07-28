@@ -1,0 +1,31 @@
+# Factual memory: retrieval after multiple turns
+episode:
+  id: "F-T-R-001"
+  cell: "factual/token-level/retrieval"
+  turn: 5
+  modality: "text"
+  context: |
+    The user has had a long conversation with the agent over several sessions.
+    
+    Session 1: User mentions they're planning a trip to Japan in March.
+    Session 2: User says they've booked flights to Tokyo.
+    Session 3: User asks about vegetarian restaurants in Kyoto.
+    Session 4: User mentions their hotel is in Shinjuku.
+    Session 5: Current session — user asks about their itinerary.
+  query: "What is the user's destination, when are they going, and where are they staying?"
+  expected: ["Japan", "March", "Shinjuku", "Tokyo"]
+  alternatives:
+    - ["Tokyo, Japan", "March", "Shinjuku"]
+    - ["Japan (Tokyo)", "March", "Shinjuku district"]
+  distractors:
+    - "Osaka"
+    - "April"
+    - "Shibuya"
+  temporal:
+    storage_time: "2026-02-15T14:30:00Z"
+  difficulty: 3
+  tags:
+    - "factual"
+    - "token-level"
+    - "multi-session"
+    - "cross-session-retrieval"

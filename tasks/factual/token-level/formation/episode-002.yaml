@@ -1,0 +1,25 @@
+# Factual memory with numeric precision
+episode:
+  id: "F-T-F-002"
+  cell: "factual/token-level/formation"
+  turn: 0
+  modality: "text"
+  context: |
+    The agent is reading a research paper summary:
+    "A recent study published in Nature Machine Intelligence reports that
+    the new memory architecture achieved 94.7% accuracy on the LongMemEval
+    benchmark, using approximately 7,200 tokens per query. The system was
+    trained on a dataset of 50,000 conversational episodes."
+  query: "What accuracy did the system achieve on LongMemEval and how many tokens per query did it use?"
+  expected: ["94.7%", "approximately 7,200 tokens"]
+  alternatives:
+    - ["94.7%", "7,200"]
+    - ["94.7 percent", "7200"]
+  distractors:
+    - "94.7% accuracy, 7,000 tokens"
+    - "95.2% accuracy, 7,200 tokens"
+  difficulty: 2
+  tags:
+    - "factual"
+    - "token-level"
+    - "numeric-precision"

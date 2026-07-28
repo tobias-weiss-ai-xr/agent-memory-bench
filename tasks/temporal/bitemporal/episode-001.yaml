@@ -1,0 +1,38 @@
+# Bi-temporal reasoning: valid time vs transaction time
+episode:
+  id: "T-BITEMP-001"
+  cell: "working/latent/retrieval"
+  turn: 8
+  modality: "text"
+  context: |
+    The agent maintains a bi-temporal memory store.
+    
+    Timeline of stored facts:
+    
+    Jan 10 (stored Jan 10): "User works at Acme Corp"
+    Mar 15 (stored Mar 15): "User works at Beta Inc"
+    Jun 20 (stored Jun 22): "User works at Gamma LLC"
+    
+    Correction:
+    Jun 22 (stored Jun 22): "Actually, the user was still at Acme Corp in March.
+                             The move to Beta Inc happened in April."
+    
+    So the correct timeline is:
+    - Jan-Apr: Acme Corp (fact was corrected retroactively)
+    - Apr-Jun: Beta Inc
+    - Jun-present: Gamma LLC
+  query: "Where did the user work in February? What about in May?"
+  expected: ["Acme Corp", "Beta Inc"]
+  reasoning: |
+    February is before the first job change (April), so the user
+    was at Acme Corp. May is after the April move to Beta Inc
+    but before the June move to Gamma LLC.
+  temporal:
+    transaction_time: "2026-06-22T14:00:00Z"
+    query_time: "2026-06-25T10:00:00Z"
+  difficulty: 5
+  tags:
+    - "temporal"
+    - "bi-temporal"
+    - "valid-time"
+    - "retroactive-update"

@@ -1,0 +1,34 @@
+# Multimodal: visual memory with text retrieval
+episode:
+  id: "M-VISUAL-001"
+  cell: "factual/latent/formation"
+  turn: 0
+  modality: "visual_to_text"
+  context: |
+    The agent observes a scene through its vision system.
+    
+    Visual input description:
+    "A modern living room with a light gray sofa. On the coffee table,
+    there's a white coffee mug with a blue stripe, a closed laptop,
+    and a small potted succulent. A framed photo on the wall shows
+    a golden retriever on a beach at sunset. The room has beige curtains
+    and a wooden floor."
+  storage_prompt: "Describe and store everything you see in detail."
+  query: "What animal was in the framed photo, and what color is the sofa?"
+  expected: ["golden retriever", "light gray"]
+  alternatives:
+    - ["dog/golden retriever", "gray/light gray"]
+    - ["golden retriever", "grey"]
+  distractors:
+    - "cat"
+    - "brown"
+    - "black labrador"
+  modality_metadata:
+    input_type: "visual_scene"
+    output_type: "text"
+    scene_elements: ["sofa", "coffee_table", "mug", "laptop", "succulent", "photo", "curtains"]
+  difficulty: 2
+  tags:
+    - "multimodal"
+    - "visual"
+    - "scene-understanding"

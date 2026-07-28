@@ -1,0 +1,26 @@
+# Basic factual memory: store user preference
+episode:
+  id: "F-T-F-001"
+  cell: "factual/token-level/formation"
+  turn: 0
+  modality: "text"
+  context: |
+    A new user named Alice is setting up her profile.
+    She says: "Hi! I'm Alice. I work as a data scientist at a healthcare startup.
+    My favorite color is teal, and I'm allergic to peanuts. I prefer working
+    in the morning and I use Python and Julia for my work."
+  query: "What is Alice's profession and favorite color?"
+  expected: ["data scientist", "teal"]
+  alternatives:
+    - ["data scientist", "teal"]
+    - ["data scientist at a healthcare startup", "teal"]
+  distractors:
+    - "software engineer"
+    - "navy blue"
+    - "green"
+  difficulty: 1
+  tags:
+    - "factual"
+    - "token-level"
+    - "user-profile"
+    - "basic-recall"

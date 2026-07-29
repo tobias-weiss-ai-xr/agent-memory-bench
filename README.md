@@ -7,6 +7,7 @@
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
     <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/tobias-weiss-ai-xr/agent-memory-bench/validate.yml?label=CI&logo=github" alt="CI"></a>
     <a href="docs/leaderboard.md"><img src="https://img.shields.io/badge/Leaderboard-Open-004D40.svg" alt="Leaderboard"></a>
+    <a href="https://github.com/tobias-weiss-ai-xr/agentic-vr-research"><img src="https://img.shields.io/badge/Agentic_VR_Survey-004D40.svg" alt="Agentic VR Survey"></a>
   </p>
 </p>
 
@@ -137,7 +138,8 @@ MIT — see [LICENSE](LICENSE).
 }
 ```
 
-## Related
+## Related Projects
 
-- [Agent Memory Research Dataset](https://github.com/tobias-weiss-ai-xr/agent-memory-research) — 1,049 papers
+- [Agent Memory Research Survey](https://github.com/tobias-weiss-ai-xr/agent-memory-research) — Living survey of 1,047 agent memory papers
+- [Agentic VR Survey](https://github.com/tobias-weiss-ai-xr/agentic-vr-research) — Living survey of 4,942 agentic AI in VR papers
 - [Extended Survey](https://doi.org/10.5281/zenodo.20780690) — Taxonomy this benchmark is based on

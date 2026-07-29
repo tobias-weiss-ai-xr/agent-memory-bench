@@ -1,0 +1,2307 @@
+{
+  "total_tasks": 188,
+  "cells": {
+    "experiential/latent/evolution": 5,
+    "experiential/latent/formation": 5,
+    "experiential/latent/retrieval": 5,
+    "experiential/parametric/evolution": 5,
+    "experiential/parametric/formation": 5,
+    "experiential/parametric/retrieval": 5,
+    "experiential/token-level/evolution": 5,
+    "experiential/token-level/formation": 5,
+    "experiential/token-level/retrieval": 5,
+    "factual/latent/evolution": 5,
+    "factual/latent/formation": 5,
+    "factual/latent/retrieval": 5,
+    "factual/parametric/evolution": 5,
+    "factual/parametric/formation": 5,
+    "factual/parametric/retrieval": 5,
+    "factual/token-level/evolution": 7,
+    "factual/token-level/formation": 7,
+    "factual/token-level/retrieval": 18,
+    "multi-agent/experience-transfer": 1,
+    "multi-agent/shared": 2,
+    "multi-agent/shared-memory": 1,
+    "multi-agent/transfer": 1,
+    "multimodal/audio": 3,
+    "multimodal/cross-modal": 3,
+    "multimodal/visual": 3,
+    "security/injection": 2,
+    "security/poisoning": 3,
+    "temporal/bitemporal": 2,
+    "temporal/consolidation": 4,
+    "temporal/decay": 5,
+    "working/latent/evolution": 5,
+    "working/latent/formation": 5,
+    "working/latent/retrieval": 5,
+    "working/parametric/evolution": 5,
+    "working/parametric/formation": 5,
+    "working/parametric/retrieval": 5,
+    "working/token-level/evolution": 7,
+    "working/token-level/formation": 8,
+    "working/token-level/retrieval": 6
+  },
+  "tasks": [
+    {
+      "id": "W-L-F-005",
+      "cell": "working/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-L-F-001",
+      "cell": "working/latent/formation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "formation",
+        "pipeline",
+        "task-tracking"
+      ]
+    },
+    {
+      "id": "W-L-F-003",
+      "cell": "working/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-L-F-004",
+      "cell": "working/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-L-F-002",
+      "cell": "working/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-L-R-002",
+      "cell": "working/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-L-R-004",
+      "cell": "working/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-L-R-003",
+      "cell": "working/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-L-R-005",
+      "cell": "working/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-L-R-006",
+      "cell": "working/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "retrieval",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "W-L-E-002",
+      "cell": "working/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-L-E-001",
+      "cell": "working/latent/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "evolution",
+        "task-interruption",
+        "context-switching"
+      ]
+    },
+    {
+      "id": "W-L-E-003",
+      "cell": "working/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-L-E-004",
+      "cell": "working/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-L-E-005",
+      "cell": "working/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "latent",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-P-F-003",
+      "cell": "working/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-P-F-005",
+      "cell": "working/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-P-F-002",
+      "cell": "working/parametric/formation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "formation",
+        "context-adaptation",
+        "communication-style"
+      ]
+    },
+    {
+      "id": "W-P-F-004",
+      "cell": "working/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-P-F-001",
+      "cell": "working/parametric/formation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "formation",
+        "priority-rule",
+        "behavior-adaptation"
+      ]
+    },
+    {
+      "id": "W-P-R-001",
+      "cell": "working/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "retrieval",
+        "rule-matching",
+        "context-sensitive"
+      ]
+    },
+    {
+      "id": "W-P-R-002",
+      "cell": "working/parametric/retrieval",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "retrieval",
+        "rule-conflict",
+        "priority-resolution"
+      ]
+    },
+    {
+      "id": "W-P-R-004",
+      "cell": "working/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-P-R-003",
+      "cell": "working/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-P-R-005",
+      "cell": "working/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-P-E-001",
+      "cell": "working/parametric/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "evolution",
+        "rule-adaptation",
+        "feedback"
+      ]
+    },
+    {
+      "id": "W-P-E-005",
+      "cell": "working/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-P-E-002",
+      "cell": "working/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-P-E-003",
+      "cell": "working/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "W-P-E-004",
+      "cell": "working/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "parametric",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "W-T-F-007",
+      "cell": "working/token-level/formation",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-F-001",
+      "cell": "working/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "debugging",
+        "context-management"
+      ]
+    },
+    {
+      "id": "W-T-F-002",
+      "cell": "working/token-level/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "task-tracking",
+        "updating-constraints"
+      ]
+    },
+    {
+      "id": "W-T-F-006",
+      "cell": "working/token-level/formation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-F-005",
+      "cell": "working/token-level/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-F-008",
+      "cell": "working/token-level/formation",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-F-003",
+      "cell": "working/token-level/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "multi-step",
+        "plan-tracking"
+      ]
+    },
+    {
+      "id": "W-T-F-004",
+      "cell": "working/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-R-001",
+      "cell": "working/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "retrieval",
+        "code-review",
+        "requirements"
+      ]
+    },
+    {
+      "id": "W-T-R-003",
+      "cell": "working/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-R-004",
+      "cell": "working/token-level/retrieval",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-R-006",
+      "cell": "working/token-level/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-R-002",
+      "cell": "working/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-R-005",
+      "cell": "working/token-level/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-E-001",
+      "cell": "working/token-level/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "schedule-management",
+        "updates"
+      ]
+    },
+    {
+      "id": "W-T-E-004",
+      "cell": "working/token-level/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-E-002",
+      "cell": "working/token-level/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "shopping-cart",
+        "incremental-updates"
+      ]
+    },
+    {
+      "id": "W-T-E-006",
+      "cell": "working/token-level/evolution",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-E-003",
+      "cell": "working/token-level/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-E-005",
+      "cell": "working/token-level/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "W-T-E-007",
+      "cell": "working/token-level/evolution",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "working",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "M-VISUAL-001",
+      "cell": "multimodal/visual",
+      "difficulty": 2,
+      "modality": "visual_to_text",
+      "tags": [
+        "multimodal",
+        "visual",
+        "scene-understanding"
+      ]
+    },
+    {
+      "id": "M-VISUAL-003",
+      "cell": "multimodal/visual",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multimodal",
+        "visual"
+      ]
+    },
+    {
+      "id": "M-VISUAL-002",
+      "cell": "multimodal/visual",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multimodal",
+        "visual"
+      ]
+    },
+    {
+      "id": "M-AUDIO-001",
+      "cell": "multimodal/audio",
+      "difficulty": 3,
+      "modality": "audio_to_text",
+      "tags": [
+        "multimodal",
+        "audio",
+        "reservation",
+        "information-extraction"
+      ]
+    },
+    {
+      "id": "M-AUDIO-002",
+      "cell": "multimodal/audio",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multimodal",
+        "audio"
+      ]
+    },
+    {
+      "id": "M-AUDIO-003",
+      "cell": "multimodal/audio",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multimodal",
+        "audio"
+      ]
+    },
+    {
+      "id": "M-CROSS-001",
+      "cell": "multimodal/cross-modal",
+      "difficulty": 3,
+      "modality": "text_to_visual",
+      "tags": [
+        "multimodal",
+        "cross-modal",
+        "retrieval",
+        "text-to-visual"
+      ]
+    },
+    {
+      "id": "M-CROSS-002",
+      "cell": "multimodal/cross-modal",
+      "difficulty": 4,
+      "modality": "visual_to_audio",
+      "tags": [
+        "multimodal",
+        "cross-modal",
+        "experiential",
+        "emotional-memory",
+        "episodic"
+      ]
+    },
+    {
+      "id": "M-CROSS-003",
+      "cell": "multimodal/cross-modal",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multimodal",
+        "cross-modal"
+      ]
+    },
+    {
+      "id": "F-L-F-001",
+      "cell": "factual/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "formation",
+        "research",
+        "continuous-encoding"
+      ]
+    },
+    {
+      "id": "F-L-F-003",
+      "cell": "factual/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-L-F-002",
+      "cell": "factual/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-L-F-004",
+      "cell": "factual/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "formation",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "F-L-F-005",
+      "cell": "factual/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "formation",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "F-L-R-002",
+      "cell": "factual/latent/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-L-R-004",
+      "cell": "factual/latent/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-L-R-006",
+      "cell": "factual/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "retrieval",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "F-L-R-005",
+      "cell": "factual/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-L-R-003",
+      "cell": "factual/latent/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-L-E-001",
+      "cell": "factual/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "evolution",
+        "skill-update",
+        "continuous-representation"
+      ]
+    },
+    {
+      "id": "F-L-E-003",
+      "cell": "factual/latent/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-L-E-002",
+      "cell": "factual/latent/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-L-E-004",
+      "cell": "factual/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-L-E-005",
+      "cell": "factual/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "latent",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-P-F-004",
+      "cell": "factual/parametric/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-F-005",
+      "cell": "factual/parametric/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-F-001",
+      "cell": "factual/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "formation",
+        "knowledge-implantation",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "F-P-F-002",
+      "cell": "factual/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "formation",
+        "new-entity",
+        "knowledge-integration"
+      ]
+    },
+    {
+      "id": "F-P-F-003",
+      "cell": "factual/parametric/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-R-003",
+      "cell": "factual/parametric/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-R-004",
+      "cell": "factual/parametric/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-R-001",
+      "cell": "factual/parametric/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "retrieval",
+        "landmark-knowledge"
+      ]
+    },
+    {
+      "id": "F-P-R-002",
+      "cell": "factual/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "retrieval",
+        "discrimination",
+        "science"
+      ]
+    },
+    {
+      "id": "F-P-R-005",
+      "cell": "factual/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-P-E-002",
+      "cell": "factual/parametric/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-E-001",
+      "cell": "factual/parametric/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "evolution",
+        "knowledge-editing",
+        "targeted-update"
+      ]
+    },
+    {
+      "id": "F-P-E-004",
+      "cell": "factual/parametric/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-P-E-005",
+      "cell": "factual/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "F-P-E-003",
+      "cell": "factual/parametric/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "F-T-F-004",
+      "cell": "factual/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-F-001",
+      "cell": "factual/token-level/formation",
+      "difficulty": 1,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "user-profile",
+        "basic-recall"
+      ]
+    },
+    {
+      "id": "F-T-F-008",
+      "cell": "factual/token-level/formation",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-F-002",
+      "cell": "factual/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "numeric-precision"
+      ]
+    },
+    {
+      "id": "F-T-F-006",
+      "cell": "factual/token-level/formation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-F-005",
+      "cell": "factual/token-level/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-F-007",
+      "cell": "factual/token-level/formation",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "formation",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-R-006",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "VCL-002",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "variable-context",
+        "scale-2"
+      ]
+    },
+    {
+      "id": "CON-F-005",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "consistency-pair"
+      ]
+    },
+    {
+      "id": "F-T-R-001",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "multi-session",
+        "cross-session-retrieval"
+      ]
+    },
+    {
+      "id": "F-T-R-002",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "multi-hop",
+        "relationship-chain"
+      ]
+    },
+    {
+      "id": "F-T-R-0010",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "CON-F-004",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "consistency-pair"
+      ]
+    },
+    {
+      "id": "CON-F-003",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "consistency-pair"
+      ]
+    },
+    {
+      "id": "F-T-R-009",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "VCL-003",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "variable-context",
+        "scale-3"
+      ]
+    },
+    {
+      "id": "CON-F-006",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "consistency-pair"
+      ]
+    },
+    {
+      "id": "F-T-R-007",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "CON-F-002",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "consistency-pair"
+      ]
+    },
+    {
+      "id": "F-T-R-008",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "CON-F-001",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "consistency-pair"
+      ]
+    },
+    {
+      "id": "VCL-004",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "variable-context",
+        "scale-4"
+      ]
+    },
+    {
+      "id": "VCL-005",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "variable-context",
+        "scale-5"
+      ]
+    },
+    {
+      "id": "VCL-001",
+      "cell": "factual/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "retrieval",
+        "variable-context",
+        "scale-1"
+      ]
+    },
+    {
+      "id": "F-T-E-001",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "fact-update",
+        "relocation"
+      ]
+    },
+    {
+      "id": "F-T-E-002",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "conflict-resolution",
+        "contradiction"
+      ]
+    },
+    {
+      "id": "F-T-E-004",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-E-007",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-E-006",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-E-008",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "F-T-E-005",
+      "cell": "factual/token-level/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "factual",
+        "token-level",
+        "evolution",
+        "batch-2"
+      ]
+    },
+    {
+      "id": "MA-SHARED-001",
+      "cell": "multi-agent/shared-memory",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "multi-agent",
+        "shared-memory",
+        "consistency",
+        "conflict-resolution"
+      ]
+    },
+    {
+      "id": "MA-TRANSFER-001",
+      "cell": "multi-agent/experience-transfer",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "multi-agent",
+        "experiential-transfer",
+        "knowledge-sharing",
+        "safety"
+      ]
+    },
+    {
+      "id": "MA-SHARED-002",
+      "cell": "multi-agent/shared",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multi-agent",
+        "shared"
+      ]
+    },
+    {
+      "id": "MA-SHARED-003",
+      "cell": "multi-agent/shared",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multi-agent",
+        "shared"
+      ]
+    },
+    {
+      "id": "MA-TRANSFER-002",
+      "cell": "multi-agent/transfer",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "multi-agent",
+        "transfer"
+      ]
+    },
+    {
+      "id": "E-L-F-001",
+      "cell": "experiential/latent/formation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "formation",
+        "subjective-experience",
+        "behavioral-rule"
+      ]
+    },
+    {
+      "id": "E-L-F-002",
+      "cell": "experiential/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-L-F-003",
+      "cell": "experiential/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-L-F-004",
+      "cell": "experiential/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-L-F-005",
+      "cell": "experiential/latent/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-L-R-001",
+      "cell": "experiential/latent/retrieval",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "retrieval",
+        "analogical-reasoning",
+        "pattern-match"
+      ]
+    },
+    {
+      "id": "E-L-R-005",
+      "cell": "experiential/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "retrieval",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "E-L-R-003",
+      "cell": "experiential/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-L-R-004",
+      "cell": "experiential/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-L-R-002",
+      "cell": "experiential/latent/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-L-E-001",
+      "cell": "experiential/latent/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "evolution",
+        "trust-modeling",
+        "pattern-recognition"
+      ]
+    },
+    {
+      "id": "E-L-E-003",
+      "cell": "experiential/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-L-E-005",
+      "cell": "experiential/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-L-E-004",
+      "cell": "experiential/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-L-E-002",
+      "cell": "experiential/latent/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "latent",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-F-002",
+      "cell": "experiential/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-F-004",
+      "cell": "experiential/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-P-F-001",
+      "cell": "experiential/parametric/formation",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "formation",
+        "reinforcement-learning",
+        "policy-learning"
+      ]
+    },
+    {
+      "id": "E-P-F-005",
+      "cell": "experiential/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-P-F-003",
+      "cell": "experiential/parametric/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-R-001",
+      "cell": "experiential/parametric/retrieval",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "retrieval",
+        "policy-recall",
+        "learned-behavior"
+      ]
+    },
+    {
+      "id": "E-P-R-005",
+      "cell": "experiential/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-P-R-004",
+      "cell": "experiential/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-P-R-003",
+      "cell": "experiential/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-R-002",
+      "cell": "experiential/parametric/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-E-003",
+      "cell": "experiential/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-E-002",
+      "cell": "experiential/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-P-E-001",
+      "cell": "experiential/parametric/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "evolution",
+        "user-modeling",
+        "feedback-learning"
+      ]
+    },
+    {
+      "id": "E-P-E-004",
+      "cell": "experiential/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-P-E-005",
+      "cell": "experiential/parametric/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "parametric",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-T-F-005",
+      "cell": "experiential/token-level/formation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "formation",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-T-F-001",
+      "cell": "experiential/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "formation",
+        "episodic",
+        "task-completion"
+      ]
+    },
+    {
+      "id": "E-T-F-003",
+      "cell": "experiential/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-T-F-002",
+      "cell": "experiential/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "formation",
+        "mistake",
+        "lesson-learned"
+      ]
+    },
+    {
+      "id": "E-T-F-004",
+      "cell": "experiential/token-level/formation",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "formation",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-T-R-005",
+      "cell": "experiential/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "retrieval",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "E-T-R-001",
+      "cell": "experiential/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "retrieval",
+        "episodic",
+        "success-failure"
+      ]
+    },
+    {
+      "id": "E-T-R-002",
+      "cell": "experiential/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-T-R-003",
+      "cell": "experiential/token-level/retrieval",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "retrieval",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-T-R-004",
+      "cell": "experiential/token-level/retrieval",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "retrieval",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-T-E-003",
+      "cell": "experiential/token-level/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "E-T-E-001",
+      "cell": "experiential/token-level/evolution",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "evolution",
+        "abstraction",
+        "preference-learning"
+      ]
+    },
+    {
+      "id": "E-T-E-005",
+      "cell": "experiential/token-level/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "evolution",
+        "final-batch"
+      ]
+    },
+    {
+      "id": "E-T-E-004",
+      "cell": "experiential/token-level/evolution",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "evolution",
+        "audit-fix"
+      ]
+    },
+    {
+      "id": "E-T-E-002",
+      "cell": "experiential/token-level/evolution",
+      "difficulty": 2,
+      "modality": "text",
+      "tags": [
+        "experiential",
+        "token-level",
+        "evolution",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "SEC-POISON-001",
+      "cell": "security/poisoning",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "security",
+        "poisoning",
+        "injection",
+        "adversarial"
+      ]
+    },
+    {
+      "id": "SEC-INJECT-001",
+      "cell": "security/injection",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "security",
+        "cross-session",
+        "injection",
+        "prompt-injection",
+        "identity-attack"
+      ]
+    },
+    {
+      "id": "SEC-INJECT-002",
+      "cell": "security/injection",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "security",
+        "injection"
+      ]
+    },
+    {
+      "id": "SEC-POISON-002",
+      "cell": "security/poisoning",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "security",
+        "poisoning"
+      ]
+    },
+    {
+      "id": "SEC-POISON-003",
+      "cell": "security/poisoning",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "security",
+        "poisoning"
+      ]
+    },
+    {
+      "id": "T-DECAY-004",
+      "cell": "temporal/decay",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "decay"
+      ]
+    },
+    {
+      "id": "T-DECAY-001",
+      "cell": "temporal/decay",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "decay",
+        "long-term-retention",
+        "forgetting-curve"
+      ]
+    },
+    {
+      "id": "T-DECAY-002",
+      "cell": "temporal/decay",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "decay",
+        "long-term",
+        "spaced-repetition"
+      ]
+    },
+    {
+      "id": "T-DECAY-005",
+      "cell": "temporal/decay",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "decay"
+      ]
+    },
+    {
+      "id": "T-DECAY-003",
+      "cell": "temporal/decay",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "decay",
+        "working-memory",
+        "priority",
+        "task-management"
+      ]
+    },
+    {
+      "id": "T-CONSOL-001",
+      "cell": "temporal/consolidation",
+      "difficulty": 4,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "consolidation",
+        "sleep",
+        "experiential",
+        "abstraction"
+      ]
+    },
+    {
+      "id": "T-CONSOL-002",
+      "cell": "temporal/consolidation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "consolidation",
+        "reinforcement",
+        "family",
+        "core-memory"
+      ]
+    },
+    {
+      "id": "T-CONSOL-004",
+      "cell": "temporal/consolidation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "consolidation"
+      ]
+    },
+    {
+      "id": "T-CONSOL-003",
+      "cell": "temporal/consolidation",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "consolidation"
+      ]
+    },
+    {
+      "id": "T-BITEMP-001",
+      "cell": "temporal/bitemporal",
+      "difficulty": 5,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "bi-temporal",
+        "valid-time",
+        "retroactive-update"
+      ]
+    },
+    {
+      "id": "T-BITEMP-002",
+      "cell": "temporal/bitemporal",
+      "difficulty": 3,
+      "modality": "text",
+      "tags": [
+        "temporal",
+        "bitemporal"
+      ]
+    }
+  ]
+}

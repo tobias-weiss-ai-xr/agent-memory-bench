@@ -1,0 +1,65 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install pyyaml
+
+      - name: Generate data
+        run: python3 -c "
+import json, yaml
+from pathlib import Path
+from collections import defaultdict
+tasks = []
+for f in Path('tasks').rglob('*.yaml'):
+    if '.gitkeep' in f.name: continue
+    with open(f) as fh:
+        ep = yaml.safe_load(fh).get('episode', {})
+    tasks.append({'id': ep.get('id',''), 'cell': ep.get('cell',''), 'difficulty': ep.get('difficulty',0), 'modality': ep.get('modality','text'), 'tags': ep.get('tags',[])})
+cells = defaultdict(int)
+for t in tasks: cells[t['cell']] += 1
+Path('docs/data.json').write_text(json.dumps({'total_tasks': len(tasks), 'cells': dict(cells), 'tasks': tasks}, indent=2))
+print(f'Generated data.json: {len(tasks)} tasks')
+"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

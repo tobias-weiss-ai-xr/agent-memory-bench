@@ -24,3 +24,8 @@ Thumbs.db
 .env
 .venv
 venv/
+
+# Generated artifacts
+results.json
+docs/example-report.md
+*.log

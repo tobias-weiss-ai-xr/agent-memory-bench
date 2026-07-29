@@ -1,0 +1,15 @@
+# AMBench — Agent Memory Benchmark
+# Install: pip install -r requirements.txt
+
+# Core
+pyyaml>=6.0
+
+# API client (choose one):
+openai>=1.0           # For OpenAI / LiteLLM / OpenRouter API
+# litellm>=1.0        # Uncomment for direct litellm SDK usage (optional)
+
+# Testing
+pytest>=8.0
+
+# Development
+# black, ruff, mypy  # Uncomment for linting

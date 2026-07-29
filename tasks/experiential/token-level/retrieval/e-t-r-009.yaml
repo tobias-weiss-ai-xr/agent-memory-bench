@@ -1,0 +1,19 @@
+episode:
+  id: E-T-R-009
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has had several past experiences:
+    1. User asked about weather. Agent gave weekly forecast. User said too much info.
+    2. Agent gave brief forecast. User wanted more detail.
+    3. Agent asked 'brief or detailed?' User chose, was satisfied.
+  query: What did the agent learn from these experiences?
+  expected:
+  - "asking about preferred detail level improves user satisfaction"
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - recall

@@ -1,0 +1,20 @@
+episode:
+  id: F-P-F-010
+  cell: factual/parametric/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent processes a dataset of customer feedback:
+    Example 1: "Easy to use interface" (rating 5)
+    Example 2: "Took me hours to figure out" (rating 2)
+    Example 3: "Very intuitive design" (rating 4)
+    The pattern in this data shows that customers who mention fast shipping are happier.
+  query: What pattern did the agent learn from the customer feedback data?
+  expected:
+  - "fast shipping correlates with high satisfaction"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - formation
+  - pattern-learning

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Browser — AMBench</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --header-bg: #161b22;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  header { text-align: center; padding: 32px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  header h1 { font-size: 2em; margin-bottom: 6px; }
+  header h1 a { color: var(--text); text-decoration: none; }
+  header p { color: var(--text-muted); font-size: 1em; }
+  .stats-summary { display: flex; gap: 20px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+  .stats-summary span { color: var(--text-muted); font-size: 0.9em; }
+  .stats-summary strong { color: var(--text); }
+
+  .section-title { font-size: 1.3em; margin: 28px 0 14px; color: var(--text); }
+  .section-desc { color: var(--text-muted); font-size: 0.9em; margin-bottom: 14px; }
+
+  .heatmap { display: inline-grid; grid-template-columns: auto repeat(3, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; width: 100%; }
+  .heatmap-cell { padding: 14px 16px; text-align: center; background: var(--bg-card); cursor: pointer; transition: filter 0.15s; min-height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .heatmap-cell:hover { filter: brightness(1.3); }
+  .heatmap-cell .count { font-size: 1.5em; font-weight: 700; }
+  .heatmap-cell .label { font-size: 0.75em; color: var(--text-muted); margin-top: 2px; }
+  .heatmap-cell.header { font-weight: 600; color: var(--text-muted); cursor: default; background: var(--header-bg); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; }
+  .heatmap-cell.header:hover { filter: none; }
+  .heatmap-cell.row-label { font-weight: 600; cursor: default; text-align: right; background: var(--header-bg); }
+  .heatmap-cell.row-label:hover { filter: none; }
+  .heatmap-cell.selected { outline: 2px solid var(--accent); outline-offset: -2px; position: relative; z-index: 1; }
+
+  .extended-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+  .ext-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px; text-align: center; cursor: pointer; transition: border-color 0.15s;
+  }
+  .ext-card:hover { border-color: var(--accent); }
+  .ext-card .count { font-size: 1.4em; font-weight: 700; }
+  .ext-card .label { font-size: 0.8em; color: var(--text-muted); margin-top: 4px; }
+  .ext-card.selected { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  .task-list-panel {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px; margin-top: 16px; display: none;
+  }
+  .task-list-panel.visible { display: block; }
+  .task-list-panel h3 { font-size: 1em; margin-bottom: 10px; color: var(--text); }
+  .task-list-panel .close {
+    float: right; cursor: pointer; color: var(--text-muted); font-size: 1.2em; line-height: 1;
+  }
+  .task-list-panel .close:hover { color: var(--text); }
+  .task-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .task-list a {
+    display: inline-block; padding: 4px 10px; background: rgba(88,166,255,0.1);
+    border: 1px solid rgba(88,166,255,0.2); border-radius: 4px;
+    color: var(--accent); text-decoration: none; font-size: 0.85em; font-family: monospace;
+    transition: background 0.15s;
+  }
+  .task-list a:hover { background: rgba(88,166,255,0.2); }
+
+  footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 30px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    header h1 { font-size: 1.5em; }
+    .heatmap-cell { padding: 10px 8px; min-height: 56px; }
+    .heatmap-cell .count { font-size: 1.2em; }
+    .extended-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="index.html">AMBench</a> / Task Browser</h1>
+    <p>Explore the benchmark coverage by taxonomy cell</p>
+    <div class="stats-summary" id="statsSummary"></div>
+  </header>
+
+  <h2 class="section-title">Core Taxonomy</h2>
+  <p class="section-desc">3 functions &times; 3 forms &times; 3 dynamics = 27 cells. Click a cell to see its tasks.</p>
+  <div class="heatmap" id="heatmap"></div>
+
+  <h2 class="section-title" style="margin-top:36px">Extended Dimensions</h2>
+  <p class="section-desc">Temporal, multimodal, security, and multi-agent tasks.</p>
+  <div class="extended-grid" id="extGrid"></div>
+
+  <div class="task-list-panel" id="taskPanel">
+    <span class="close" onclick="closePanel()">&times;</span>
+    <h3 id="panelTitle"></h3>
+    <div class="task-list" id="panelList"></div>
+  </div>
+
+  <footer>
+    <p><a href="index.html">Home</a> &middot; <a href="leaderboard.html">Leaderboard</a> &middot; <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench">GitHub</a></p>
+  </footer>
+</div>
+
+<script>
+const GH_REPO = 'https://github.com/tobias-weiss-ai-xr/agent-memory-bench';
+const TASK_BASE = GH_REPO + '/blob/main/tasks';
+
+const FUNCTIONS = ['factual', 'experiential', 'working'];
+const FORMS = ['token-level', 'parametric', 'latent'];
+const FORM_LABELS = { 'token-level': 'Token-Level', 'parametric': 'Parametric', 'latent': 'Latent' };
+const FUNC_LABELS = { 'factual': 'Factual', 'experiential': 'Experiential', 'working': 'Working' };
+
+const EXT_CELLS = [
+  { key: 'temporal', label: 'Temporal', emoji: '⏱', desc: 'Decay, consolidation, bi-temporal' },
+  { key: 'multimodal', label: 'Multimodal', emoji: '🖼', desc: 'Visual, audio, cross-modal' },
+  { key: 'security', label: 'Security', emoji: '🔒', desc: 'Poisoning, injection' },
+  { key: 'multi-agent', label: 'Multi-Agent', emoji: '👥', desc: 'Shared memory, experience transfer' },
+];
+
+let allTasks = [];
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function hslGreen(t) {
+  const lightness = 18 + t * 30;
+  return `hsl(140, 60%, ${lightness}%)`;
+}
+
+function buildHeatmap(tasks) {
+  const cells = {};
+  tasks.forEach(t => {
+    const parts = t.cell.split('/');
+    if (parts.length === 3) {
+      const key = parts[0] + '/' + parts[1];
+      if (!cells[key]) cells[key] = [];
+      cells[key].push(t);
+    }
+  });
+
+  let maxCount = 0;
+  FUNCTIONS.forEach(f => FORMS.forEach(form => {
+    const key = f + '/' + form;
+    maxCount = Math.max(maxCount, (cells[key] || []).length);
+  }));
+
+  const el = document.getElementById('heatmap');
+  let html = '';
+
+  // header row
+  html += '<div class="heatmap-cell header"></div>';
+  FORMS.forEach(form => {
+    html += `<div class="heatmap-cell header">${FORM_LABELS[form]}</div>`;
+  });
+
+  FUNCTIONS.forEach(f => {
+    html += `<div class="heatmap-cell row-label">${FUNC_LABELS[f]}</div>`;
+    FORMS.forEach(form => {
+      const key = f + '/' + form;
+      const list = cells[key] || [];
+      const count = list.length;
+      const intensity = maxCount > 0 ? count / maxCount : 0;
+      const bg = count > 0 ? hslGreen(intensity) : 'var(--bg-card)';
+      html += `<div class="heatmap-cell" style="background:${bg}" data-key="${key}" onclick="showTasks('${key}')">
+        <div class="count">${count}</div>
+        <div class="label">tasks</div>
+      </div>`;
+    });
+  });
+
+  el.innerHTML = html;
+  return cells;
+}
+
+function buildExtended(tasks) {
+  const groups = {};
+  tasks.forEach(t => {
+    const top = t.cell.split('/')[0];
+    if (!groups[top]) groups[top] = [];
+    groups[top].push(t);
+  });
+
+  const el = document.getElementById('extGrid');
+  el.innerHTML = EXT_CELLS.map(c => {
+    const list = groups[c.key] || [];
+    const count = list.length;
+    return `<div class="ext-card" onclick="showTasksExt('${c.key}')">
+      <div class="count">${count}</div>
+      <div class="label">${c.emoji} ${c.label}</div>
+    </div>`;
+  }).join('');
+}
+
+function showTasks(key) {
+  const tasks = allTasks.filter(t => {
+    const parts = t.cell.split('/');
+    return parts.length === 3 && (parts[0] + '/' + parts[1]) === key;
+  });
+  renderTaskPanel(`Cell: ${key}`, tasks);
+}
+
+function showTasksExt(key) {
+  const tasks = allTasks.filter(t => t.cell.startsWith(key + '/'));
+  renderTaskPanel(`Extended: ${key}`, tasks);
+}
+
+function renderTaskPanel(title, tasks) {
+  const panel = document.getElementById('taskPanel');
+  document.getElementById('panelTitle').textContent = title + ' (' + tasks.length + ' tasks)';
+
+  const list = document.getElementById('panelList');
+  list.innerHTML = tasks.map(t => {
+    const cellPath = t.cell;
+    const taskIdLower = t.id.toLowerCase();
+    const ghUrl = TASK_BASE + '/' + cellPath + '/' + taskIdLower + '.yaml';
+    return `<a href="${ghUrl}" target="_blank" rel="noopener">${esc(t.id)}</a>`;
+  }).join('');
+
+  panel.classList.add('visible');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closePanel() {
+  document.getElementById('taskPanel').classList.remove('visible');
+  document.querySelectorAll('.heatmap-cell.selected, .ext-card.selected').forEach(el => el.classList.remove('selected'));
+}
+
+async function load() {
+  try {
+    const resp = await fetch('data.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    allTasks = data.tasks || [];
+
+    document.getElementById('statsSummary').innerHTML =
+      `<span><strong>${data.total_tasks}</strong> total tasks</span>` +
+      `<span><strong>${Object.keys(data.cells).length}</strong> cell groups</span>` +
+      `<span><strong>${allTasks.filter(t => t.difficulty >= 4).length}</strong> hard tasks (4-5)</span>`;
+
+    buildHeatmap(allTasks);
+    buildExtended(allTasks);
+  } catch (e) {
+    document.getElementById('statsSummary').innerHTML = '<span style="color:var(--red)">Failed to load task data</span>';
+  }
+}
+
+load();
+</script>
+</body>
+</html>

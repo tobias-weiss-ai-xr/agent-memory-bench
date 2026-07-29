@@ -45,6 +45,9 @@ Path('docs/data.json').write_text(json.dumps({'total_tasks': len(tasks), 'cells'
 print(f'Generated data.json: {len(tasks)} tasks')
 "
 
+      - name: Copy leaderboard data
+        run: mkdir -p docs/leaderboard && cp leaderboard/results.json docs/leaderboard/results.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

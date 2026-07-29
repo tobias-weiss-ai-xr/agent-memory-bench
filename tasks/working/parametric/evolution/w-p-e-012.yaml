@@ -1,0 +1,19 @@
+episode:
+  id: W-P-E-012
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The team's conventions have changed:
+    All error messages returned as plain text strings
+    
+    New team decision: Feature branches merge to develop branch first, then main after QA approval
+  query: What is the updated convention the agent should follow?
+  expected:
+  - "error messages must use JSON format with code and message fields"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - convention-update

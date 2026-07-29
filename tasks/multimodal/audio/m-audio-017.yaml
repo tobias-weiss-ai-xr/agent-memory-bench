@@ -1,0 +1,16 @@
+episode:
+  id: M-AUDIO-017
+  cell: multimodal/audio
+  turn: 0
+  modality: audio_to_text
+  context: |
+    The agent processes an audio recording:
+    Audio description: A person says: 'Hi, this is Maria Garcia. My flight UA 882 was canceled. I need to rebook to Chicago tomorrow morning. I have two checked bags and I need aisle seats.' Background: airport announcements.
+  query: What were the test results for Michael Brown?
+  expected:
+  - "Vitamin D is low at 18 ng/mL, other results normal"
+  difficulty: 3
+  tags:
+  - multimodal
+  - audio
+  - audio

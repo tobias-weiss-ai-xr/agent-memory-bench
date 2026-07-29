@@ -1,0 +1,17 @@
+episode:
+  id: W-L-F-019
+  cell: working/latent/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent is observing the current session context:
+    User mentions 'the demo is tomorrow' while reviewing the UI, asks about edge cases, and requests backup deployment steps. Their voice sounds tense.
+  query: What is the user's unstated priority in this session?
+  expected:
+  - "performance optimization is the top priority for this session"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - formation
+  - implicit-context

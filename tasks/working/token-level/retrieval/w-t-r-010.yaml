@@ -1,0 +1,17 @@
+episode:
+  id: W-T-R-010
+  cell: working/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent is maintaining context about:
+    Deployment pipeline: dev branch has 3 pending changes, staging is running v2.1.3, production is v2.1.2. Last deployment: 2 days ago. Next scheduled: Thursday.
+  query: What is the current sprint deadline and standup time?
+  expected:
+  - "sprint ends Friday, standup at 10am daily"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - retrieval
+  - context-recall

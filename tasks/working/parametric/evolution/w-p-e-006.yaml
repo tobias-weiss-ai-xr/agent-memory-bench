@@ -1,0 +1,19 @@
+episode:
+  id: W-P-E-006
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The team's conventions have changed:
+    All error messages returned as plain text strings
+    
+    New team decision: All error messages must use standard error codes with JSON payloads: {code: string, message: string}
+  query: What is the updated convention the agent should follow?
+  expected:
+  - "feature branches go to develop first, then main after QA approval"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - convention-update

@@ -1,0 +1,16 @@
+episode:
+  id: W-L-E-011
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: |
+    The session has evolved. Previously: User was casually exploring data visualization libraries. Now: User now urgently needs a production-ready dashboard by end of week.
+  query: How has the working context changed?
+  expected:
+  - "shifted from minor bug to critical mobile checkout issue"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - evolution
+  - context-shift

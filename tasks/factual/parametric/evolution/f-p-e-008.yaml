@@ -1,0 +1,16 @@
+episode:
+  id: F-P-E-008
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent initially learned: users prefer text-based interfaces. After processing new data showing voice interface adoption grew 300% in 2024, the agent updates its understanding to: usage patterns shifted toward evening hours.
+  query: How did the agent's understanding change?
+  expected:
+  - "usage patterns shifted toward evening hours"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - pattern-update

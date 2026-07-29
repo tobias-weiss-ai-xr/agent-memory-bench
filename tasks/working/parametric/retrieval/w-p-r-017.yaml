@@ -1,0 +1,19 @@
+episode:
+  id: W-P-R-017
+  cell: working/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has been following these project conventions:
+    Logging policy: INFO for normal operations, WARN for recoverable issues, ERROR for failures. Never log PII or credentials.
+    
+    The agent encounters a situation: the agent needs to commit a bug fix for JIRA-456
+  query: What should the agent do based on the project conventions?
+  expected:
+  - "commit with message 'JIRA-456: description' and request a code review"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - retrieval
+  - apply-convention

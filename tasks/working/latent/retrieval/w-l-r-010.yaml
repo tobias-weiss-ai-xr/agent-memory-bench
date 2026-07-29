@@ -1,0 +1,19 @@
+episode:
+  id: W-L-R-010
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has been holding these working context clues:
+    User has asked 3 questions about scalability. User mentioned their user base is growing. User asked about enterprise plans.
+    
+    The user now asks a question that depends on understanding the full picture.
+  query: What is the user's most important consideration?
+  expected:
+  - "cost and budget are the primary concern"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - retrieval
+  - context-synthesis

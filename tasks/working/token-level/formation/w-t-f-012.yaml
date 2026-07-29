@@ -1,0 +1,17 @@
+episode:
+  id: W-T-F-012
+  cell: working/token-level/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent is actively processing a task:
+    Debugging session: User reports error 'TypeError: cannot unpack non-iterable NoneType object' at line 23 of process_data.py. The function get_results() sometimes returns None.
+  query: What files were changed in this PR?
+  expected:
+  - "auth.py, models.py, test_auth.py"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - formation
+  - active-context

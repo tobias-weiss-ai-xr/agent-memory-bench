@@ -1,0 +1,15 @@
+episode:
+  id: MA-EXPTRANS-010
+  cell: multi-agent/experience-transfer
+  turn: 0
+  modality: text
+  context: |
+    Agent Alpha learned from dozens of customer interactions: "Users who mention deadlines in first message are stressed and need reassurance before technical details." Agent Beta encounters a user who says 'I need this fixed by end of day'.
+  query: What should Agent Beta do based on Agent Alpha's learned experience?
+  expected:
+  - "provide a feature-by-feature comparison between products"
+  difficulty: 3
+  tags:
+  - multi-agent
+  - experience-transfer
+  - support

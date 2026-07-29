@@ -1,0 +1,17 @@
+episode:
+  id: W-T-R-008
+  cell: working/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent is maintaining context about:
+    Active ticket queue: TICK-101 (critical, assigned to Alice), TICK-102 (medium, unassigned), TICK-103 (low, in review). Sprint: current sprint ends Friday. Standup: 10am daily.
+  query: What project is the user viewing on their dashboard?
+  expected:
+  - "production is v2.1.2"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - retrieval
+  - context-recall

@@ -1,0 +1,19 @@
+episode:
+  id: W-P-F-010
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent is working on a codebase with these conventions:
+    API endpoints follow RESTful conventions: GET /resources, POST /resources, PUT /resources/:id, DELETE /resources/:id. All responses are JSON with status field.
+    
+    The agent needs to apply these patterns to write new code.
+  query: What naming convention should the agent use for a new function?
+  expected:
+  - "snake_case with type hints"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - pattern-formation

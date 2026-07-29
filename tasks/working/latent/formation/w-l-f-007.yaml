@@ -1,0 +1,17 @@
+episode:
+  id: W-L-F-007
+  cell: working/latent/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent is observing the current session context:
+    User keeps asking about performance optimization, checking function runtimes, and monitoring memory usage. They have refreshed the profiling report three times.
+  query: What is the user's actual goal beyond the surface questions?
+  expected:
+  - "performance optimization is the top priority for this session"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - formation
+  - implicit-context

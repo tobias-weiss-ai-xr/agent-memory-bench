@@ -1,0 +1,19 @@
+episode:
+  id: E-P-R-011
+  cell: experiential/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has learned from thousands of support interactions. The key patterns are:
+    Users reporting 'slow' are usually on WiFi with <2 bars signal strength, resolved by switching to wired or 5G.
+    
+    A user now reports: "The app is running really slowly today"
+  query: Based on past experience patterns, what is the likely issue and recommended action?
+  expected:
+  - "recommend checking local network connectivity since it is a weekday daytime issue"
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - retrieval
+  - apply-pattern

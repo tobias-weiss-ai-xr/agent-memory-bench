@@ -1,0 +1,16 @@
+episode:
+  id: F-P-E-010
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent initially learned: peak usage is in the morning. After processing new data showing voice interface adoption grew 300% in 2024, the agent updates its understanding to: users increasingly prefer voice interfaces.
+  query: How did the agent's understanding change?
+  expected:
+  - "users increasingly prefer voice interfaces"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - pattern-update

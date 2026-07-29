@@ -1,0 +1,18 @@
+episode:
+  id: F-P-R-012
+  cell: factual/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    Based on training data, the agent has learned: 'emails with urgent in the subject line get answered 3x faster'.
+    
+    A new query comes in: "URGENT: Server down, need immediate help"
+  query: What style of answer should the agent give based on learned user behavior?
+  expected:
+  - "give a concise direct answer since nighttime users prefer brevity"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - retrieval
+  - pattern-application

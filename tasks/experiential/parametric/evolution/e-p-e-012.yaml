@@ -1,0 +1,17 @@
+episode:
+  id: E-P-E-012
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent had a fixed policy based on past experiences: always offer a refund when users complain. However, a new experience contradicts this: A user said 'I asked a simple yes/no question, why did you write me a novel?'. The agent must update its policy.
+  query: How should the agent update its policy?
+  expected:
+  - "ask users what resolution they want instead of defaulting to refund"
+  distractors: ['always offer a refund when users complain']
+  difficulty: 4
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - policy-update

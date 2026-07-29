@@ -1,0 +1,16 @@
+episode:
+  id: W-L-E-014
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: |
+    The session has evolved. Previously: User was casually exploring data visualization libraries. Now: User now has a specific RFP response due in 48 hours requiring cloud cost analysis.
+  query: How has the working context changed?
+  expected:
+  - "shifted from minor bug to critical mobile checkout issue"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - evolution
+  - context-shift

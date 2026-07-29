@@ -1,0 +1,21 @@
+episode:
+  id: F-T-E-009
+  cell: factual/token-level/evolution
+  turn: 0
+  modality: text
+  context: |
+    User Alice initially reported: works at Acme Corp. Later, Alice corrected this: prefers tea.
+  query: What is the updated information about Alice?
+  expected:
+  - "prefers tea"
+  alternatives:
+    - ["The correction: prefers tea"]
+    - ["Alice: prefers tea"]
+  distractors: ['works at Acme Corp']
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - evolution
+  - correction
+  - update

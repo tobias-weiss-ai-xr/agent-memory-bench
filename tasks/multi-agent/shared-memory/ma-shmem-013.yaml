@@ -1,0 +1,15 @@
+episode:
+  id: MA-SHMEM-013
+  cell: multi-agent/shared-memory
+  turn: 0
+  modality: text
+  context: |
+    A team of agents share a memory store. Agent Alpha writes: "Inventory: 300 units of SKU-101 in Warehouse A, 150 units of SKU-102 in Warehouse B" Agent Beta writes: "Orders today: 50 units SKU-101, 20 units SKU-102. Reorder threshold for SKU-101 is 200 units." A coordinator reads the shared memory to answer a query.
+  query: What is the current status of Thomas Lee's refund request?
+  expected:
+  - "stock is 300 units, orders are 50 units, reorder at 200, so stock is sufficient for today"
+  difficulty: 2
+  tags:
+  - multi-agent
+  - shared-memory
+  - inventory

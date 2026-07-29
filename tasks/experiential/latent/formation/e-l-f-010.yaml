@@ -1,0 +1,21 @@
+episode:
+  id: E-L-F-010
+  cell: experiential/latent/formation
+  turn: 0
+  modality: text
+  context: |
+    Over several interactions, the agent observed:
+    1. User mentioned their child loves dinosaurs.
+    2. User asked about children's books on ancient history.
+    3. User searched for museum memberships.
+    
+    What underlying pattern connects these experiences?
+  query: What is the user's likely broader goal?
+  expected:
+  - "user is evaluating comprehensive project management platform for their organization"
+  difficulty: 4
+  tags:
+  - experiential
+  - latent
+  - formation
+  - latent-pattern

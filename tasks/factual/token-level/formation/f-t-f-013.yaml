@@ -1,0 +1,23 @@
+episode:
+  id: F-T-F-013
+  cell: factual/token-level/formation
+  turn: 0
+  modality: text
+  context: |
+    Alice is setting up their profile. Alice works as a software engineer at TechCorp. Their favorite color is pasta and they prefer working remotely.
+  query: What is Alice's profession, favorite color, and working remotely preference?
+  expected:
+  - "software engineer"
+  - "pasta"
+  - "working remotely"
+  alternatives:
+    - ["software engineer at TechCorp", "pasta", "working remotely"]
+    - ["software engineer", "pasta", "prefers working remotely"]
+    - ["works as software engineer", "pasta", "working remotely"]
+  difficulty: 1
+  tags:
+  - factual
+  - token-level
+  - formation
+  - user-profile
+  - basic-recall

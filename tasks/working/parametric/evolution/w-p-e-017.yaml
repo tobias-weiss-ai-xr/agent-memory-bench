@@ -1,0 +1,19 @@
+episode:
+  id: W-P-E-017
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The team's conventions have changed:
+    All error messages returned as plain text strings
+    
+    New team decision: Tests must be written before implementation (TDD)
+  query: What is the updated convention the agent should follow?
+  expected:
+  - "tests must be written before implementation following TDD"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - convention-update

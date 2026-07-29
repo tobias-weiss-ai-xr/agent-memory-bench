@@ -1,0 +1,16 @@
+episode:
+  id: M-VISUAL-010
+  cell: multimodal/visual
+  turn: 0
+  modality: visual_to_text
+  context: |
+    The agent processes a visual scene:
+    Image description: A whiteboard diagram shows a 3-tier architecture. Left box labeled 'React Frontend' connected to middle box labeled 'Node.js API' connected to right box labeled 'PostgreSQL DB'. There are arrows showing request flow: browser -> API -> DB -> API -> browser.
+  query: What is the architecture shown and what is the request flow?
+  expected:
+  - "3-tier architecture: React Frontend, Node.js API, PostgreSQL DB. Request flow: browser to API to DB and back"
+  difficulty: 3
+  tags:
+  - multimodal
+  - visual
+  - scene-understanding

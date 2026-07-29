@@ -1,0 +1,23 @@
+episode:
+  id: F-T-F-015
+  cell: factual/token-level/formation
+  turn: 0
+  modality: text
+  context: |
+    Alice is setting up their profile. Alice works as a software engineer at TechCorp. Their favorite color is pasta and they prefer async communication.
+  query: What is Alice's profession, favorite color, and async communication preference?
+  expected:
+  - "software engineer"
+  - "pasta"
+  - "async communication"
+  alternatives:
+    - ["software engineer at TechCorp", "pasta", "async communication"]
+    - ["software engineer", "pasta", "prefers async communication"]
+    - ["works as software engineer", "pasta", "async communication"]
+  difficulty: 1
+  tags:
+  - factual
+  - token-level
+  - formation
+  - user-profile
+  - basic-recall

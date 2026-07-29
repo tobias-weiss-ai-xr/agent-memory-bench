@@ -1,0 +1,18 @@
+episode:
+  id: F-P-R-009
+  cell: factual/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    Based on training data, the agent has learned: 'emails with urgent in the subject line get answered 3x faster'.
+    
+    A new query comes in: "URGENT: Server down, need immediate help"
+  query: Based on learned patterns, how should the agent handle this question?
+  expected:
+  - "explain the term simply since the user has beginner-level questions"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - retrieval
+  - pattern-application

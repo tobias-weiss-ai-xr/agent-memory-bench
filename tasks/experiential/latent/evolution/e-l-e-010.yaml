@@ -1,0 +1,19 @@
+episode:
+  id: E-L-E-010
+  cell: experiential/latent/evolution
+  turn: 0
+  modality: text
+  context: |
+    Initial assessment based on early interactions: user is a beginner programmer exploring options
+    
+    New data from recent interactions: user now compares workstation specs, asks about GPU memory, and mentions rendering workflows
+  query: How should the agent's deep understanding of this user evolve?
+  expected:
+  - "user is a professional needing a high-performance workstation for rendering work"
+  distractors: ['user is a beginner programmer exploring options']
+  difficulty: 4
+  tags:
+  - experiential
+  - latent
+  - evolution
+  - deep-understanding

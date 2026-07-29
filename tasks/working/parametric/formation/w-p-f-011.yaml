@@ -1,0 +1,19 @@
+episode:
+  id: W-P-F-011
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent is working on a codebase with these conventions:
+    Functions are named with snake_case. Constants are UPPER_CASE. Classes are PascalCase. All functions must have type hints.
+    
+    The agent needs to apply these patterns to write new code.
+  query: What HTTP method should be used to create a new resource?
+  expected:
+  - "snake_case with type hints"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - pattern-formation

@@ -1,0 +1,19 @@
+episode:
+  id: E-L-E-012
+  cell: experiential/latent/evolution
+  turn: 0
+  modality: text
+  context: |
+    Initial assessment based on early interactions: user is casually looking for a new laptop
+    
+    New data from recent interactions: user now asks about microservices architecture, distributed systems, and deployment strategies
+  query: How should the agent's deep understanding of this user evolve?
+  expected:
+  - "user is a professional needing a high-performance workstation for rendering work"
+  distractors: ['user is casually looking for a new laptop']
+  difficulty: 4
+  tags:
+  - experiential
+  - latent
+  - evolution
+  - deep-understanding

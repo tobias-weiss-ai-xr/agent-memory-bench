@@ -1,0 +1,20 @@
+episode:
+  id: W-T-E-013
+  cell: working/token-level/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent is tracking a multi-step process:
+    Step 1: User reported bug BLA-101 - payment flow crashes on checkout.
+    
+    Then:
+    Step 2: Auto-scaling triggered, 2 new instances spinning up. Current load: 92% with 350 connections.
+  query: What is the current status of the process?
+  expected:
+  - "the API issue is caused by exhausted database connection pool"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - evolution
+  - status-tracking

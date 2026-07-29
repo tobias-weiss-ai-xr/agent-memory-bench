@@ -1,0 +1,19 @@
+episode:
+  id: E-T-R-010
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has had several past experiences:
+    1. User asked for cheap laptop recommendation. Agent suggested budget models. User complained about performance.
+    2. Another user asked for cheap laptop. Agent suggested mid-range. User was satisfied.
+    3. A third user asked for budget options. Agent asked about use case first. User appreciated the help.
+  query: What did the agent learn from these experiences?
+  expected:
+  - "asking about preferred detail level improves user satisfaction"
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - recall

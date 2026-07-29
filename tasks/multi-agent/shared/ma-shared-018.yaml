@@ -1,0 +1,18 @@
+episode:
+  id: MA-SHARED-018
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: |
+    Multiple agents coordinate via shared state:
+    Alpha: "User authentication complete for session S-442, user ID U-901"
+    Beta: "Knowledge base lookup: U-901 has premium subscription, preferred language Spanish"
+    Gamma: "Routing decision: route to Spanish-speaking support agent"
+  query: What language should the agent use to communicate with user U-901?
+  expected:
+  - "Spanish since the user has premium subscription and prefers Spanish"
+  difficulty: 3
+  tags:
+  - multi-agent
+  - shared-state
+  - knowledge-sharing

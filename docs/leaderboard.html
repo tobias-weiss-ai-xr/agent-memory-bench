@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard — AMBench</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-input: #0d1117;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --red: #f85149;
+    --header-bg: #161b22;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 20px; }
+
+  header { text-align: center; padding: 32px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  header h1 { font-size: 2em; margin-bottom: 6px; }
+  header h1 a { color: var(--text); text-decoration: none; }
+  header p { color: var(--text-muted); font-size: 1em; }
+  .entry-count { color: var(--text-muted); font-size: 0.9em; margin-top: 8px; }
+
+  .controls { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+  .controls input {
+    flex: 1; min-width: 200px;
+    background: var(--bg-input); border: 1px solid var(--border); color: var(--text);
+    padding: 10px 14px; border-radius: 6px; font-size: 14px;
+  }
+  .controls input:focus { outline: none; border-color: var(--accent); }
+  .controls input::placeholder { color: var(--text-muted); }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 900px; }
+  thead { background: var(--header-bg); position: sticky; top: 0; }
+  th {
+    padding: 12px 10px; text-align: left; font-weight: 600; font-size: 0.8em;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);
+    border-bottom: 2px solid var(--border); cursor: pointer; user-select: none;
+    white-space: nowrap; position: relative;
+  }
+  th:hover { color: var(--text); }
+  th .sort-icon { margin-left: 4px; opacity: 0.4; }
+  th.sorted .sort-icon { opacity: 1; color: var(--accent); }
+  td { padding: 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tbody tr:hover { background: rgba(88,166,255,0.04); }
+
+  .rank { font-weight: 700; color: var(--text-muted); width: 48px; text-align: center; }
+  .rank-1 { color: #ffd700; }
+  .rank-2 { color: #c0c0c0; }
+  .rank-3 { color: #cd7f32; }
+
+  .system-name { font-weight: 600; }
+  .model-name { color: var(--text-muted); font-size: 0.9em; }
+
+  .score { font-weight: 600; text-align: center; white-space: nowrap; }
+  .score-high { color: var(--green); }
+  .score-mid { color: var(--yellow); }
+  .score-low { color: var(--red); }
+
+  .date-col { color: var(--text-muted); font-size: 0.85em; white-space: nowrap; }
+
+  .empty-state {
+    text-align: center; padding: 60px 20px; color: var(--text-muted);
+  }
+  .empty-state .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+  .empty-state h2 { font-size: 1.4em; margin-bottom: 8px; color: var(--text); }
+  .empty-state p { margin-bottom: 6px; line-height: 1.7; }
+  .empty-state a { color: var(--accent); text-decoration: none; }
+  .empty-state a:hover { text-decoration: underline; }
+
+  .submissions-link { text-align: center; margin-top: 20px; }
+  .submissions-link a { color: var(--accent); text-decoration: none; font-size: 0.9em; }
+
+  footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 30px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    header { padding: 24px 0 12px; }
+    header h1 { font-size: 1.5em; }
+    .controls input { min-width: 100%; }
+    th, td { padding: 8px 6px; font-size: 12px; }
+    table { min-width: 700px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="index.html">AMBench</a> / Leaderboard</h1>
+    <p>Ranked evaluation of agent memory systems</p>
+    <div class="entry-count" id="entryCount"></div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search by system name or model..." oninput="filterAndRender()">
+  </div>
+
+  <div class="table-wrap" id="tableWrap">
+    <table>
+      <thead id="tableHead"></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="submissions-link">
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/CONTRIBUTING.md">How to submit your system &rarr;</a>
+  </div>
+
+  <footer>
+    <p><a href="index.html">Home</a> &middot; <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench">GitHub</a> &middot; <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/CONTRIBUTING.md">Submit via PR</a></p>
+  </footer>
+</div>
+
+<script>
+const SCORE_COLS = [
+  { key: 'overall', label: 'Overall' },
+  { key: 'factual', label: 'Factual' },
+  { key: 'experiential', label: 'Experiential' },
+  { key: 'working', label: 'Working' },
+  { key: 'temporal', label: 'Temporal' },
+  { key: 'multimodal', label: 'Multimodal' },
+  { key: 'security', label: 'Security' },
+  { key: 'multi-agent', label: 'Multi-Agent' },
+];
+
+const STATIC_COLS = [
+  { key: 'rank',    label: 'Rank', sortKey: d => d.rank },
+  { key: 'system',  label: 'System', sortKey: d => d.system?.toLowerCase() },
+  { key: 'model',   label: 'Model', sortKey: d => d.model?.toLowerCase() },
+];
+
+let allData = [];
+let sortKey = 'overall';
+let sortDir = -1;
+
+function scoreClass(v) {
+  if (v == null) return '';
+  if (v >= 0.8) return 'score-high';
+  if (v >= 0.5) return 'score-mid';
+  return 'score-low';
+}
+
+function scoreHTML(v) {
+  if (v == null) return '<span class="score">—</span>';
+  const cls = scoreClass(v);
+  return `<span class="score ${cls}">${(v * 100).toFixed(0)}</span>`;
+}
+
+function renderHead() {
+  const allCols = [...STATIC_COLS, ...SCORE_COLS, { key: 'date', label: 'Date', sortKey: d => d.date }];
+  const html = allCols.map(col => {
+    const active = sortKey === col.key;
+    const arrow = active ? (sortDir === 1 ? '&#9650;' : '&#9660;') : '&#9650;&#9660;';
+    return `<th data-key="${col.key}" class="${active ? 'sorted' : ''}" onclick="setSort('${col.key}')"><span class="sort-icon">${arrow}</span> ${col.label}</th>`;
+  }).join('');
+  document.getElementById('tableHead').innerHTML = '<tr>' + html + '</tr>';
+}
+
+function renderBody(data) {
+  const tbody = document.getElementById('tableBody');
+  if (!data.length) {
+    tbody.innerHTML = '';
+    document.getElementById('entryCount').textContent = '0 entries';
+    document.getElementById('tableWrap').innerHTML = `
+      <div class="empty-state">
+        <div class="icon">&#128202;</div>
+        <h2>No submissions yet</h2>
+        <p>Be the first to submit your memory system!</p>
+        <p>Run the harness on your system, create a submission JSON following <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/leaderboard/template.json">template.json</a>, and open a PR.</p>
+        <p style="margin-top:12px"><a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/CONTRIBUTING.md">View submission guide &rarr;</a></p>
+      </div>
+    `;
+    return;
+  }
+  const html = data.map(d => {
+    return '<tr>' +
+      `<td class="rank rank-${d.rank}">${d.rank}</td>` +
+      `<td><span class="system-name">${esc(d.system)}</span></td>` +
+      `<td><span class="model-name">${esc(d.model)}</span></td>` +
+      SCORE_COLS.map(c => `<td>${scoreHTML(d.scores?.[c.key])}</td>`).join('') +
+      `<td class="date-col">${esc(d.date)}</td>` +
+    '</tr>';
+  }).join('');
+  tbody.innerHTML = html;
+  document.getElementById('entryCount').textContent = `${data.length} entr${data.length === 1 ? 'y' : 'ies'}`;
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function setSort(key) {
+  if (sortKey === key) { sortDir = -sortDir; }
+  else { sortKey = key; sortDir = -1; }
+  filterAndRender();
+}
+
+function getSortFn(key) {
+  const col = [...STATIC_COLS, ...SCORE_COLS, { key: 'date', sortKey: d => d.date }].find(c => c.key === key);
+  if (col && col.sortKey) return col.sortKey;
+  if (key === 'overall' || SCORE_COLS.some(c => c.key === key)) return d => d.scores?.[key] ?? -1;
+  return d => String(d[key] ?? '').toLowerCase();
+}
+
+function filterAndRender() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  let filtered = q ? allData.filter(d =>
+    (d.system && d.system.toLowerCase().includes(q)) ||
+    (d.model && d.model.toLowerCase().includes(q))
+  ) : allData;
+
+  const fn = getSortFn(sortKey);
+  filtered.sort((a, b) => {
+    const va = fn(a), vb = fn(b);
+    if (va == null && vb == null) return 0;
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    return va < vb ? sortDir : va > vb ? -sortDir : 0;
+  });
+
+  renderHead();
+  renderBody(filtered);
+}
+
+async function load() {
+  try {
+    const resp = await fetch('leaderboard/results.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    allData = Array.isArray(data) ? data : [];
+  } catch (e) {
+    allData = [];
+  }
+  filterAndRender();
+}
+
+load();
+</script>
+</body>
+</html>

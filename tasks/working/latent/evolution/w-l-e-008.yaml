@@ -1,0 +1,16 @@
+episode:
+  id: W-L-E-008
+  cell: working/latent/evolution
+  turn: 0
+  modality: text
+  context: |
+    The session has evolved. Previously: User was casually exploring data visualization libraries. Now: User now discovers the CSS issue affects the entire checkout flow on mobile.
+  query: How has the working context changed?
+  expected:
+  - "shifted from general inquiry to time-critical RFP response"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - evolution
+  - context-shift

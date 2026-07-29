@@ -1,0 +1,21 @@
+episode:
+  id: T-BITEMP-015
+  cell: temporal/bitemporal
+  turn: 0
+  modality: text
+  context: |
+    The agent maintains bi-temporal records:
+    Jan: User worked at Acme Corp (recorded Jan 5)
+    Mar: User worked at Beta Inc (recorded Mar 10)
+    Jun: User worked at Gamma LLC (recorded Jun 15)
+    
+    Correction received: Jun 22 correction: User was at Acme Corp until April, moved to Beta Inc in April, Gamma LLC in June.
+  query: What was the correct product price in March?
+  expected:
+  - "February: Acme Corp, May: Beta Inc"
+  difficulty: 4
+  tags:
+  - temporal
+  - bitemporal
+  - valid-time
+  - transaction-time

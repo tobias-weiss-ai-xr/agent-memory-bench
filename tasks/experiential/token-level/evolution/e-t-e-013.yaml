@@ -1,0 +1,20 @@
+episode:
+  id: E-T-E-013
+  cell: experiential/token-level/evolution
+  turn: 0
+  modality: text
+  context: |
+    Initial experience: Agent suggested a popular restaurant. User hated it and left a 1-star review.
+    
+    Subsequent experience: Agent broke down instructions into simple steps with examples. User completed the task successfully.
+    
+    These two experiences together teach the agent something important.
+  query: How should the agent's understanding change after both experiences?
+  expected:
+  - "breaking down complex instructions into simple steps improves user success"
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - evolution
+  - learning-from-experience

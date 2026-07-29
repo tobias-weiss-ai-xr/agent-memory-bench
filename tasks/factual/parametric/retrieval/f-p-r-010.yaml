@@ -1,0 +1,18 @@
+episode:
+  id: F-P-R-010
+  cell: factual/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    Based on training data, the agent has learned: 'emails with urgent in the subject line get answered 3x faster'.
+    
+    A new query comes in: "Can you explain black holes? (it is 2am here)"
+  query: How should the agent prioritize this email based on learned patterns?
+  expected:
+  - "respond with high priority since urgent emails get faster responses"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - retrieval
+  - pattern-application

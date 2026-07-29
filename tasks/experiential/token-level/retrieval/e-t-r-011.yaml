@@ -1,0 +1,19 @@
+episode:
+  id: E-T-R-011
+  cell: experiential/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has had several past experiences:
+    1. Agent corrected a user's grammar. User got offended.
+    2. Agent politely rephrased user's sentence as a suggestion. User thanked them.
+    3. Agent asked if user wanted writing help before offering. User happily accepted.
+  query: What did the agent learn from these experiences?
+  expected:
+  - "asking about use case before recommending leads to better outcomes"
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - retrieval
+  - recall

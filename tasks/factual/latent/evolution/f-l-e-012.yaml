@@ -1,0 +1,17 @@
+episode:
+  id: F-L-E-012
+  cell: factual/latent/evolution
+  turn: 0
+  modality: text
+  context: |
+    Initial clues: User mentions they love cooking and follow 20 food blogs. Later, additional information emerges: User asks about restaurant supply stores and commercial kitchen equipment. The agent must update its latent understanding.
+  query: How should the agent's understanding change based on the new information?
+  expected:
+  - "user is a serious photography enthusiast"
+  distractors: ['user is a home cooking enthusiast']
+  difficulty: 4
+  tags:
+  - factual
+  - latent
+  - evolution
+  - revised-inference

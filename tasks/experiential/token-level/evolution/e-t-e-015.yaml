@@ -1,0 +1,20 @@
+episode:
+  id: E-T-E-015
+  cell: experiential/token-level/evolution
+  turn: 0
+  modality: text
+  context: |
+    Initial experience: Agent suggested a popular restaurant. User hated it and left a 1-star review.
+    
+    Subsequent experience: Agent gave a comprehensive answer with examples. User said it was perfect.
+    
+    These two experiences together teach the agent something important.
+  query: How should the agent's understanding change after both experiences?
+  expected:
+  - "personalized recommendations based on user preferences work better than popularity-based ones"
+  difficulty: 3
+  tags:
+  - experiential
+  - token-level
+  - evolution
+  - learning-from-experience

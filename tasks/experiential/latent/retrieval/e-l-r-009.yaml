@@ -1,0 +1,19 @@
+episode:
+  id: E-L-R-009
+  cell: experiential/latent/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has built a deep understanding of this user over time:
+    The user values concise answers, prefers morning interactions, is a senior developer, and gets frustrated with oversimplified explanations.
+    
+    The user asks a complex technical question at 8am.
+  query: How should the agent respond to support this user?
+  expected:
+  - "create a structured plan with visual elements and provide encouragement"
+  difficulty: 4
+  tags:
+  - experiential
+  - latent
+  - retrieval
+  - deep-insight

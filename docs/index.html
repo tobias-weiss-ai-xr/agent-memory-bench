@@ -5,55 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMBench — Agent Memory Benchmark</title>
 <style>
-  :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --accent: #58a6ff; --green: #3fb950; --orange: #d29922; --red: #f85149; }
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --red: #f85149;
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-  
-  header { text-align: center; padding: 40px 0 20px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
-  header h1 { font-size: 2.5em; margin-bottom: 10px; }
-  header p { color: #8b949e; font-size: 1.1em; }
-  header .badges { margin: 15px 0; }
+  body {
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  header { text-align: center; padding: 48px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+  header h1 { font-size: 2.8em; margin-bottom: 8px; letter-spacing: -0.02em; }
+  header .tagline { color: var(--text-muted); font-size: 1.15em; margin-bottom: 12px; }
+  header .badges { margin: 14px 0; }
   header .badges img { height: 20px; margin: 2px; }
-  
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
-  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; }
-  .stat-card .value { font-size: 2em; font-weight: bold; color: var(--accent); }
-  .stat-card .label { font-size: 0.85em; color: #8b949e; margin-top: 5px; }
-  
-  .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-  .controls input, .controls select { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
-  .controls input { flex: 1; min-width: 200px; }
-  
-  .cell-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; margin-bottom: 30px; }
-  .cell-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 15px; cursor: pointer; transition: border-color 0.2s; }
-  .cell-card:hover { border-color: var(--accent); }
-  .cell-card .name { font-weight: 600; }
-  .cell-card .count { font-size: 0.9em; color: #8b949e; }
-  .cell-card .bar { height: 4px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; }
-  .cell-card .bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
-  .cell-card .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; margin: 2px; }
-  .tag-domain { background: #1f6feb33; color: #58a6ff; }
-  .tag-factual { background: #3fb95033; color: #3fb950; }
-  .tag-experiential { background: #d2992233; color: #d29922; }
-  .tag-working { background: #f8514933; color: #f85149; }
-  
-  .task-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-  .task-table th, .task-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
-  .task-table th { color: #8b949e; font-weight: 600; font-size: 0.85em; }
-  .task-table tr:hover { background: var(--card); }
-  
-  .diff-1 { color: var(--green); } .diff-2 { color: var(--green); } .diff-3 { color: var(--orange); }
-  .diff-4 { color: var(--red); } .diff-5 { color: var(--red); font-weight: bold; }
-  
-  footer { text-align: center; padding: 30px; color: #8b949e; font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 30px; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 36px; }
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 18px 14px; text-align: center;
+  }
+  .stat-card .value { font-size: 1.8em; font-weight: 700; color: var(--accent); }
+  .stat-card .label { font-size: 0.8em; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 36px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 28px 22px; text-decoration: none; color: var(--text);
+    transition: border-color 0.2s, transform 0.15s; position: relative; overflow: hidden;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card .icon { font-size: 2em; margin-bottom: 10px; }
+  .card h3 { font-size: 1.2em; margin-bottom: 6px; }
+  .card p { color: var(--text-muted); font-size: 0.9em; }
+  .card .arrow { position: absolute; right: 20px; bottom: 20px; color: var(--accent); font-size: 1.3em; }
+
+  .links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+  .links a {
+    padding: 8px 18px; border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text); text-decoration: none; font-size: 0.9em; transition: border-color 0.2s;
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .about { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+  .about h3 { font-size: 1.1em; margin-bottom: 10px; color: var(--text); }
+  .about p { color: var(--text-muted); font-size: 0.92em; line-height: 1.7; margin-bottom: 8px; }
+  .about .highlight { color: var(--green); font-weight: 600; }
+  .about .note { font-size: 0.85em; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 12px; }
+  .about .note a { color: var(--accent); text-decoration: none; }
+  .about .note a:hover { text-decoration: underline; }
+
+  footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.85em; border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    .cards { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <h1>🔬 AMBench</h1>
-    <p>Unified Benchmark for Agent Memory Systems</p>
+    <h1>AMBench</h1>
+    <p class="tagline">Unified Benchmark for Agent Memory Systems</p>
     <div class="badges">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT">
       <img src="https://img.shields.io/github/actions/workflow/status/tobias-weiss-ai-xr/agent-memory-bench/validate.yml?label=CI" alt="CI">
@@ -63,113 +89,62 @@
 
   <div class="stats" id="stats"></div>
 
-  <div class="controls">
-    <input type="text" id="search" placeholder="Search tasks by ID, cell, or tag..." oninput="render()">
-    <select id="cellFilter" onchange="render()">
-      <option value="">All cells</option>
-    </select>
-    <select id="diffFilter" onchange="render()">
-      <option value="">All difficulties</option>
-      <option value="1">Level 1 (basic)</option>
-      <option value="2">Level 2</option>
-      <option value="3">Level 3</option>
-      <option value="4">Level 4</option>
-      <option value="5">Level 5 (complex)</option>
-    </select>
+  <div class="cards">
+    <a href="leaderboard.html" class="card">
+      <div class="icon">&#9878;</div>
+      <h3>Leaderboard</h3>
+      <p>Ranked evaluation results for submitted memory systems. Sort, filter, and compare scores across all benchmark categories.</p>
+      <span class="arrow">&rarr;</span>
+    </a>
+    <a href="tasks.html" class="card">
+      <div class="icon">&#9744;</div>
+      <h3>Task Browser</h3>
+      <p>Explore benchmark coverage across the 27-cell taxonomy. View task counts, difficulty distributions, and task details per cell.</p>
+      <span class="arrow">&rarr;</span>
+    </a>
   </div>
 
-  <div id="taskList"></div>
-  
+  <div class="links">
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/README.md">README</a>
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/CONTRIBUTING.md">Contributing</a>
+    <a href="specification.md">Specification</a>
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench">GitHub</a>
+  </div>
+
+  <div class="about">
+    <h3>About AMBench</h3>
+    <p>AMBench is the first benchmark to provide <span class="highlight">full taxonomic coverage</span> of the agent memory design space &mdash; <strong>27 core cells</strong> spanning 3 functions (factual, experiential, working) &times; 3 forms (token-level, parametric, latent) &times; 3 dynamics (formation, retrieval, evolution), plus <strong>4 extended dimensions</strong> (temporal, multimodal, security, multi-agent).</p>
+    <p>Submit your memory system via PR and appear on the leaderboard. All submissions are automatically validated and ranked.</p>
+    <div class="note">
+      The leaderboard uses a PR-based pipeline &mdash; add a submission JSON to <code>leaderboard/submissions/</code> following <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/blob/main/leaderboard/template.json">template.json</a> and open a pull request.
+    </div>
+  </div>
+
   <footer>
-    <p>AMBench v0.1 — <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench" style="color: var(--accent)">GitHub</a> · 
-    <a href="docs/specification.md" style="color: var(--accent)">Specification</a> · 
-    <a href="docs/leaderboard.md" style="color: var(--accent)">Leaderboard</a></p>
+    <p>AMBench &mdash; MIT License &middot; <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench">GitHub</a></p>
   </footer>
 </div>
 
 <script>
-const dataUrl = 'data.json';
-
 async function load() {
-  const resp = await fetch(dataUrl);
-  const data = await resp.json();
-  
-  renderStats(data);
-  populateFilter(data);
-  window._data = data;
-  render();
-}
+  try {
+    const resp = await fetch('data.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
 
-function renderStats(data) {
-  const cells = Object.values(data.cells).reduce((a,b) => a+b, 0);
-  const core = Object.entries(data.cells).filter(([k]) => k.split('/').length === 3).length;
-  document.getElementById('stats').innerHTML = `
-    <div class="stat-card"><div class="value">${data.total_tasks}</div><div class="label">Total Tasks</div></div>
-    <div class="stat-card"><div class="value">${core}</div><div class="label">Core Cells Covered</div></div>
-    <div class="stat-card"><div class="value">${Object.keys(data.cells).length}</div><div class="label">Total Cell Groups</div></div>
-    <div class="stat-card"><div class="value">${data.tasks.filter(t => t.difficulty >= 4).length}</div><div class="label">Hard Tasks (4-5)</div></div>
-    <div class="stat-card"><div class="value">${data.tasks.filter(t => t.modality !== 'text').length}</div><div class="label">Multimodal Tasks</div></div>
-    <div class="stat-card"><div class="value">${[...new Set(data.tasks.flatMap(t => t.tags))].length}</div><div class="label">Unique Tags</div></div>
-  `;
-}
+    const coreCells = Object.keys(data.cells).filter(k => k.split('/').length === 3).length;
+    const hardTasks = data.tasks ? data.tasks.filter(t => t.difficulty >= 4).length : 0;
 
-function populateFilter(data) {
-  const cells = [...new Set(data.tasks.map(t => t.cell))].sort();
-  const sel = document.getElementById('cellFilter');
-  cells.forEach(c => {
-    const opt = document.createElement('option');
-    opt.value = c;
-    opt.textContent = c;
-    sel.appendChild(opt);
-  });
+    document.getElementById('stats').innerHTML = [
+      { value: data.total_tasks, label: 'Total Tasks' },
+      { value: coreCells, label: 'Core Cells' },
+      { value: Object.keys(data.cells).length, label: 'Cell Groups' },
+      { value: hardTasks, label: 'Hard Tasks (4-5)' },
+    ].map(s => `<div class="stat-card"><div class="value">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+  } catch (e) {
+    document.getElementById('stats').innerHTML = `<div class="stat-card"><div class="value">?</div><div class="label">Loading failed</div></div>`;
+  }
 }
-
-function tagClass(cell) {
-  if (cell.startsWith('factual')) return 'tag-factual';
-  if (cell.startsWith('experiential')) return 'tag-experiential';
-  if (cell.startsWith('working')) return 'tag-working';
-  return 'tag-domain';
-}
-
-function render() {
-  const data = window._data;
-  if (!data) return;
-  
-  const q = document.getElementById('search').value.toLowerCase();
-  const cellF = document.getElementById('cellFilter').value;
-  const diffF = document.getElementById('diffFilter').value;
-  
-  const filtered = data.tasks.filter(t => {
-    if (cellF && t.cell !== cellF) return false;
-    if (diffF && t.difficulty !== parseInt(diffF)) return false;
-    if (q && !t.id.toLowerCase().includes(q) && !t.cell.toLowerCase().includes(q) && !t.tags.some(tg => tg.toLowerCase().includes(q))) return false;
-    return true;
-  });
-  
-  const byCell = {};
-  filtered.forEach(t => {
-    if (!byCell[t.cell]) byCell[t.cell] = [];
-    byCell[t.cell].push(t);
-  });
-  
-  let html = '<table class="task-table"><tr><th>ID</th><th>Cell</th><th>Difficulty</th><th>Modality</th><th>Tags</th></tr>';
-  Object.entries(byCell).sort().forEach(([cell, tasks]) => {
-    tasks.forEach(t => {
-      html += `<tr>
-        <td><strong>${t.id}</strong></td>
-        <td><span class="tag ${tagClass(cell)}">${cell}</span></td>
-        <td class="diff-${t.difficulty}">${'★'.repeat(t.difficulty)}${'☆'.repeat(5-t.difficulty)}</td>
-        <td>${t.modality}</td>
-        <td>${t.tags.slice(0,3).map(tg => `<span class="tag ${tagClass(cell)}">${tg}</span>`).join(' ')}</td>
-      </tr>`;
-    });
-  });
-  html += '</table>';
-  html += `<p style="margin-top:10px;color:#8b949e">${filtered.length} tasks shown</p>`;
-  
-  document.getElementById('taskList').innerHTML = html;
-}
-
 load();
 </script>
 </body>

@@ -1,0 +1,16 @@
+episode:
+  id: M-EMBODIED-014
+  cell: multimodal/embodied
+  turn: 0
+  modality: visual_to_text
+  context: |
+    The agent has an embodied presence and records:
+    The robot navigates a warehouse. Sensors detect: shelf A3 has 12 boxes of SKU-401, shelf B7 has 5 boxes of SKU-401, and the packing station needs 8 boxes. The robot has a payload capacity of 6 boxes.
+  query: What is the status of each floor on the construction site?
+  expected:
+  - "no, total available SKU-401 is 17 boxes but payload capacity is only 6 boxes"
+  difficulty: 4
+  tags:
+  - multimodal
+  - embodied
+  - embodied

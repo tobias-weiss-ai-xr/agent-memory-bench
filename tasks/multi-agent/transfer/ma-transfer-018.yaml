@@ -1,0 +1,15 @@
+episode:
+  id: MA-TRANSFER-018
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: |
+    Agent Expert-Alpha has specialized knowledge: "Users from the finance sector require SOC2 compliance documentation before any demo" This knowledge is transferred to Agent Agent-Beta, who now faces: a prospect from a major bank requests a product demo
+  query: What should Agent {target} do before scheduling the demo?
+  expected:
+  - "request SOC2 compliance documentation before proceeding with the demo"
+  difficulty: 3
+  tags:
+  - multi-agent
+  - knowledge-transfer
+  - technical

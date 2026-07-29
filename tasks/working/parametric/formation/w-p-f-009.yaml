@@ -1,0 +1,19 @@
+episode:
+  id: W-P-F-009
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent is working on a codebase with these conventions:
+    Functions are named with snake_case. Constants are UPPER_CASE. Classes are PascalCase. All functions must have type hints.
+    
+    The agent needs to apply these patterns to write new code.
+  query: How should database queries be constructed for security?
+  expected:
+  - "use parameterized statements"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - pattern-formation

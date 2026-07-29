@@ -1,0 +1,19 @@
+episode:
+  id: F-L-R-010
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: |
+    From our conversations, here is what I know about you:
+    You work in tech, live in a cold climate city, and have mentioned skiing three times this week.
+    
+    Based on this information, what can I infer about your hobbies?
+  query: What might the user need help with for their trip?
+  expected:
+  - "balancing childcare with work during core hours"
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - inference

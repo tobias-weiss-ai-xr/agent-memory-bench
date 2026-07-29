@@ -1,0 +1,16 @@
+episode:
+  id: F-P-E-017
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent initially learned: users prefer text-based interfaces. After processing new data showing desktop traffic now equals mobile, the agent updates its understanding to: desktop and mobile usage are now balanced.
+  query: How did the agent's understanding change?
+  expected:
+  - "desktop and mobile usage are now balanced"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - pattern-update

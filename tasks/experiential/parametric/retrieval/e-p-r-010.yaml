@@ -1,0 +1,19 @@
+episode:
+  id: E-P-R-010
+  cell: experiential/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has learned from thousands of support interactions. The key patterns are:
+    Users reporting 'sync error' typically have full storage. Clearing cache resolves 80% of cases.
+    
+    A user now reports: "The app is running really slowly today"
+  query: Based on past experience patterns, what is the likely issue and recommended action?
+  expected:
+  - "check WiFi signal strength and recommend switching to wired connection"
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - retrieval
+  - apply-pattern

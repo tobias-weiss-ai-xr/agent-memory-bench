@@ -1,0 +1,16 @@
+episode:
+  id: M-EMBODIED-018
+  cell: multimodal/embodied
+  turn: 0
+  modality: visual_to_text
+  context: |
+    The agent has an embodied presence and records:
+    The robot navigates a warehouse. Sensors detect: shelf A3 has 12 boxes of SKU-401, shelf B7 has 5 boxes of SKU-401, and the packing station needs 8 boxes. The robot has a payload capacity of 6 boxes.
+  query: What action should the arm take for a blue square part?
+  expected:
+  - "floor 3: steel frame completed, floor 2: concrete pouring in progress, floor 1: foundation done"
+  difficulty: 4
+  tags:
+  - multimodal
+  - embodied
+  - embodied

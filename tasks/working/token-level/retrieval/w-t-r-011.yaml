@@ -1,0 +1,17 @@
+episode:
+  id: W-T-R-011
+  cell: working/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent is maintaining context about:
+    Active ticket queue: TICK-101 (critical, assigned to Alice), TICK-102 (medium, unassigned), TICK-103 (low, in review). Sprint: current sprint ends Friday. Standup: 10am daily.
+  query: What is the current sprint deadline and standup time?
+  expected:
+  - "Project Phoenix"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - retrieval
+  - context-recall

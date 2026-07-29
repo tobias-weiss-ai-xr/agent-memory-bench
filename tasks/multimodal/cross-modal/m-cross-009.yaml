@@ -1,0 +1,18 @@
+episode:
+  id: M-CROSS-009
+  cell: multimodal/cross-modal
+  turn: 0
+  modality: text_to_visual
+  context: |
+    The agent encountered information in one modality and must retrieve it in another:
+    text: Meeting notes: Product launch March 15, target audience 25-35 tech professionals, key feature is AI-powered analytics
+    
+    The agent must use this stored information to answer a query in a different modality.
+  query: What are the sprint 12 tasks shown on the whiteboard?
+  expected:
+  - "complete payment integration, fix login bug, update API docs"
+  difficulty: 4
+  tags:
+  - multimodal
+  - cross-modal
+  - cross-modal

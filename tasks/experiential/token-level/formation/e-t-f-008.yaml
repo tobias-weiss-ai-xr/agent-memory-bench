@@ -1,0 +1,17 @@
+episode:
+  id: E-T-F-008
+  cell: experiential/token-level/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent experienced the following interaction:
+    During a tutoring session, the student struggled with fractions. The agent explained with pizza slices. Student said "Oh, now I get it!"
+  query: What happened in this experience?
+  expected:
+  - "a user got a recipe recommendation and reported success"
+  difficulty: 2
+  tags:
+  - experiential
+  - token-level
+  - formation
+  - episodic

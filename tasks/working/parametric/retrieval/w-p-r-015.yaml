@@ -1,0 +1,19 @@
+episode:
+  id: W-P-R-015
+  cell: working/parametric/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has been following these project conventions:
+    All commits must reference a JIRA ticket. Commit format: 'PROJ-123: description'. Code review requires at least one approval.
+    
+    The agent encounters a situation: the agent needs to add a new column to the users table
+  query: What should the agent do based on the project conventions?
+  expected:
+  - "log at WARN level since it is a recoverable issue"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - retrieval
+  - apply-convention

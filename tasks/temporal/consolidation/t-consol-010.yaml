@@ -1,0 +1,20 @@
+episode:
+  id: T-CONSOL-010
+  cell: temporal/consolidation
+  turn: 0
+  modality: text
+  context: |
+    Across multiple sessions, the agent gathered information:
+    Session 1: User discussed their vacation to Japan. Liked Tokyo, loved Kyoto.
+    Session 2: User mentioned planning another trip, considering South Korea.
+    Session 3: User asked about flights to Seoul in April.
+    
+    After a consolidation phase, the agent needs to integrate this knowledge.
+  query: What is the user's consolidated travel plan based on all sessions?
+  expected:
+  - "the user traveled to Japan, loved Kyoto, and is planning a trip to Seoul in April"
+  difficulty: 4
+  tags:
+  - temporal
+  - consolidation
+  - memory-consolidation

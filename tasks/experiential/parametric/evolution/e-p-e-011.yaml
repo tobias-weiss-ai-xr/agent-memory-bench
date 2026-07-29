@@ -1,0 +1,17 @@
+episode:
+  id: E-P-E-011
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent had a fixed policy based on past experiences: always offer a refund when users complain. However, a new experience contradicts this: A user complained but explicitly said 'I do not want a refund, I just want you to fix it'. The agent must update its policy.
+  query: How should the agent update its policy?
+  expected:
+  - "ask about communication channel preference"
+  distractors: ['always offer a refund when users complain']
+  difficulty: 4
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - policy-update

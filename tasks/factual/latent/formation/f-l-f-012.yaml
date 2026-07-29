@@ -1,0 +1,16 @@
+episode:
+  id: F-L-F-012
+  cell: factual/latent/formation
+  turn: 0
+  modality: text
+  context: |
+    During conversation, Alice mentions she is looking at rain boots and umbrellas online, and asks about indoor activities for the weekend.
+  query: What can be inferred about the weather where Alice is?
+  expected:
+  - "he just completed a major project or release"
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - formation
+  - implicit-inference

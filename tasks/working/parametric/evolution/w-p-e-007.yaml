@@ -1,0 +1,19 @@
+episode:
+  id: W-P-E-007
+  cell: working/parametric/evolution
+  turn: 0
+  modality: text
+  context: |
+    The team's conventions have changed:
+    All error messages returned as plain text strings
+    
+    New team decision: Tests must be written before implementation (TDD)
+  query: What is the updated convention the agent should follow?
+  expected:
+  - "error messages must use JSON format with code and message fields"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - evolution
+  - convention-update

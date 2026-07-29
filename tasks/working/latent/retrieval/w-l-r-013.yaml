@@ -1,0 +1,19 @@
+episode:
+  id: W-L-R-013
+  cell: working/latent/retrieval
+  turn: 0
+  modality: text
+  context: |
+    The agent has been holding these working context clues:
+    User mentioned budget constraints twice. User asked about free tiers. User compared pricing of 5 different tools.
+    
+    The user now asks a question that depends on understanding the full picture.
+  query: What is the user's primary concern?
+  expected:
+  - "cost and budget are the primary concern"
+  difficulty: 4
+  tags:
+  - working
+  - latent
+  - retrieval
+  - context-synthesis

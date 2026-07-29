@@ -1,0 +1,20 @@
+episode:
+  id: W-T-E-014
+  cell: working/token-level/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent is tracking a multi-step process:
+    Step 1: User reported bug BLA-101 - payment flow crashes on checkout.
+    
+    Then:
+    Step 2: Investigation reveals the database connection pool is exhausted. Max pool: 50, current: 50 active.
+  query: What is the current status of the process?
+  expected:
+  - "bug BLA-101 is assigned and fixed in branch fix/payment-validation"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - evolution
+  - status-tracking

@@ -1,0 +1,20 @@
+episode:
+  id: E-L-F-012
+  cell: experiential/latent/formation
+  turn: 0
+  modality: text
+  context: |
+    Over several interactions, the agent observed:
+    1. User asked for project management tools, then asked about time tracking, then about resource allocation.
+    2. User asked about team workflows, then about reporting, then about integration capabilities.
+    
+    What underlying pattern connects these experiences?
+  query: What is motivating the user's interests?
+  expected:
+  - "user is evaluating comprehensive project management platform for their organization"
+  difficulty: 4
+  tags:
+  - experiential
+  - latent
+  - formation
+  - latent-pattern

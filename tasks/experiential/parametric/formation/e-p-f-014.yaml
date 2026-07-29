@@ -1,0 +1,21 @@
+episode:
+  id: E-P-F-014
+  cell: experiential/parametric/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent processed multiple similar experiences:
+    Case 1: User said 'it doesn't work' - turned out they hadn't installed the update.
+    Case 2: User said 'nothing happens' - they were on wrong page.
+    Case 3: User said 'broken' - they missed a configuration step.
+    
+    A new user presents with similar symptoms: user complains about a disappointing experience
+  query: Based on learned patterns from past experiences, what should the agent do?
+  expected:
+  - "start with a simple explanation and use analogies before technical details"
+  difficulty: 4
+  tags:
+  - experiential
+  - parametric
+  - formation
+  - pattern-from-experience

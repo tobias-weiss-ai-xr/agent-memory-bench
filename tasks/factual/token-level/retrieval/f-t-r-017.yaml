@@ -1,0 +1,28 @@
+episode:
+  id: F-T-R-017
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: |
+    Throughout our conversation, the user mentioned several facts:
+    - Their name is Alice.
+    - They work in healthcare.
+    - They live in Berlin.
+    - Their phone model is Pixel 8.
+    - They have a pet cat named Oscar.
+  query: What is the user's name, profession, city, and pet?
+  expected:
+  - "Alice"
+  - "healthcare"
+  - "Berlin"
+  - "cat"
+  alternatives:
+    - ["Alice", "healthcare professional", "Berlin", "cat named Oscar"]
+    - ["Alice from Berlin", "works in healthcare", "has a cat"]
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - multi-attribute
+  - cross-session

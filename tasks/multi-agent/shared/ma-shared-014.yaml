@@ -1,0 +1,18 @@
+episode:
+  id: MA-SHARED-014
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: |
+    Multiple agents coordinate via shared state:
+    Alpha: "User authentication complete for session S-442, user ID U-901"
+    Beta: "Knowledge base lookup: U-901 has premium subscription, preferred language Spanish"
+    Gamma: "Routing decision: route to Spanish-speaking support agent"
+  query: What recommendation should the system make based on shared knowledge?
+  expected:
+  - "Q3 is positive with 12% revenue growth and 8% cost reduction, recommend expanding marketing"
+  difficulty: 3
+  tags:
+  - multi-agent
+  - shared-state
+  - coordination

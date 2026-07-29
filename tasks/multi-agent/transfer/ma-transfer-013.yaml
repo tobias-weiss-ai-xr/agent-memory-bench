@@ -1,0 +1,15 @@
+episode:
+  id: MA-TRANSFER-013
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: |
+    Agent Expert-Alpha has specialized knowledge: "Users from the finance sector require SOC2 compliance documentation before any demo" This knowledge is transferred to Agent Agent-Beta, who now faces: a prospect from a major bank requests a product demo
+  query: Which API version should Agent {target} use?
+  expected:
+  - "use API v2 for new integrations since it uses JSON"
+  difficulty: 3
+  tags:
+  - multi-agent
+  - knowledge-transfer
+  - compliance

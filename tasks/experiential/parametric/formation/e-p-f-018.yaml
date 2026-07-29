@@ -1,0 +1,21 @@
+episode:
+  id: E-P-F-018
+  cell: experiential/parametric/formation
+  turn: 0
+  modality: text
+  context: |
+    The agent processed multiple similar experiences:
+    Case 1: User angry about billing error. Apology + refund resolved it.
+    Case 2: User upset about slow service. Empathy + ETA resolved it.
+    Case 3: User frustrated with bug. Acknowledgment + workaround resolved it.
+    
+    A new user presents with similar symptoms: user says 'my app crashed'
+  query: Based on learned patterns from past experiences, what should the agent do?
+  expected:
+  - "ask whether they installed the latest update and check basic configuration first"
+  difficulty: 4
+  tags:
+  - experiential
+  - parametric
+  - formation
+  - pattern-from-experience

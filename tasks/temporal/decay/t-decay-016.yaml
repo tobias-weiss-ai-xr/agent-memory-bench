@@ -1,0 +1,21 @@
+episode:
+  id: T-DECAY-016
+  cell: temporal/decay
+  turn: 0
+  modality: text
+  context: |
+    The agent stored information at different times:
+    Jan 1: User mentioned their dog Max loves chicken flavored treats.
+    Jan 15: User said Max started a new diet.
+    Feb 1: User mentioned they adopted a second dog named Luna.
+    Current: Mar 1
+    
+    The current time is March 2026.
+  query: What dog food does Max prefer and when was this information stored?
+  expected:
+  - "Max prefers chicken flavored treats, stored on Jan 1"
+  difficulty: 3
+  tags:
+  - temporal
+  - decay
+  - memory-decay

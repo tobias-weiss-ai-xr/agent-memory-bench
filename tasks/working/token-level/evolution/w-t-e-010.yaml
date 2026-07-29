@@ -1,0 +1,20 @@
+episode:
+  id: W-T-E-010
+  cell: working/token-level/evolution
+  turn: 0
+  modality: text
+  context: |
+    The agent is tracking a multi-step process:
+    Step 1: Server load is at 80% capacity with 200 active connections.
+    
+    Then:
+    Step 2: Developer assigned to BLA-101 found the issue is in the Stripe integration. Fixed in branch fix/payment-validation.
+  query: What is the current status of the process?
+  expected:
+  - "bug BLA-101 is assigned and fixed in branch fix/payment-validation"
+  difficulty: 2
+  tags:
+  - working
+  - token-level
+  - evolution
+  - status-tracking

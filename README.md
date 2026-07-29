@@ -22,7 +22,8 @@ The [agent memory research landscape](https://github.com/tobias-weiss-ai-xr/agen
 | LoCoMo | 1 | Temporal, multimodal, experiential, working |
 | LongMemEval | 1 | Everything except factual/token-level |
 | MemBench | ~11 | Experiential, temporal, multimodal |
-| **AMBench** | **27** | **Full coverage** |
+| [Vectorize AMB](https://github.com/vectorize-io/agent-memory-benchmark) | ~5 scenarios | No taxonomy — covers practical scenarios but not the 27-cell design space |
+| **AMBench** | **27 + 4 ext.** | **Full coverage** |
 
 ## What AMBench Covers
 
@@ -44,6 +45,23 @@ The [agent memory research landscape](https://github.com/tobias-weiss-ai-xr/agen
 | 👥 Multi-agent | Shared memory, experience transfer | 5 |
 
 **Total: 147 core + 30 extended = 177 tasks**
+
+## Why AMBench Over Alternatives
+
+Vectorize's [AMB](https://github.com/vectorize-io/agent-memory-benchmark) is the closest existing benchmark — both focus on agent memory evaluation with cost tracking and open results. However, AMBench differs in key ways:
+
+| Dimension | Vectorize AMB | AMBench |
+|-----------|--------------|---------|
+| **Coverage** | ~5 practical scenarios (beam, lifebench, locomo, longmemeval, personamem) | 27 taxonomy cells + 4 extended dimensions (177 tasks) |
+| **Scoring** | Single LLM-as-judge (Gemini) | 4 strategies (exact, keyword, LLM-judge, auto) |
+| **Vendor lock-in** | Gemini-only for generation + judging | Any OpenAI-compatible API via LiteLLM |
+| **Task validation** | None | 44+ tests, YAML schema check, ID collision detection, coverage reporting |
+| **Memory isolation** | Not supported | Dual-run protocol isolates memory from reasoning |
+| **Taxonomic coverage** | No taxonomy — datasets target specific use cases | Full 3×3×3 form×function×dynamics design space |
+| **Extended dimensions** | No | Temporal (decay, consolidation, bi-temporal), multimodal, security, multi-agent |
+| **LLM dependency** | Answer generation and judging both use Gemini | Model-agnostic — swap providers without changing tasks |
+
+We benchmark memory architectures, not just memory providers. A complete memory system combines storage, retrieval, reasoning, and tool use — AMBench evaluates all of it across the full design space.
 
 ## Quick Start
 

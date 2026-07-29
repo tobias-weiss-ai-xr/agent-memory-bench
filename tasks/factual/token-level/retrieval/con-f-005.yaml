@@ -1,0 +1,16 @@
+episode:
+  id: CON-F-005
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'User preferences: prefers window seat on flights, likes chamomile tea,
+    allergic to shellfish.'
+  query: What is the user allergic to?
+  expected:
+  - shellfish
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - consistency-pair

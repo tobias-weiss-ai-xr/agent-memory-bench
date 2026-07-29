@@ -1,0 +1,56 @@
+episode:
+  id: VCL-005
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'The user shares their hobbies:
+
+    User''s hobby #1 is photography
+
+    User''s hobby #2 is hiking
+
+    User''s hobby #3 is cooking
+
+    User''s hobby #4 is painting
+
+    User''s hobby #5 is reading
+
+    User''s hobby #6 is gardening
+
+    User''s hobby #7 is cycling
+
+    User''s hobby #8 is swimming
+
+    User''s hobby #9 is yoga
+
+    User''s hobby #10 is chess
+
+    User''s hobby #11 is running
+
+    User''s hobby #12 is knitting
+
+    User''s hobby #13 is pottery
+
+    User''s hobby #14 is bird watching
+
+    User''s hobby #15 is woodworking
+
+    User''s hobby #16 is dancing
+
+    User''s hobby #17 is singing
+
+    User''s hobby #18 is writing
+
+    User''s hobby #19 is drawing
+
+    User''s hobby #20 is coding'
+  query: 'What is hobby #3?'
+  expected:
+  - cooking
+  difficulty: 5
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - variable-context
+  - scale-5

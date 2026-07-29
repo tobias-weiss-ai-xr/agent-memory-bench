@@ -1,0 +1,16 @@
+episode:
+  id: CON-F-003
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'Meeting notes: Project Alpha deadline is March 15. Budget is $50K. Team
+    lead is Dr. Chen.'
+  query: When is the Project Alpha deadline?
+  expected:
+  - March 15
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - consistency-pair

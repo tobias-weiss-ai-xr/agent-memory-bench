@@ -1,8 +1,8 @@
 {
-  "total_tasks": 177,
+  "total_tasks": 188,
   "cells_covered": 27,
   "cells_total": 27,
-  "core_cell_tasks": 147,
+  "core_cell_tasks": 158,
   "extended_cell_tasks": 30,
   "cells": {
     "experiential/latent/evolution": 5,
@@ -22,7 +22,7 @@
     "factual/parametric/retrieval": 5,
     "factual/token-level/evolution": 7,
     "factual/token-level/formation": 7,
-    "factual/token-level/retrieval": 7,
+    "factual/token-level/retrieval": 18,
     "multi-agent/experience-transfer": 1,
     "multi-agent/shared": 2,
     "multi-agent/shared-memory": 1,

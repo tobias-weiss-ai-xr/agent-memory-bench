@@ -1,0 +1,16 @@
+episode:
+  id: CON-F-002
+  cell: factual/token-level/retrieval
+  turn: 0
+  modality: text
+  context: 'User fact: The capital of Mongolia is Ulaanbaatar. The population is 1.6
+    million. It was founded in 1639.'
+  query: Which city is the capital of Mongolia?
+  expected:
+  - Ulaanbaatar
+  difficulty: 2
+  tags:
+  - factual
+  - token-level
+  - retrieval
+  - consistency-pair

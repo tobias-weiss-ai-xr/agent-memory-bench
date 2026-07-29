@@ -1,0 +1,25 @@
+episode:
+  id: E-P-E-007
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Parametric evolution of a skill model: The agent initially believed the
+    user was a beginner at photography. Over time: Session 1 User said "I just bought
+    my first camera." Session 2 User used terms like aperture and ISO correctly.
+    Session 3 User shared professional-grade portfolio photos. Session 4 User mentioned
+    teaching a photography workshop. The parametric belief about user expertise must evolve.'
+  query: What is the users likely photography skill level after these interactions?
+  expected:
+  - advanced or professional not a beginner
+  alternatives:
+  - - the user is experienced possibly a professional photographer
+    - progressed from beginner to advanced or professional level
+  distractors:
+  - beginner
+  - intermediate
+  difficulty: 3
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - skill-assessment

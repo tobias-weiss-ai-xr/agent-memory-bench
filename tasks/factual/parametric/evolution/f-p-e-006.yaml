@@ -1,0 +1,21 @@
+episode:
+  id: F-P-E-006
+  cell: factual/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'A parametric knowledge update: Initial fact was "The chemical symbol for
+    potassium is P." Correction: "Actually the chemical symbol for potassium is K
+    from the Latin word kalium." The agent must update its long-term factual knowledge.'
+  query: What is the correct chemical symbol for potassium?
+  expected:
+  - K
+  distractors:
+  - P
+  - Po
+  - Ka
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - chemistry

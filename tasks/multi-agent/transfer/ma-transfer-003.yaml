@@ -1,0 +1,20 @@
+episode:
+  id: MA-TRANSFER-003
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: 'Agent Alice was a math tutor and learned a teaching policy: "When a student
+    makes a mistake, first point out what they did right before correcting the error."
+    Agent Bob is a new writing tutor receiving Alices transferred policy.'
+  query: What teaching policy should Agent Bob apply based on Agent Alice transferred policy?
+  expected:
+  - first point out what the student did right before correcting errors
+  alternatives:
+  - - start with positive feedback then address mistakes
+    - acknowledge correct parts before giving corrections
+  difficulty: 2
+  tags:
+  - multi-agent
+  - transfer
+  - teaching
+  - policy-transfer

@@ -1,0 +1,25 @@
+episode:
+  id: M-VISUAL-004
+  cell: multimodal/visual
+  turn: 0
+  modality: visual_to_text
+  context: 'Scene description from a city park photograph: "A golden retriever
+    catches a bright blue frisbee mid-air. Behind the dog, a woman in a red dress
+    pushes a stroller along a gravel path. Three tall oak trees line the left side.
+    A clock tower in the distance reads 4:15 PM. Autumn leaves cover the ground."'
+  query: Describe the activity, the people, and the time shown in this park scene.
+  expected:
+  - golden retriever catching blue frisbee woman in red pushing stroller on gravel path 415 PM autumn
+  alternatives:
+  - - dog catching frisbee woman with stroller oak trees autumn leaves clock tower shows 415
+    - retriever mid-air catch blue frisbee red-dressed woman strolling clock at 4:15 fall season
+  modality_metadata:
+    input_type: visual
+    output_type: text
+    scene_type: outdoor_park
+  difficulty: 3
+  tags:
+  - multimodal
+  - visual
+  - scene-description
+  - detail-recall

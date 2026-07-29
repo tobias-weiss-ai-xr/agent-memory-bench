@@ -1,0 +1,21 @@
+episode:
+  id: MA-SHARED-005
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: 'A shared memory system for home automation contains conflicting entries:
+    Agent A recorded "Owner prefers bedroom temperature at 18C at night." Agent B
+    recorded "Owner set thermostat to 22C last three nights." A third agent managing
+    the bedroom climate must decide what to do.'
+  query: What should the agent do given the conflicting temperature preferences?
+  expected:
+  - set to a moderate temperature or ask the owner for current preference
+  alternatives:
+  - - use the most recent data 22C but flag the conflict
+    - default to 20C as a compromise and notify the owner
+  difficulty: 2
+  tags:
+  - multi-agent
+  - shared
+  - home-automation
+  - conflict-resolution

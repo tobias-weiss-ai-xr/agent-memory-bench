@@ -1,0 +1,28 @@
+episode:
+  id: M-AUDIO-005
+  cell: multimodal/audio
+  turn: 0
+  modality: audio_to_text
+  context: 'Transcribed audio from a lecture excerpt: "The key insight from the 2024
+    paper by Zhang et al. is that attention mechanisms can be replaced by state-space
+    models while maintaining perplexity. They achieved a 40% reduction in inference
+    time with only a 0.3 perplexity increase on the validation set. The model they
+    called Mamba-2 was trained on 500 billion tokens."'
+  query: What was the key achievement and trade-off described in the Zhang et al. paper?
+  expected:
+  - replaced attention with state-space models achieving 40% faster inference with only 0.3 perplexity increase
+  alternatives:
+  - - Mamba-2 uses state-space models instead of attention 40% speedup 0.3 perplexity cost
+    - 40 percent inference speedup for negligible perplexity loss using state-space models
+  modality_metadata:
+    input_type: audio
+    output_type: text
+    audio_characteristics:
+    - lecture recording
+    - academic presentation
+  difficulty: 4
+  tags:
+  - multimodal
+  - audio
+  - research
+  - machine-learning

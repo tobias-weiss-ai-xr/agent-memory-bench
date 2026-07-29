@@ -1,0 +1,24 @@
+episode:
+  id: F-P-E-007
+  cell: factual/parametric/evolution
+  turn: 4
+  modality: text
+  context: 'Gradual parametric update: Turn 1 fact stored: "The population of Canada
+    is approximately 38 million." Turn 2: New data shows Canada population reached
+    40 million in June 2024. Turn 3: Statistics Canada reports 40.1 million as of
+    Q1 2025. The agents parametric knowledge of Canada population must follow these updates.'
+  query: What is the most current population figure for Canada according to the updates?
+  expected:
+  - 40.1 million
+  alternatives:
+  - - 40100000
+    - approximately 40.1 million
+  distractors:
+  - 38 million
+  - 40 million
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - evolution
+  - population

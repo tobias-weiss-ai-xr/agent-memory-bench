@@ -1,0 +1,21 @@
+episode:
+  id: MA-EXPTRANS-002
+  cell: multi-agent/experience-transfer
+  turn: 0
+  modality: text
+  context: 'Agent Alpha learned from dozens of customer interactions: "Users who mention
+    a deadline in their first message are usually under high stress and need reassurance
+    before technical details." Agent Beta is now handling a new user who starts with
+    "I need this fixed by end of day."'
+  query: What should Agent Beta do based on Agent Alpha learned experience?
+  expected:
+  - provide reassurance before diving into technical details
+  - the user is likely stressed and needs empathy first
+  alternatives:
+  - - acknowledge urgency, offer reassurance, then proceed with troubleshooting
+  difficulty: 3
+  tags:
+  - multi-agent
+  - experiential-transfer
+  - customer-service
+  - empathy

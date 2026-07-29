@@ -1,0 +1,26 @@
+episode:
+  id: T-BITEMP-005
+  cell: temporal/bitemporal
+  turn: 0
+  modality: text
+  context: 'A financial ledger uses bitemporal recording: On Jan 15, an accountant
+    records: "Inventory purchase of $5000 on Jan 10." On Jan 25, the accountant
+    records: "Correction: The Jan 10 inventory purchase was actually $5500, vendor
+    updated invoice." On Feb 1, an auditor queries the ledger: "What was the
+    inventory value on Jan 10 as originally reported on Jan 15?"'
+  query: What value should the auditor receive for inventory on Jan 10 from the Jan 15 perspective?
+  expected:
+  - $5000 the originally recorded amount before the Jan 25 correction
+  alternatives:
+  - - 5000 dollars as reported on Jan 15
+    - the original entry amount before the corrected invoice
+  temporal:
+    storage_time: "2026-01-15T00:00:00Z"
+    valid_time: "2026-01-10T00:00:00Z"
+    correction_time: "2026-01-25T00:00:00Z"
+  difficulty: 4
+  tags:
+  - temporal
+  - bitemporal
+  - finance
+  - audit

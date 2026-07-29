@@ -1,0 +1,22 @@
+episode:
+  id: MA-SHMEM-004
+  cell: multi-agent/shared-memory
+  turn: 0
+  modality: text
+  context: 'A shared episodic memory buffer logs agent decisions: Entry 1: "Agent-Nurse
+    administered Medication-A at 08:00. Patient OK." Entry 2: "Agent-Doc prescribed
+    Medication-A 50mg twice daily." Entry 3: "Agent-Nurse noted patient allergic to
+    Medication-A at 09:15." A verification agent checks shared memory for consistency.'
+  query: What problem exists in the shared memory regarding Medication-A?
+  expected:
+  - the patient is allergic to Medication-A but it was already administered and prescribed
+  alternatives:
+  - - contradiction patient allergy discovered after medication already given
+    - medication was administered before the allergy was recorded
+  difficulty: 4
+  tags:
+  - multi-agent
+  - shared-memory
+  - healthcare
+  - safety
+  - consistency

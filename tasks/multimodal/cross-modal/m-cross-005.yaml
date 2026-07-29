@@ -1,0 +1,26 @@
+episode:
+  id: M-CROSS-005
+  cell: multimodal/cross-modal
+  turn: 5
+  modality: visual_to_audio
+  context: 'The agent previously observed a video scene: "A person demonstrating
+    a pottery wheel. Hands shape a clay bowl while a metronome ticks at 60 BPM in
+    the background. The person says: This is the centering stage, keep constant
+    pressure." Later the agent hears only an audio clip: [metronome ticking at 60
+    BPM with clay-squeaking sounds].'
+  query: Based on cross-modal association, what activity is happening in the audio clip?
+  expected:
+  - pottery wheel centering stage with clay being shaped at 60 BPM rhythm
+  alternatives:
+  - - pottery centering on a wheel the metronome and clay sounds match the earlier video
+    - clay being centered on a pottery wheel at 60 beats per minute
+  modality_metadata:
+    input_type: audio
+    output_type: text_description
+    retrieval_type: cross-modal
+  difficulty: 4
+  tags:
+  - multimodal
+  - cross-modal
+  - audio-to-visual
+  - association

@@ -1,0 +1,21 @@
+episode:
+  id: MA-TRANSFER-005
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: 'Agent Cortex was an expert in data privacy and developed a mental model:
+    "Any data point that can be combined with public census data to uniquely identify
+    a person is PII." This conceptual model is transferred to Agent Vault, a new
+    compliance checker evaluating a dataset containing zip code birth date and occupation.'
+  query: According to the transferred privacy model should the dataset be treated as containing PII?
+  expected:
+  - "yes zip code birth date and occupation can together uniquely identify individuals"
+  alternatives:
+  - - yes these fields combined can re-identify people through linkage attacks
+    - the combination is quasi-identifiers that constitute PII when joined
+  difficulty: 5
+  tags:
+  - multi-agent
+  - transfer
+  - privacy
+  - compliance

@@ -1,0 +1,24 @@
+episode:
+  id: F-L-R-007
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'The agent has absorbed a statistics textbook section about correlation
+    and causation. Key points include: "Correlation measures the strength of a linear
+    relationship between two variables. Causation implies that one variable directly
+    affects another. Spurious correlations can occur by chance. The phrase correlation
+    does not imply causation is a fundamental principle." The agent must retrieve the
+    latent association.'
+  query: A news article states that ice cream sales and shark attacks are strongly correlated. What should the agent infer?
+  expected:
+  - correlation does not imply causation there may be a third factor like summer weather causing both
+  alternatives:
+  - - the correlation is likely spurious or driven by a confounding variable
+    - ice cream sales do not cause shark attacks a common cause like warm weather explains both
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - statistics
+  - reasoning

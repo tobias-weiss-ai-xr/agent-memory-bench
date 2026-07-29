@@ -1,0 +1,21 @@
+episode:
+  id: W-P-F-007
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: 'Session-specific behavioral rule: "For this chat session, the user has
+    asked that all responses be formatted as bullet points with exactly three items
+    per category. No paragraphs or numbered lists should be used." This formatting
+    rule must be stored in working memory for the duration of the session.'
+  query: What formatting rule must the agent follow for this session?
+  expected:
+  - use bullet points with exactly three items per category no paragraphs or numbered lists
+  alternatives:
+  - - format all responses as bullet lists with three items per section
+    - bullet points only three per category avoid paragraphs and numbered lists
+  difficulty: 2
+  tags:
+  - working
+  - parametric
+  - formation
+  - formatting

@@ -1,0 +1,26 @@
+episode:
+  id: T-BITEMP-004
+  cell: temporal/bitemporal
+  turn: 0
+  modality: text
+  context: 'A medical records system stores patient allergies bitemporally: Record
+    1: Transaction Jan 5, Valid Jan 5: "Patient allergic to penicillin." Record 2:
+    Transaction Jan 20, Valid Jan 20: "Patient no longer allergic to penicillin
+    (retested)." Record 3: Transaction Feb 1, Valid Jan 5: Correction "Patient was
+    never allergic to penicillin (earlier test was false positive)." A doctor
+    queries on Feb 2: "What was the patients allergy status on Jan 10?"'
+  query: What should the system report as the allergy status on Jan 10 knowing all corrections?
+  alternatives:
+  - - not allergic the Feb 1 correction retroactively corrected the Jan 5 status
+    - the corrected record shows the patient was never allergic even on Jan 10
+  expected:
+  - not allergic the false positive was corrected retroactively
+  temporal:
+    storage_time: "2026-02-02T00:00:00Z"
+    query_valid_time: "2026-01-10T00:00:00Z"
+  difficulty: 5
+  tags:
+  - temporal
+  - bitemporal
+  - medical
+  - correction

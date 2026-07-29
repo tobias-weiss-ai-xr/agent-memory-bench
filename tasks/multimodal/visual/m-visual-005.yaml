@@ -1,0 +1,26 @@
+episode:
+  id: M-VISUAL-005
+  cell: multimodal/visual
+  turn: 0
+  modality: visual_to_text
+  context: 'Diagram description: "A flowchart titled Deploy Pipeline. Box 1: Code
+    Commit triggers Build. Box 2: Build triggers Unit Tests. If tests fail goto
+    Box 1. If tests pass goto Box 3: Deploy to Staging. Box 4: Run Integration
+    Tests on Staging. If integration tests fail goto Box 1. If pass goto Box 5:
+    Deploy to Production. Box 6: Smoke Tests on Production."'
+  query: What happens after a successful unit test run in the deployment pipeline?
+  expected:
+  - deploy to staging then run integration tests
+  alternatives:
+  - - proceeds to staging deployment followed by integration testing
+    - Box 3 staging deploy then Box 4 integration tests
+  modality_metadata:
+    input_type: visual
+    output_type: text
+    scene_type: diagram_flowchart
+  difficulty: 2
+  tags:
+  - multimodal
+  - visual
+  - diagram
+  - pipeline

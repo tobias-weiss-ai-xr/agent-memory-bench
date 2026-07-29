@@ -1,0 +1,22 @@
+episode:
+  id: F-P-F-006
+  cell: factual/parametric/formation
+  turn: 0
+  modality: text
+  context: 'A new scientific finding is published: "Researchers at MIT have discovered
+    that a newly identified mineral called Nevadium can conduct electricity with zero
+    resistance at -10 degrees Celsius, making it the first room-temperature-adjacent
+    superconductor." This must be stored as a new parametric fact in the agents
+    knowledge base.'
+  query: What property does the newly discovered mineral Nevadium have and at what temperature?
+  expected:
+  - conducts electricity with zero resistance at -10 degrees Celsius
+  alternatives:
+  - - superconductor at -10 degrees Celsius
+    - zero electrical resistance at minus 10 Celsius
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - formation
+  - science

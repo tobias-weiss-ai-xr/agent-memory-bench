@@ -1,0 +1,21 @@
+episode:
+  id: MA-SHMEM-005
+  cell: multi-agent/shared-memory
+  turn: 3
+  modality: text
+  context: 'A shared working memory for a travel booking system accumulates data: Write
+    1: "User wants flights to Tokyo March 15-22." Write 2: "User prefers window seats
+    and vegetarian meals." Write 3: "Budget max is $1200 for the flight." A booking
+    agent must retrieve all constraints before searching.'
+  query: What are all the constraints the booking agent must satisfy?
+  expected:
+  - flights to Tokyo March 15-22 window seat vegetarian meal budget under $1200
+  alternatives:
+  - - Tokyo round trip March 15-22 window seat veg meal max $1200
+    - destination Tokyo dates 15-22 March window vegetarian under 1200 dollars
+  difficulty: 3
+  tags:
+  - multi-agent
+  - shared-memory
+  - travel
+  - constraints

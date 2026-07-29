@@ -1,0 +1,21 @@
+episode:
+  id: MA-SHMEM-003
+  cell: multi-agent/shared-memory
+  turn: 0
+  modality: text
+  context: 'Multiple surveillance agents write to shared memory: Agent Cam-1: "Person
+    in red jacket entered building at 14:03." Agent Cam-2: "Person in red jacket
+    accessed floor 3 at 14:07." Agent Cam-3: "Person in red jacket exited stairwell
+    B at 14:12." A security coordinator agent queries the shared memory trail.'
+  query: What is the movement timeline of the person in the red jacket?
+  expected:
+  - entered building at 14:03 floor 3 at 14:07 exited stairwell B at 14:12
+  alternatives:
+  - - entered 14:03 accessed floor 3 at 14:07 left via stairwell B at 14:12
+    - 14:03 entry 14:07 floor 3 14:12 stairwell B exit
+  difficulty: 2
+  tags:
+  - multi-agent
+  - shared-memory
+  - security
+  - tracking

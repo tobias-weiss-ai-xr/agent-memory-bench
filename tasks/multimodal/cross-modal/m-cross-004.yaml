@@ -1,0 +1,27 @@
+episode:
+  id: M-CROSS-004
+  cell: multimodal/cross-modal
+  turn: 0
+  modality: text_to_visual
+  context: 'The agent has stored descriptions of three photographs: Photo A: "A
+    bustling night market in Taipei with red lanterns and steam rising from food
+    stalls." Photo B: "A quiet library with tall oak shelves, a single reading lamp
+    illuminating an open book." Photo C: "A snowy mountain peak at sunrise with
+    pink and orange clouds below the summit." The query is: "Show me the peaceful
+    scene with warm lighting and a place for quiet study."'
+  query: Which stored photo best matches this query and why?
+  expected:
+  - Photo B the quiet library with the reading lamp matches peaceful warm lighting and study
+  alternatives:
+  - - Photo B library scene because it is peaceful has warm light and is for reading
+    - the library photograph since it is described as quiet with a reading lamp
+  modality_metadata:
+    input_type: text_query
+    output_type: text_description_of_visual
+    retrieval_type: cross-modal
+  difficulty: 2
+  tags:
+  - multimodal
+  - cross-modal
+  - retrieval
+  - scene-matching

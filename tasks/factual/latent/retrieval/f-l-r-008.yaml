@@ -1,0 +1,22 @@
+episode:
+  id: F-L-R-008
+  cell: factual/latent/retrieval
+  turn: 0
+  modality: text
+  context: 'From reading biology textbooks the agent has internalized: "DNA contains
+    genetic instructions. Genes are segments of DNA that code for proteins. Each human
+    cell contains approximately 20000 to 25000 genes. Genes are located on chromosomes.
+    Humans have 23 pairs of chromosomes." This is stored in latent factual memory.'
+  query: If a human has a condition caused by a single gene mutation approximately how many other genes are unaffected?
+  alternatives:
+  - - approximately 19999 to 24999 other genes are unaffected
+    - the vast majority of the 20000 to 25000 genes remain normal
+  expected:
+  - around 20000 to 25000 genes total so 19999 to 24999 other genes are normal
+  difficulty: 3
+  tags:
+  - factual
+  - latent
+  - retrieval
+  - biology
+  - genetics

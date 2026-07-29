@@ -1,0 +1,27 @@
+episode:
+  id: T-BITEMP-003
+  cell: temporal/bitemporal
+  turn: 0
+  modality: text
+  context: 'An employee database has bitemporal tracking for John Smiths salary:
+    Transaction time (when the record was entered): March 1st. Valid time (when the
+    salary took effect): February 1st. On March 15th, a correction is entered:
+    Transaction time March 15th, Valid time February 1st, Corrected salary $75000
+    (was $70000). A query asks "What was John Smiths salary effective February 1st
+    as of March 1st?"'
+  query: What salary would be reported for John Smith effective Feb 1st from the March 1st perspective?
+  expected:
+  - $70000 the original record before the March 15th correction
+  alternatives:
+  - - 70000 because the correction had not been entered yet as of March 1st
+    - 70000 dollars the transaction time was after the query snapshot
+  temporal:
+    storage_time: "2026-03-01T00:00:00Z"
+    valid_time: "2026-02-01T00:00:00Z"
+    correction_time: "2026-03-15T00:00:00Z"
+  difficulty: 5
+  tags:
+  - temporal
+  - bitemporal
+  - salary
+  - database

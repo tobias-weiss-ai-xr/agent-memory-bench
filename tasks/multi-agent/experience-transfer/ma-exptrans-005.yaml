@@ -1,0 +1,21 @@
+episode:
+  id: MA-EXPTRANS-005
+  cell: multi-agent/experience-transfer
+  turn: 5
+  modality: text
+  context: 'Agent Delta spent a month debugging database migration scripts and learned
+    a heuristic: "If a migration fails on a foreign key constraint, check for orphaned
+    records in the child table first, not the parent table." Agent Gamma faces a failing
+    migration with a foreign key error and has access to Delta transferred memory.'
+  query: According to Delta learned experience, what should Agent Gamma check first?
+  expected:
+  - check for orphaned records in the child table
+  alternatives:
+  - - look for child records with no matching parent
+    - examine the referencing table for dangling rows
+  difficulty: 4
+  tags:
+  - multi-agent
+  - experiential-transfer
+  - database
+  - debugging

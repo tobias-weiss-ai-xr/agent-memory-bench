@@ -1,0 +1,20 @@
+episode:
+  id: MA-EXPTRANS-004
+  cell: multi-agent/experience-transfer
+  turn: 0
+  modality: text
+  context: 'Agent Ray served users in a mathematics tutoring role and learned: "When
+    a student asks the same question three times, they are not ignoring the answer — they
+    need a different explanation approach." Agent Zoe, now tutoring, has a student
+    ask "Why is negative times negative positive?" for the third time.'
+  query: What should Agent Zoe do differently based on Ray transferred experience?
+  expected:
+  - try a different explanation approach instead of repeating the same answer
+  alternatives:
+  - - use an analogy or visual explanation since repetition means the current approach isnt working
+  difficulty: 3
+  tags:
+  - multi-agent
+  - experiential-transfer
+  - education
+  - tutoring

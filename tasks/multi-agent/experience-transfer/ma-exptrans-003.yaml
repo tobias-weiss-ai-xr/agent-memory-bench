@@ -1,0 +1,21 @@
+episode:
+  id: MA-EXPTRANS-003
+  cell: multi-agent/experience-transfer
+  turn: 0
+  modality: text
+  context: 'Agent Sigma (deployed in code review) learned through painful experience:
+    "Always check for hardcoded secrets before approving any pull request. Three times
+    I missed API keys in comments." Agent Omega is now reviewing its first pull request
+    and has access to Sigma transferred experience.'
+  query: What specific check should Agent Omega prioritize based on Sigma experience?
+  expected:
+  - check for hardcoded secrets and API keys in the pull request
+  alternatives:
+  - - scan for hardcoded credentials before approving
+    - look for secrets, tokens, and passwords in code
+  difficulty: 4
+  tags:
+  - multi-agent
+  - experiential-transfer
+  - security
+  - code-review

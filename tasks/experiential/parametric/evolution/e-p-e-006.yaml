@@ -1,0 +1,24 @@
+episode:
+  id: E-P-E-006
+  cell: experiential/parametric/evolution
+  turn: 0
+  modality: text
+  context: 'Parametric evolution through repeated user interactions: User initially
+    said "Call me Dr. Smith." After several interactions the user said "You can call
+    me John." Later the user said "My friends call me Johnny." The agent must update
+    its parametric model of how to address this user based on the most recent preference.'
+  query: How should the agent address the user based on the evolved parametric preference?
+  expected:
+  - Johnny the most recent preference
+  alternatives:
+  - - Johnny since that is the current preference
+    - call the user Johnny as indicated in the latest interaction
+  distractors:
+  - Dr. Smith
+  - John
+  difficulty: 2
+  tags:
+  - experiential
+  - parametric
+  - evolution
+  - user-preference

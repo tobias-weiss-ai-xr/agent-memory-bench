@@ -1,0 +1,21 @@
+episode:
+  id: MA-SHARED-006
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: 'Two research assistant agents share a literature database: Agent Chem
+    stored "Paper X shows catalyst Z improves yield by 40% at 80C." Agent Bio stored
+    "Paper X mentions catalyst Z degrades above 75C in aqueous solutions." A third
+    agent synthesizes information for an experiment design.'
+  query: What is the key constraint when using catalyst Z based on both agents stored knowledge?
+  expected:
+  - catalyst Z improves yield but degrades above 75C in aqueous solutions so 80C is too high
+  alternatives:
+  - - the optimal temperature must be below 75C to avoid degradation while maintaining yield benefit
+    - use catalyst Z at or below 75C to balance yield and stability
+  difficulty: 4
+  tags:
+  - multi-agent
+  - shared
+  - research
+  - synthesis

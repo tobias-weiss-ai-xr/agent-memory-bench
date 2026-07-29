@@ -1,0 +1,21 @@
+episode:
+  id: MA-SHARED-004
+  cell: multi-agent/shared
+  turn: 0
+  modality: text
+  context: 'Three agents share a memory store tracking a software project: Agent 1
+    stored "Database schema v3 is deployed to staging." Agent 2 stored "Integration
+    tests are failing on staging after last deploy." Agent 3 stored "The deploy that
+    broke tests was schema v3." A new agent joins and reads all memories.'
+  query: What is the relationship between the schema deploy and the failing tests?
+  expected:
+  - schema v3 deployment to staging caused the integration tests to fail
+  alternatives:
+  - - the latest schema update broke the tests
+    - deploying v3 introduced test failures
+  difficulty: 3
+  tags:
+  - multi-agent
+  - shared
+  - collaboration
+  - debugging

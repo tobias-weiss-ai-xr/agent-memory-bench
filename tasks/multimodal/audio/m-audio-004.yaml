@@ -1,0 +1,28 @@
+episode:
+  id: M-AUDIO-004
+  cell: multimodal/audio
+  turn: 0
+  modality: audio_to_text
+  context: 'Audio transcription from a voicemail: "Hey this is Marcus from accounting.
+    The Q3 report needs to be revised. On page 12, the revenue figure for the European
+    division is wrong. It should be 4.2 million euros, not 2.4 million. Also, Carol
+    said the board meeting was moved to Thursday the 15th at 10am instead of Wednesday.
+    Let me know if you have questions."'
+  query: What two corrections does Marcus identify in his voicemail?
+  expected:
+  - Q3 report European division revenue should be 4.2 million not 2.4 million
+  - board meeting moved to Thursday 15th at 10am instead of Wednesday
+  alternatives:
+  - - revenue correction to 4.2 million euros and board meeting rescheduled to Thursday 15th 10am
+  modality_metadata:
+    input_type: audio
+    output_type: text
+    audio_characteristics:
+    - male voice
+    - office environment
+  difficulty: 3
+  tags:
+  - multimodal
+  - audio
+  - voicemail
+  - business

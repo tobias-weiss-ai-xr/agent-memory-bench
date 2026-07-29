@@ -1,0 +1,21 @@
+episode:
+  id: MA-TRANSFER-004
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: 'Agent Search learned a relevance-ranking heuristic: "For technical queries,
+    prioritize results from official documentation over forum posts, even if forum
+    posts have higher engagement scores." This policy is transferred to Agent Recommend
+    which now handles a query about "Python async best practices."'
+  query: How should Agent Recommend prioritize results using the transferred heuristic?
+  expected:
+  - prioritize official Python documentation over forum posts for async best practices
+  alternatives:
+  - - rank official docs higher than community forum posts
+    - prefer authoritative sources over crowd-sourced content
+  difficulty: 3
+  tags:
+  - multi-agent
+  - transfer
+  - search
+  - relevance

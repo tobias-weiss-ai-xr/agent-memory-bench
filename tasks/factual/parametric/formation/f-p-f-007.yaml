@@ -1,0 +1,22 @@
+episode:
+  id: F-P-F-007
+  cell: factual/parametric/formation
+  turn: 0
+  modality: text
+  context: 'New regulatory fact: "As of January 2026, the GDPR Article 45 amendment
+    requires that all AI systems processing EU citizen data must conduct an annual
+    bias audit and publish the results in a machine-readable format." This must be
+    stored as a permanent parametric fact about AI regulation.'
+  query: What does the GDPR Article 45 amendment require of AI systems processing EU citizen data?
+  expected:
+  - annual bias audit with results published in machine-readable format
+  alternatives:
+  - - yearly bias audits and publication of results in machine-readable form
+    - conduct bias audits every year and publish findings in machine-readable format
+  difficulty: 4
+  tags:
+  - factual
+  - parametric
+  - formation
+  - regulation
+  - GDPR

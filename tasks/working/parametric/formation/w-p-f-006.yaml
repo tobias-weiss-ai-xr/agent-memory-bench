@@ -1,0 +1,21 @@
+episode:
+  id: W-P-F-006
+  cell: working/parametric/formation
+  turn: 0
+  modality: text
+  context: 'New working memory rule for the current session: "When the user provides
+    a code snippet, always first check if it contains any syntax errors before
+    explaining what it does. If errors exist, list them before explaining the
+    intended functionality." This rule should be added to the session working memory.'
+  query: What is the working memory rule for handling code snippets in this session?
+  expected:
+  - first check for syntax errors and list them then explain the intended functionality
+  alternatives:
+  - - check code for syntax errors first report errors then explain what the code was meant to do
+    - identify syntax errors before explaining code purpose
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - code-review

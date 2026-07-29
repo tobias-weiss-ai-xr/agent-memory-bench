@@ -1,0 +1,28 @@
+episode:
+  id: T-CONSOL-005
+  cell: temporal/consolidation
+  turn: 15
+  modality: text
+  context: 'A user has shared scattered preferences over many sessions: Session 2:
+    "I love hiking in the mountains." Session 5: "My favorite gear brand is REI."
+    Session 7: "I am training for a marathon." Session 9: "Trail running is the
+    best combination of both my hobbies." Session 12: "I need new trail running
+    shoes." After a consolidation cycle, the system should synthesize these into
+    a coherent user model.'
+  query: What unified picture of the user emerges from these scattered statements?
+  expected:
+  - the user is an outdoor enthusiast who enjoys trail running and hiking uses REI gear and is training for a marathon
+  alternatives:
+  - - user loves outdoor activities combining hiking and running prefers REI brand training for a marathon
+    - active outdoor lifestyle mountain hiking trail running marathon training REI customer
+  consolidation:
+    type: sleep
+    cycles: 1
+    before: "2026-07-01T23:00:00Z"
+    after: "2026-07-02T07:00:00Z"
+  difficulty: 3
+  tags:
+  - temporal
+  - consolidation
+  - abstraction
+  - user-modeling

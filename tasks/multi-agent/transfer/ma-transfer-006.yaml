@@ -1,0 +1,21 @@
+episode:
+  id: MA-TRANSFER-006
+  cell: multi-agent/transfer
+  turn: 0
+  modality: text
+  context: 'Agent Linguist learned a communication pattern: "When users ask yes-no
+    questions, they often omit important context. Always ask clarifying questions
+    before answering." Agent Support receives this transferred strategy and a user
+    asks "Can I use this library?"'
+  query: What should Agent Support do following the transferred communication strategy?
+  expected:
+  - ask clarifying questions to understand the context before answering yes or no
+  alternatives:
+  - - probe for more details about the use case programming language and environment
+    - do not answer immediately first gather context about what the user wants to do
+  difficulty: 2
+  tags:
+  - multi-agent
+  - transfer
+  - communication
+  - support

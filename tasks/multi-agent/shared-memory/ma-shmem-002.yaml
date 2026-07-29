@@ -1,0 +1,21 @@
+episode:
+  id: MA-SHMEM-002
+  cell: multi-agent/shared-memory
+  turn: 0
+  modality: text
+  context: 'A swarm of inventory agents share a blackboard memory. Agent A writes:
+    "Warehouse 3 received 500 units of SKU-442 at 09:00." Agent B writes: "SKU-442
+    reorder threshold is 200 units." Agent C writes: "Current orders need 350 units
+    of SKU-442 for next week." A planning agent reads the shared memory.'
+  query: Does the warehouse have enough SKU-442 units to fulfill next week orders?
+  expected:
+  - "yes 500 units available 350 units needed surplus of 150"
+  alternatives:
+  - - yes there is enough inventory with 150 units to spare
+    - sufficient stock 500 on hand 350 required
+  difficulty: 2
+  tags:
+  - multi-agent
+  - shared-memory
+  - inventory
+  - logistics

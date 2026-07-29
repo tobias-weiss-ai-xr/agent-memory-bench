@@ -145,17 +145,51 @@ python src/harness.py --litellm --markdown results.md
 | **Multi-metric evaluation** | HELM | ✅ |
 | **Community task format** | BIG-bench | ✅ |
 | **Leaderboard** | Open LLM Leaderboard | 🚧 |
-| **Memory isolation protocol** | MemoryAgentBench | 🚧 |
+| **Memory isolation protocol** | MemoryAgentBench | ✅ |
 
 ## 🏗️ Infrastructure
 
+### Memory Isolation Protocol
+
+The memory isolation protocol measures the **marginal contribution** of a memory system by comparing performance with and without memory context. This separates the memory system's contribution from the LLM's raw reasoning ability.
+
+**Dual-Run Evaluation (`--dual-run`):**
+- For each task, the harness runs two evaluations:
+  - **Baseline run**: Evaluates the task with **empty context** — measures what the LLM can answer from parametric knowledge alone
+  - **Memory run**: Evaluates the same task with **full context** — measures the memory-assisted capability
+- **Memory contribution** = `memory_score - baseline_score` per task
+- The summary reports baseline average, memory average, and average contribution across all tasks
+
+```bash
+# Dry-run dual evaluation with mock responses
+python src/harness.py --mock --dual-run
+
+# Real evaluation (requires API key)
+python src/harness.py --model gpt-4 --dual-run
+
+# With markdown report
+python src/harness.py --mock --dual-run --markdown results/dual-run.md
+
+# Resume support: per-run state is tracked independently
+python src/harness.py --mock --dual-run --resume
+```
+
+**Baseline Reference (`--baseline`):**
+- Pre-computed no-memory baseline scores can be loaded for comparison with memory-assisted runs
+- Baseline files are stored in `results/baseline/` and contain the `avg_score` from a memory-free evaluation
+- The report displays **Memory Isolation Gain** when a baseline is provided
+
+```bash
+# Generate a no-memory baseline
+python src/harness.py --mock --dual-run --output results/baseline/llm-baseline.json
+
+# Compare a memory-system run against the baseline
+python src/harness.py --mock --memory-isolation --baseline results/baseline/llm-baseline.json
+```
+
+**Output Structure:** Dual-run JSON reports contain both `baseline` and `memory` sub-reports, a `per_task` breakdown with per-task scores and contributions, and summary metrics (`avg_contribution`, `positive_contributions`, `negative_contributions`).
+
 ### Resume Capability
-
-The harness supports resuming interrupted evaluations via `--resume`. After each task, state is saved to `results/resume_state.jsonl`. On restart with `--resume`, completed tasks are skipped. Use `--reset` to clear saved state and start fresh.
-
-```
-python src/harness.py --mock --resume
-```
 
 ### Docker Sandboxing
 

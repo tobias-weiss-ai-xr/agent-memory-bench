@@ -1,11 +1,15 @@
 {
-  "system": "...",
-  "model": "...",
+  "system": "MyMemorySystem",
+  "model": "gpt-4",
   "scores": {
-    "overall": 0.0,
-    "factual": 0.0,
-    "experiential": 0.0,
-    "working": 0.0
+    "overall": 0.85,
+    "factual": 0.9,
+    "experiential": 0.82,
+    "working": 0.88,
+    "temporal": 0.8,
+    "multimodal": 0.75,
+    "security": 0.95,
+    "multi-agent": 0.78
   },
-  "date": "YYYY-MM-DD"
+  "date": "2026-07-29"
 }

@@ -5,7 +5,15 @@ import json
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from src.harness import load_tasks, TaskRunner, MockClient, ReportGenerator, ProviderConfig, OpenAIClient
+from src.harness import (
+    load_tasks,
+    TaskRunner,
+    MockClient,
+    ReportGenerator,
+    ProviderConfig,
+    OpenAIClient,
+    EXCLUDED_FIELDS,
+)
 
 
 def test_load_tasks_returns_all():
@@ -31,11 +39,11 @@ def test_harness_mock_run():
     tasks_dir = Path(__file__).parent.parent / "tasks"
     tasks = load_tasks(tasks_dir, cell_filter=["factual/token-level/formation"])[:3]
     assert len(tasks) > 0, "No factual/token-level/formation tasks found"
-    
+
     client = MockClient()
     runner = TaskRunner(client)
     results = [runner.run_task(t) for t in tasks]
-    
+
     report = ReportGenerator.generate(results, "mock-test", {})
     assert report.total_tasks == len(tasks)
     assert isinstance(report.avg_score, float)
@@ -44,13 +52,14 @@ def test_harness_mock_run():
 
 def test_provider_config_litellm():
     """--litellm flag should resolve to LiteLLM provider."""
+
     class Args:
         litellm = True
         api_key = "sk-test-key"
         base_url = None
         model = "gpt-4"
         mock = False
-    
+
     api_key, base_url, model, headers = ProviderConfig.resolve(Args())
     assert api_key == "sk-test-key"
     assert "localhost" in base_url
@@ -60,14 +69,17 @@ def test_provider_config_litellm():
 def test_provider_config_litellm_env():
     """LITELLM_API_KEY env var should be detected."""
     import os
+
     os.environ["LITELLM_API_KEY"] = "sk-litellm-env-test"
     try:
+
         class Args:
             litellm = False
             api_key = None
             base_url = None
             model = "deepseek/deepseek-v4-flash"
             mock = False
+
         api_key, base_url, model, headers = ProviderConfig.resolve(Args())
         assert api_key == "sk-litellm-env-test"
         assert "localhost:4000" in base_url
@@ -78,6 +90,7 @@ def test_provider_config_litellm_env():
 def test_scorer_exact_match():
     """Exact match should find expected text in response."""
     from src.harness import Scorer
+
     s = Scorer()
     assert s.exact_match("The answer is 42.", ["42"]) == 1.0
     assert s.exact_match("No relevant info.", ["42"]) == 0.0
@@ -87,6 +100,7 @@ def test_scorer_exact_match():
 def test_scorer_keyword_match():
     """Keyword match should score partial overlap."""
     from src.harness import Scorer
+
     s = Scorer()
     score = s.keyword_match("The capital is Paris", ["Paris"])
     assert score > 0.3, f"Expected moderate keyword match, got {score}"
@@ -104,3 +118,198 @@ def test_coverage_json_exists():
     assert "cells_covered" in data
     assert "cells_total" in data
     assert data["cells_total"] == 27
+
+
+class SpyClient:
+    def __init__(self):
+        self.messages = None
+        self.model = "spy"
+
+    def complete(self, messages):
+        self.messages = messages
+        return "test-response", 10, 2.0
+
+
+def test_excluded_fields_removed_from_prompt():
+    """Fields in EXCLUDED_FIELDS must never appear in constructed prompt."""
+    spy = SpyClient()
+    runner = TaskRunner(spy)
+    task = {
+        "id": "exclude-test",
+        "cell": "test/cell",
+        "query": "test query",
+        "expected": ["answer"],
+        "context": "test context",
+        "hidden": {"expected_action": "do_thing"},
+        "alternatives": ["other answer"],
+        "distractors": ["wrong answer"],
+    }
+    runner.run_task(task)
+    prompt_str = str(spy.messages)
+    for field in EXCLUDED_FIELDS:
+        assert field not in prompt_str, f"Excluded field '{field}' found in prompt"
+
+
+def test_dual_run_task_result_contribution():
+    """DualRunTaskResult should compute memory contribution correctly."""
+    from src.harness import DualRunTaskResult, TaskResult
+
+    baseline = TaskResult(
+        episode_id="test-1",
+        cell="test/cell",
+        query="q",
+        expected=["a"],
+        response="wrong",
+        score=0.0,
+        latency_ms=5.0,
+        tokens_used=10,
+    )
+    memory = TaskResult(
+        episode_id="test-1",
+        cell="test/cell",
+        query="q",
+        expected=["a"],
+        response="correct answer",
+        score=1.0,
+        latency_ms=5.0,
+        tokens_used=10,
+    )
+    dr = DualRunTaskResult(
+        episode_id="test-1",
+        cell="test/cell",
+        baseline=baseline,
+        memory=memory,
+        contribution=memory.score - baseline.score,
+    )
+    assert dr.contribution == 1.0
+    assert dr.baseline.score == 0.0
+    assert dr.memory.score == 1.0
+
+
+def test_dual_run_baseline_uses_empty_context():
+    """Baseline run should use empty context, memory run should use full context."""
+    tasks_dir = Path(__file__).parent.parent / "tasks"
+    tasks = load_tasks(tasks_dir, cell_filter=["factual/token-level/formation"])[:2]
+    assert len(tasks) > 0
+
+    client = MockClient()
+    runner = TaskRunner(client)
+
+    for ep in tasks:
+        baseline_ep = dict(ep)
+        baseline_ep["context"] = ""
+        baseline_result = runner.run_task(baseline_ep)
+        memory_result = runner.run_task(ep)
+
+        assert baseline_result.score is not None
+        assert memory_result.score is not None
+        assert baseline_result.response != memory_result.response
+
+
+def test_dual_run_cli_mock_mode():
+    """--dual-run should work with --mock and produce structured output."""
+    import subprocess
+    import tempfile
+
+    result = subprocess.run(
+        [
+            "python3",
+            "src/harness.py",
+            "--mock",
+            "--dual-run",
+            "--max-tasks",
+            "3",
+            "--output",
+            "/tmp/test_dual_run.json",
+        ],
+        capture_output=True,
+        text=True,
+        timeout=30,
+        cwd=Path(__file__).parent.parent,
+    )
+    output_path = Path("/tmp/test_dual_run.json")
+    assert output_path.exists(), f"Output file not found. stdout: {result.stdout}"
+
+    with open(output_path) as f:
+        data = json.load(f)
+
+    assert data.get("dual_run") is True
+    assert "baseline" in data
+    assert "memory" in data
+    assert "avg_contribution" in data
+    assert "per_task" in data
+    assert len(data["per_task"]) == 3
+    for pt in data["per_task"]:
+        assert "episode_id" in pt
+        assert "baseline_score" in pt
+        assert "memory_score" in pt
+        assert "contribution" in pt
+    output_path.unlink(missing_ok=True)
+
+
+def test_dual_run_per_task_breakdown():
+    """Each task in dual-run should have baseline and memory scores."""
+    tasks_dir = Path(__file__).parent.parent / "tasks"
+    tasks = load_tasks(tasks_dir, cell_filter=["factual/token-level/formation"])[:2]
+
+    client = MockClient()
+    runner = TaskRunner(client)
+    baseline_results = []
+    memory_results = []
+
+    for ep in tasks:
+        baseline_ep = dict(ep)
+        baseline_ep["context"] = ""
+        baseline_results.append(runner.run_task(baseline_ep))
+        memory_results.append(runner.run_task(ep))
+
+    assert len(baseline_results) == len(memory_results)
+    for br, mr in zip(baseline_results, memory_results):
+        assert br.episode_id == mr.episode_id
+        assert 0.0 <= br.score <= 1.0
+        assert 0.0 <= mr.score <= 1.0
+
+
+def test_dual_run_report_structure():
+    """Dual-run report should include summary metrics."""
+    from src.harness import DualRunTaskResult, TaskResult
+
+    results = []
+    for i in range(3):
+        br = TaskResult(
+            episode_id=f"t{i}",
+            cell="test/cell",
+            query="q",
+            expected=["a"],
+            response="x",
+            score=0.2 * i,
+            latency_ms=5.0,
+            tokens_used=10,
+        )
+        mr = TaskResult(
+            episode_id=f"t{i}",
+            cell="test/cell",
+            query="q",
+            expected=["a"],
+            response="y",
+            score=0.5 + 0.3 * i,
+            latency_ms=5.0,
+            tokens_used=10,
+        )
+        results.append(
+            DualRunTaskResult(
+                episode_id=f"t{i}",
+                cell="test/cell",
+                baseline=br,
+                memory=mr,
+                contribution=mr.score - br.score,
+            )
+        )
+
+    avg_contrib = sum(dr.contribution for dr in results) / len(results)
+    positive = sum(1 for dr in results if dr.contribution > 0)
+
+    assert avg_contrib > 0.0
+    assert positive == 3
+    for dr in results:
+        assert dr.contribution == dr.memory.score - dr.baseline.score

@@ -155,6 +155,11 @@ def main():
         if count > 1:
             all_errors.append(f"Duplicate episode ID: '{eid}' ({count}x)")
     
+    if file_count == 0 and task_dir.exists():
+        all_errors.append(f"No YAML files found in {task_dir}")
+    elif not task_dir.exists():
+        all_errors.append(f"Directory not found: {task_dir}")
+    
     if all_errors:
         print(f"Found {len(all_errors)} error(s) in {file_count} files:\n", file=sys.stderr)
         for err in all_errors:

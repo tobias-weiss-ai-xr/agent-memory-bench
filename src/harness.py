@@ -515,6 +515,16 @@ def main():
     parser.add_argument("--max-tasks", type=int, default=0,
                         help="Limit number of tasks (for quick testing)")
     args = parser.parse_args()
+    
+    # If no API-related args and not mock, show help
+    if not args.mock and not args.api_key and not args.litellm \
+       and not os.environ.get("LITELLM_API_KEY") \
+       and not os.environ.get("DEEPSEEK_API_KEY") \
+       and not os.environ.get("OPENAI_API_KEY") \
+       and not os.environ.get("OPENROUTER_API_KEY"):
+        parser.print_help()
+        print("\nNo API key found. Use --mock for dry-run or set LITELLM_API_KEY / DEEPSEEK_API_KEY / OPENAI_API_KEY")
+        sys.exit(1)
 
     # Load tasks
     tasks = load_tasks(args.tasks, args.cells)

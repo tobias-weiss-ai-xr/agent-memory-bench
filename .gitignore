@@ -27,5 +27,7 @@ venv/
 
 # Generated artifacts
 results.json
+results/
+leaderboard/results.json
 docs/example-report.md
 *.log

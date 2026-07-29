@@ -8,6 +8,8 @@
     <a href="https://github.com/tobias-weiss-ai-xr/agent-memory-bench/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/tobias-weiss-ai-xr/agent-memory-bench/validate.yml?label=CI&logo=github" alt="CI"></a>
     <a href="docs/leaderboard.md"><img src="https://img.shields.io/badge/Leaderboard-Open-004D40.svg" alt="Leaderboard"></a>
     <a href="https://github.com/tobias-weiss-ai-xr/agentic-vr-research"><img src="https://img.shields.io/badge/Agentic_VR_Survey-004D40.svg" alt="Agentic VR Survey"></a>
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-skill-research"><img src="https://img.shields.io/badge/Skill_Survey-004D40.svg" alt="Skill Survey"></a>
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-skill-bench"><img src="https://img.shields.io/badge/Skill_Bench-004D40.svg" alt="Skill Bench"></a>
   </p>
 </p>
 
@@ -145,6 +147,38 @@ python src/harness.py --litellm --markdown results.md
 | **Leaderboard** | Open LLM Leaderboard | 🚧 |
 | **Memory isolation protocol** | MemoryAgentBench | 🚧 |
 
+## 🏗️ Infrastructure
+
+### Resume Capability
+
+The harness supports resuming interrupted evaluations via `--resume`. After each task, state is saved to `results/resume_state.jsonl`. On restart with `--resume`, completed tasks are skipped. Use `--reset` to clear saved state and start fresh.
+
+```
+python src/harness.py --mock --resume
+```
+
+### Docker Sandboxing
+
+Run the harness in a containerized environment:
+
+```
+docker compose -f docker/docker-compose.yml up
+```
+
+The `--docker` flag prints setup instructions. Results are written to `results/` on the host.
+
+### Hidden Annotation Fields
+
+Task YAML files may include an optional `hidden` section with `expected_action`, `judge_spec`, and `leak_targets`. These fields are validated by `scripts/validate.py` but are **excluded from agent input** — they never appear in the prompt sent to the evaluated model. The validator warns when hidden fields are detected.
+
+### Leaderboard PR Submission
+
+Submit evaluation results via pull request. Add a JSON file to `leaderboard/` following `leaderboard/template.json`:
+
+```json
+{"system": "...", "model": "...", "scores": {"overall": 0.0, "factual": 0.0, "experiential": 0.0, "working": 0.0}, "date": "YYYY-MM-DD"}
+```
+
 ## Scoring
 
 AMBench supports four scoring strategies, selectable via `--scoring`:
@@ -178,7 +212,10 @@ ambench/
 ├── scripts/          # validate.py, coverage.py
 ├── tests/            # 40+ tests
 ├── docs/             # Specification, gaps, leaderboard
-└── task-templates/   # Episode format reference
+├── task-templates/   # Episode format reference
+├── docker/           # Docker sandboxing (Dockerfile, compose)
+├── leaderboard/      # PR-based leaderboard submissions
+└── results/          # Resume state and evaluation outputs
 ```
 
 ## How to Contribute
@@ -219,4 +256,6 @@ MIT — see [LICENSE](LICENSE).
 
 - [Agent Memory Research Survey](https://github.com/tobias-weiss-ai-xr/agent-memory-research) — Living survey of 1,047 agent memory papers
 - [Agentic VR Survey](https://github.com/tobias-weiss-ai-xr/agentic-vr-research) — Living survey of 4,942 agentic AI in VR papers
+- [Skill Survey](https://github.com/tobias-weiss-ai-xr/agent-skill-research) — Living survey of AI agent skills (tool use, planning, reasoning, code generation, etc.)
+- [Skill Bench](https://github.com/tobias-weiss-ai-xr/agent-skill-bench) — Unified benchmark for evaluating AI agent skills
 - [Extended Survey](https://doi.org/10.5281/zenodo.20780690) — Taxonomy this benchmark is based on

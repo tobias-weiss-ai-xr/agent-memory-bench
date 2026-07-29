@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  ambench:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: ["--mock"]
+    volumes:
+      - ../results:/app/results

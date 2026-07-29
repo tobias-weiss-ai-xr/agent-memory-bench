@@ -1,0 +1,11 @@
+{
+  "system": "...",
+  "model": "...",
+  "scores": {
+    "overall": 0.0,
+    "factual": 0.0,
+    "experiential": 0.0,
+    "working": 0.0
+  },
+  "date": "YYYY-MM-DD"
+}

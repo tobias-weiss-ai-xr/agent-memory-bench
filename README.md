@@ -10,6 +10,8 @@
     <a href="https://github.com/tobias-weiss-ai-xr/agentic-vr-research"><img src="https://img.shields.io/badge/Agentic_VR_Survey-004D40.svg" alt="Agentic VR Survey"></a>
     <a href="https://github.com/tobias-weiss-ai-xr/agent-skill-research"><img src="https://img.shields.io/badge/Skill_Survey-004D40.svg" alt="Skill Survey"></a>
     <a href="https://github.com/tobias-weiss-ai-xr/agent-skill-bench"><img src="https://img.shields.io/badge/Skill_Bench-004D40.svg" alt="Skill Bench"></a>
+    <a href="https://github.com/tobias-weiss-ai-xr/agent-learning-research"><img src="https://img.shields.io/badge/Learning_Survey-004D40.svg?logo=github" alt="Learning Survey"></a>
+    <a href="https://github.com/tobias-weiss-ai-xr/learning-research"><img src="https://img.shields.io/badge/Learning_Research-004D40.svg?logo=github" alt="Learning Research"></a>
     <a href="docker/"><img src="https://img.shields.io/badge/Reproducible-Docker-2496ED.svg?logo=docker" alt="Reproducible"></a>
   </p>
 </p>
@@ -297,4 +299,6 @@ MIT — see [LICENSE](LICENSE).
 - [Agentic VR Survey](https://github.com/tobias-weiss-ai-xr/agentic-vr-research) — Living survey of 4,942 agentic AI in VR papers
 - [Skill Survey](https://github.com/tobias-weiss-ai-xr/agent-skill-research) — Living survey of AI agent skills (tool use, planning, reasoning, code generation, etc.)
 - [Skill Bench](https://github.com/tobias-weiss-ai-xr/agent-skill-bench) — Unified benchmark for evaluating AI agent skills
+- [Agent Learning Research](https://github.com/tobias-weiss-ai-xr/agent-learning-research) — Survey of learning in AI agents
+- [Learning Research](https://github.com/tobias-weiss-ai-xr/learning-research) — Interdisciplinary survey of learning across all disciplines
 - [Extended Survey](https://doi.org/10.5281/zenodo.20780690) — Taxonomy this benchmark is based on

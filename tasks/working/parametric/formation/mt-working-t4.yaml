@@ -1,0 +1,27 @@
+episode:
+  id: MT-WORKING-T4
+  episode_id: MT-WORKING
+  cell: working/parametric/formation
+  turn: 4
+  modality: text
+  context: |
+    New sprint planning begins. The team velocity was 4 completed tasks last sprint.
+    Priority for next sprint: finish A-103, complete D-401, and add E-501 and F-601.
+    Maria is now on leave. David takes over A-103. Uma continues D-401. Sarah and Tom take E-501 and F-601 respectively.
+  query: "What is the plan for next sprint: tasks, assignments, and what was the team velocity last sprint?"
+  expected:
+  - "4 tasks completed last sprint"
+  - "A-103: David"
+  - "D-401: Uma"
+  - "E-501: Sarah"
+  - "F-601: Tom"
+  - "velocity: 4"
+  alternatives:
+  - - "Last sprint velocity: 4. Next sprint: A-103 (David), D-401 (Uma), E-501 (Sarah), F-601 (Tom). Maria is on leave."
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - multi-turn
+  - project-tracking

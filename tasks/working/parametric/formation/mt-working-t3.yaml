@@ -1,0 +1,28 @@
+episode:
+  id: MT-WORKING-T3
+  episode_id: MT-WORKING
+  cell: working/parametric/formation
+  turn: 3
+  modality: text
+  context: |
+    End of sprint review results:
+    A-102 and A-101 are verified complete. A-103 is 70% done but needs another sprint.
+    B-201 is complete and deployed. C-301 is also complete pending final sign-off.
+    D-401 promoted from backlog to in progress, assigned to Uma.
+  query: "Which tasks are complete, and which are still in progress?"
+  expected:
+  - "A-101 complete"
+  - "A-102 complete"
+  - "B-201 complete"
+  - "C-301 complete pending sign-off"
+  - "A-103 in progress (70%)"
+  - "D-401 in progress (Uma)"
+  alternatives:
+  - - "Complete: A-101, A-102, B-201, C-301 (pending sign-off). In progress: A-103 (70%, David), D-401 (Uma)"
+  difficulty: 3
+  tags:
+  - working
+  - parametric
+  - formation
+  - multi-turn
+  - project-tracking

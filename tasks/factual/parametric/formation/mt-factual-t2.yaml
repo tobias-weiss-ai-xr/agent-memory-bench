@@ -1,0 +1,29 @@
+episode:
+  id: MT-FACTUAL-T2
+  episode_id: MT-FACTUAL
+  cell: factual/parametric/formation
+  turn: 2
+  modality: text
+  context: |
+    You continue talking with Jordan.
+    Jordan adds: "My current project involves building a real-time NLP pipeline for customer feedback analysis.
+    I'm working with the product team on this, and we're using Python, spaCy, and Apache Kafka.
+    I manage a team of 4 engineers. I also hold a PhD in Computer Science from MIT."
+  query: What project is Jordan working on, and what technologies are they using?
+  expected:
+  - "real-time NLP pipeline for customer feedback analysis"
+  - "Python"
+  - "spaCy"
+  - "Apache Kafka"
+  alternatives:
+  - - "NLP pipeline for customer feedback"
+    - "Python, spaCy, Apache Kafka"
+  - - "building a real-time NLP pipeline"
+    - "Python, spaCy, and Kafka"
+  difficulty: 2
+  tags:
+  - factual
+  - parametric
+  - formation
+  - multi-turn
+  - project-details

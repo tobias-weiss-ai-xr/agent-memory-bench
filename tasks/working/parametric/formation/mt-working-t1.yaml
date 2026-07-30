@@ -1,0 +1,25 @@
+episode:
+  id: MT-WORKING-T1
+  episode_id: MT-WORKING
+  cell: working/parametric/formation
+  turn: 1
+  modality: text
+  context: |
+    You are managing a project board. The current sprint has 5 tasks: A-101, A-102, A-103, B-201, and C-301.
+    Task A-101 is in progress, assigned to Maria. A-102 is done. A-103 is blocked. B-201 is not started. C-301 is in review.
+  query: What is the status of each task on the project board?
+  expected:
+  - "A-101 in progress"
+  - "A-102 done"
+  - "A-103 blocked"
+  - "B-201 not started"
+  - "C-301 in review"
+  alternatives:
+  - - "A-101: in progress (Maria), A-102: done, A-103: blocked, B-201: not started, C-301: in review"
+  difficulty: 1
+  tags:
+  - working
+  - parametric
+  - formation
+  - multi-turn
+  - project-tracking

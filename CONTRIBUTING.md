@@ -46,6 +46,29 @@ Open an issue if you find:
 4. Push and open a PR
 5. We'll review within 7 days
 
+## Reproducible Evaluation
+
+All evaluations can be run in a containerized environment with pinned dependencies
+and model versions for full reproducibility:
+
+```bash
+# Build the container
+docker compose -f docker/docker-compose.yml build
+
+# Run mock evaluation (no API key needed)
+docker compose -f docker/docker-compose.yml run --rm ambench --mock
+
+# Run real evaluation
+export OPENAI_API_KEY=sk-...
+docker compose -f docker/docker-compose.yml run --rm ambench
+
+# Run with custom model and scoring
+export OPENAI_API_KEY=sk-...
+export AMBENCH_MODEL=claude-3-5-sonnet-20241022
+export AMBENCH_SCORING=llm_judge
+docker compose -f docker/docker-compose.yml run --rm ambench
+```
+
 ## Code of Conduct
 
 Be excellent to each other. This is a scientific infrastructure project — all contributions are valued regardless of seniority.

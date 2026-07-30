@@ -10,6 +10,7 @@
     <a href="https://github.com/tobias-weiss-ai-xr/agentic-vr-research"><img src="https://img.shields.io/badge/Agentic_VR_Survey-004D40.svg" alt="Agentic VR Survey"></a>
     <a href="https://github.com/tobias-weiss-ai-xr/agent-skill-research"><img src="https://img.shields.io/badge/Skill_Survey-004D40.svg" alt="Skill Survey"></a>
     <a href="https://github.com/tobias-weiss-ai-xr/agent-skill-bench"><img src="https://img.shields.io/badge/Skill_Bench-004D40.svg" alt="Skill Bench"></a>
+    <a href="docker/"><img src="https://img.shields.io/badge/Reproducible-Docker-2496ED.svg?logo=docker" alt="Reproducible"></a>
   </p>
 </p>
 
@@ -111,6 +112,10 @@ Vectorize AMB is a **memory-provider benchmark**: it answers *"Which RAG backend
 \*InMind targets Factual memory but the phenomenon applies across all cells.
 
 **The gap is clear:** no existing benchmark covers more than 11 of 27 taxonomy cells. None evaluates temporal dynamics, multimodal integration, or security as first-class dimensions. None combines taxonomic breadth with memory isolation, difficulty-adaptive scoring, and cost-performance tracking. AMBench is designed to fill all of these gaps simultaneously.
+
+> **Reproducible evaluation** — All benchmarks run in a containerized environment
+> with pinned dependencies and model snapshots. See [CONTRIBUTING.md](CONTRIBUTING.md)
+> for one-command eval instructions.
 
 ## Quick Start
 

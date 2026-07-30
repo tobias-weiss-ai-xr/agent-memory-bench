@@ -1,0 +1,32 @@
+episode:
+  id: MT-FACTUAL-T4
+  episode_id: MT-FACTUAL
+  cell: factual/parametric/formation
+  turn: 4
+  modality: text
+  context: |
+    A new colleague asks you about Jordan.
+  query: "Tell me everything you know about Jordan Chen: their role, background, project, hobbies, and languages."
+  expected:
+  - "Senior Data Scientist"
+  - "computational linguistics"
+  - "fintech startup in Berlin"
+  - "Austin office"
+  - "real-time NLP pipeline"
+  - "Python"
+  - "spaCy"
+  - "Apache Kafka"
+  - "rock climbing"
+  - "jazz piano"
+  - "English"
+  - "Mandarin"
+  - "German"
+  alternatives:
+  - - "Senior Data Scientist, computational linguistics background, worked at fintech in Berlin, Austin office, leading NLP pipeline project with Python/spaCy/Kafka, rock climber, jazz pianist, speaks English/Mandarin/German"
+  difficulty: 4
+  tags:
+  - factual
+  - parametric
+  - formation
+  - multi-turn
+  - knowledge-integration

@@ -1,0 +1,31 @@
+episode:
+  id: MT-FACTUAL-T3
+  episode_id: MT-FACTUAL
+  cell: factual/parametric/formation
+  turn: 3
+  modality: text
+  context: |
+    Jordan shares more personal background:
+    "Outside of work, I'm an avid rock climber and have climbed in Yosemite and Patagonia.
+    I also play jazz piano and teach a weekly music class for underprivileged kids.
+    I speak three languages: English, Mandarin, and German."
+  query: What are Jordan's hobbies and what languages do they speak?
+  expected:
+  - "rock climbing"
+  - "jazz piano"
+  - "teaching music"
+  - "English"
+  - "Mandarin"
+  - "German"
+  alternatives:
+  - - "rock climber, jazz pianist, music teacher"
+    - "English, Mandarin, German"
+  - - "rock climbing and jazz piano"
+    - "English, Mandarin, German"
+  difficulty: 3
+  tags:
+  - factual
+  - parametric
+  - formation
+  - multi-turn
+  - personal-background

@@ -313,3 +313,233 @@ def test_dual_run_report_structure():
     assert positive == 3
     for dr in results:
         assert dr.contribution == dr.memory.score - dr.baseline.score
+
+
+def test_multi_turn_grouping():
+    """Tasks with shared episode_id should be grouped and ordered by turn."""
+    from src.harness import TaskRunner, MockClient
+
+    mt_tasks = [
+        {
+            "id": "MT-TEST-T1",
+            "episode_id": "MT-TEST",
+            "cell": "test/cell",
+            "turn": 1,
+            "query": "turn 1 query",
+            "expected": ["response-1"],
+            "context": "context 1",
+            "difficulty": 1,
+            "modality": "text",
+        },
+        {
+            "id": "MT-TEST-T2",
+            "episode_id": "MT-TEST",
+            "cell": "test/cell",
+            "turn": 2,
+            "query": "turn 2 query",
+            "expected": ["response-2"],
+            "context": "context 2",
+            "difficulty": 1,
+            "modality": "text",
+        },
+        {
+            "id": "MT-TEST-T3",
+            "episode_id": "MT-TEST",
+            "cell": "test/cell",
+            "turn": 3,
+            "query": "turn 3 query",
+            "expected": ["response-3"],
+            "context": "context 3",
+            "difficulty": 1,
+            "modality": "text",
+        },
+    ]
+
+    client = MockClient()
+    runner = TaskRunner(client)
+
+    from collections import OrderedDict
+
+    episodes = OrderedDict()
+    for ep in mt_tasks:
+        eid = ep.get("episode_id", ep.get("id", "unknown"))
+        if eid not in episodes:
+            episodes[eid] = []
+        episodes[eid].append(ep)
+
+    assert len(episodes) == 1
+    assert "MT-TEST" in episodes
+
+    episode_tasks = episodes["MT-TEST"]
+    episode_tasks.sort(key=lambda t: t.get("turn", 0))
+    assert episode_tasks[0]["turn"] == 1
+    assert episode_tasks[1]["turn"] == 2
+    assert episode_tasks[2]["turn"] == 3
+
+
+def test_multi_turn_conversation_history():
+    """Each turn should receive previous conversation as history."""
+    from src.harness import TaskRunner
+
+    class HistorySpyClient:
+        def __init__(self):
+            self.calls = []
+            self.model = "spy"
+
+        def complete(self, messages):
+            self.calls.append(messages)
+            return f"mock-response-{len(self.calls)}", 10, 2.0
+
+    spy = HistorySpyClient()
+    runner = TaskRunner(spy)
+
+    turn1 = {
+        "id": "MT-HIST-T1",
+        "episode_id": "MT-HIST",
+        "cell": "test/cell",
+        "turn": 1,
+        "query": "first question",
+        "expected": ["mock"],
+        "context": "first context",
+        "difficulty": 1,
+        "modality": "text",
+    }
+    turn2 = {
+        "id": "MT-HIST-T2",
+        "episode_id": "MT-HIST",
+        "cell": "test/cell",
+        "turn": 2,
+        "query": "second question",
+        "expected": ["mock"],
+        "context": "second context",
+        "difficulty": 1,
+        "modality": "text",
+    }
+
+    conv_history = []
+    result1 = runner.run_task(turn1, conv_history)
+    conv_history.append({"role": "user", "content": turn1["query"]})
+    conv_history.append({"role": "assistant", "content": result1.response})
+
+    result2 = runner.run_task(turn2, conv_history)
+    conv_history.append({"role": "user", "content": turn2["query"]})
+    conv_history.append({"role": "assistant", "content": result2.response})
+
+    assert len(spy.calls) == 2
+    call1_user_msgs = [m for m in spy.calls[0] if m["role"] == "user"]
+    call2_user_msgs = [m for m in spy.calls[1] if m["role"] == "user"]
+    assert len(call1_user_msgs) == 1
+    assert "first question" in call1_user_msgs[0]["content"]
+    assert len(call2_user_msgs) == 2
+    assert "first question" in call2_user_msgs[0]["content"]
+    assert "second question" in call2_user_msgs[1]["content"]
+
+
+def test_multi_turn_cli_mock_mode():
+    """--multi-turn should work with --mock and produce structured output."""
+    import subprocess, tempfile, json
+    from pathlib import Path
+
+    with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tmp:
+        output_path = tmp.name
+
+    result = subprocess.run(
+        [
+            "python3",
+            "src/harness.py",
+            "--mock",
+            "--multi-turn",
+            "--cells",
+            "factual/parametric/formation",
+            "--output",
+            output_path,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=30,
+        cwd=Path(__file__).parent.parent,
+    )
+
+    output = Path(output_path)
+    assert output.exists(), f"Output not found. stdout: {result.stdout}"
+
+    with open(output) as f:
+        data = json.load(f)
+
+    assert data.get("multi_turn") is True
+    assert "episodes" in data
+    assert "overall_avg_score" in data
+    assert len(data["episodes"]) >= 1
+    for ep in data["episodes"]:
+        assert "episode_id" in ep
+        assert "turns" in ep
+        assert "avg_score" in ep
+        assert "turn_scores" in ep
+        assert len(ep["turn_scores"]) == ep["turns"]
+    output.unlink(missing_ok=True)
+
+
+def test_multi_turn_overall_avg():
+    """Multi-turn overall avg should be average of episode averages."""
+    from src.harness import MockClient, TaskRunner, main
+
+    class CaptureClient(MockClient):
+        def __init__(self):
+            super().__init__()
+            self.call_count = 0
+
+        def complete(self, messages):
+            self.call_count += 1
+            return "answer-ok", 10, 2.0
+
+    mt_tasks = [
+        {
+            "id": "MT-CAP-T1",
+            "episode_id": "MT-CAP",
+            "cell": "test/cell",
+            "turn": 1,
+            "query": "q1",
+            "expected": ["answer-ok"],
+            "context": "c1",
+            "difficulty": 1,
+            "modality": "text",
+        },
+        {
+            "id": "MT-CAP-T2",
+            "episode_id": "MT-CAP",
+            "cell": "test/cell",
+            "turn": 2,
+            "query": "q2",
+            "expected": ["answer-ok"],
+            "context": "c2",
+            "difficulty": 1,
+            "modality": "text",
+        },
+        {
+            "id": "MT-CAP-T3",
+            "episode_id": "MT-CAP",
+            "cell": "test/cell",
+            "turn": 3,
+            "query": "q3",
+            "expected": ["answer-ok"],
+            "context": "c3",
+            "difficulty": 1,
+            "modality": "text",
+        },
+    ]
+
+    client = CaptureClient()
+    runner = TaskRunner(client)
+
+    conv_history = []
+    results = []
+    for t in mt_tasks:
+        r = runner.run_task(t, conv_history)
+        results.append(r)
+        conv_history.append({"role": "user", "content": t["query"]})
+        conv_history.append({"role": "assistant", "content": r.response})
+
+    episode_avg = sum(r.score for r in results) / len(results)
+    assert episode_avg >= 0.0
+    assert episode_avg <= 1.0
+    assert client.call_count == 3

@@ -1,0 +1,27 @@
+episode:
+  id: MT-FACTUAL-T1
+  episode_id: MT-FACTUAL
+  cell: factual/parametric/formation
+  turn: 1
+  modality: text
+  context: |
+    You are meeting a new colleague named Jordan for the first time.
+    Jordan says: "Hi, I'm Jordan Chen. I recently joined the company as a Senior Data Scientist.
+    My background is in computational linguistics, and I previously worked at a fintech startup in Berlin.
+    I'm based in the Austin office and my extension is 4521."
+  query: What is Jordan's name, role, and which office are they based in?
+  expected:
+  - "Jordan Chen"
+  - "Senior Data Scientist"
+  - "Austin"
+  alternatives:
+  - - "Jordan Chen"
+    - "Senior Data Scientist at the company"
+    - "Austin office"
+  difficulty: 1
+  tags:
+  - factual
+  - parametric
+  - formation
+  - multi-turn
+  - profile-building

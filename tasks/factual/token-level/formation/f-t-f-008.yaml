@@ -12,7 +12,7 @@ episode:
   distractors:
   - paperback
   - ebook
-  difficulty: 5
+  difficulty: 2
   tags:
   - factual
   - token-level

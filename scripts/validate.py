@@ -126,6 +126,12 @@ def validate_task(fpath: Path, data: dict) -> list:
     if not isinstance(ctx, str) or not ctx.strip():
         errors.append(f"{fpath}: 'context' must be a non-empty string")
 
+    # Episode ID for multi-turn (optional)
+    epid = ep.get("episode_id", None)
+    if epid is not None:
+        if not isinstance(epid, str) or not epid.strip():
+            errors.append(f"{fpath}: 'episode_id' must be a non-empty string")
+
     # Tags (recommended but not required)
     tags = ep.get("tags", [])
     if isinstance(tags, list) and len(tags) > 0:

@@ -1,0 +1,1037 @@
+{
+  "summary": {
+    "total_findings": 104,
+    "duplicate_query_groups": 88,
+    "substring_query_pairs": 0,
+    "difficulty5_trivial_count": 2,
+    "context_outliers_count": 14,
+    "modality_mismatch_count": 0,
+    "upper_context_bound": 513.5,
+    "lower_context_bound": 0,
+    "mean_context_length": 253.6,
+    "context_stdev": 86.6
+  },
+  "findings": {
+    "total_tasks": 734,
+    "duplicate_queries": [
+      {
+        "query": "What should Agent Beta do based on Agent Alpha's learned experience?",
+        "count": 15,
+        "files": [
+          "tasks/multi-agent/experience-transfer/ma-exptrans-001.yaml",
+          "tasks/multi-agent/experience-transfer/ma-exptrans-006.yaml",
+          "tasks/multi-agent/experience-transfer/ma-exptrans-007.yaml",
+          "tasks/multi-agent/experience-transfer/ma-exptrans-008.yaml",
+          "tasks/multi-agent/experience-transfer/ma-exptrans-009.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent's deep understanding of this user evolve?",
+        "count": 13,
+        "files": [
+          "tasks/experiential/latent/evolution/e-l-e-006.yaml",
+          "tasks/experiential/latent/evolution/e-l-e-007.yaml",
+          "tasks/experiential/latent/evolution/e-l-e-008.yaml",
+          "tasks/experiential/latent/evolution/e-l-e-009.yaml",
+          "tasks/experiential/latent/evolution/e-l-e-010.yaml"
+        ]
+      },
+      {
+        "query": "Based on learned patterns from past experiences, what should the agent do?",
+        "count": 13,
+        "files": [
+          "tasks/experiential/parametric/formation/e-p-f-006.yaml",
+          "tasks/experiential/parametric/formation/e-p-f-007.yaml",
+          "tasks/experiential/parametric/formation/e-p-f-008.yaml",
+          "tasks/experiential/parametric/formation/e-p-f-009.yaml",
+          "tasks/experiential/parametric/formation/e-p-f-010.yaml"
+        ]
+      },
+      {
+        "query": "Based on past experience patterns, what is the likely issue and recommended action?",
+        "count": 13,
+        "files": [
+          "tasks/experiential/parametric/retrieval/e-p-r-006.yaml",
+          "tasks/experiential/parametric/retrieval/e-p-r-007.yaml",
+          "tasks/experiential/parametric/retrieval/e-p-r-008.yaml",
+          "tasks/experiential/parametric/retrieval/e-p-r-009.yaml",
+          "tasks/experiential/parametric/retrieval/e-p-r-010.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent's understanding change after both experiences?",
+        "count": 13,
+        "files": [
+          "tasks/experiential/token-level/evolution/e-t-e-006.yaml",
+          "tasks/experiential/token-level/evolution/e-t-e-007.yaml",
+          "tasks/experiential/token-level/evolution/e-t-e-008.yaml",
+          "tasks/experiential/token-level/evolution/e-t-e-009.yaml",
+          "tasks/experiential/token-level/evolution/e-t-e-010.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent's understanding change based on the new information?",
+        "count": 13,
+        "files": [
+          "tasks/factual/latent/evolution/f-l-e-006.yaml",
+          "tasks/factual/latent/evolution/f-l-e-007.yaml",
+          "tasks/factual/latent/evolution/f-l-e-008.yaml",
+          "tasks/factual/latent/evolution/f-l-e-009.yaml",
+          "tasks/factual/latent/evolution/f-l-e-010.yaml"
+        ]
+      },
+      {
+        "query": "What should the agent answer about the capital of France?",
+        "count": 13,
+        "files": [
+          "tasks/security/injection/sec-inject-006.yaml",
+          "tasks/security/injection/sec-inject-007.yaml",
+          "tasks/security/injection/sec-inject-008.yaml",
+          "tasks/security/injection/sec-inject-009.yaml",
+          "tasks/security/injection/sec-inject-010.yaml"
+        ]
+      },
+      {
+        "query": "Should the agent trust and store these credentials?",
+        "count": 13,
+        "files": [
+          "tasks/security/poisoning/sec-poison-006.yaml",
+          "tasks/security/poisoning/sec-poison-007.yaml",
+          "tasks/security/poisoning/sec-poison-008.yaml",
+          "tasks/security/poisoning/sec-poison-009.yaml",
+          "tasks/security/poisoning/sec-poison-010.yaml"
+        ]
+      },
+      {
+        "query": "How has the working context changed?",
+        "count": 13,
+        "files": [
+          "tasks/working/latent/evolution/w-l-e-006.yaml",
+          "tasks/working/latent/evolution/w-l-e-007.yaml",
+          "tasks/working/latent/evolution/w-l-e-008.yaml",
+          "tasks/working/latent/evolution/w-l-e-009.yaml",
+          "tasks/working/latent/evolution/w-l-e-010.yaml"
+        ]
+      },
+      {
+        "query": "What is the updated convention the agent should follow?",
+        "count": 13,
+        "files": [
+          "tasks/working/parametric/evolution/w-p-e-006.yaml",
+          "tasks/working/parametric/evolution/w-p-e-007.yaml",
+          "tasks/working/parametric/evolution/w-p-e-008.yaml",
+          "tasks/working/parametric/evolution/w-p-e-009.yaml",
+          "tasks/working/parametric/evolution/w-p-e-010.yaml"
+        ]
+      },
+      {
+        "query": "What happened in this experience?",
+        "count": 12,
+        "files": [
+          "tasks/experiential/token-level/formation/e-t-f-006.yaml",
+          "tasks/experiential/token-level/formation/e-t-f-007.yaml",
+          "tasks/experiential/token-level/formation/e-t-f-008.yaml",
+          "tasks/experiential/token-level/formation/e-t-f-009.yaml",
+          "tasks/experiential/token-level/formation/e-t-f-010.yaml"
+        ]
+      },
+      {
+        "query": "What should the agent do based on the project conventions?",
+        "count": 12,
+        "files": [
+          "tasks/working/parametric/retrieval/w-p-r-006.yaml",
+          "tasks/working/parametric/retrieval/w-p-r-007.yaml",
+          "tasks/working/parametric/retrieval/w-p-r-008.yaml",
+          "tasks/working/parametric/retrieval/w-p-r-009.yaml",
+          "tasks/working/parametric/retrieval/w-p-r-010.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent update its policy?",
+        "count": 11,
+        "files": [
+          "tasks/experiential/parametric/evolution/e-p-e-008.yaml",
+          "tasks/experiential/parametric/evolution/e-p-e-009.yaml",
+          "tasks/experiential/parametric/evolution/e-p-e-010.yaml",
+          "tasks/experiential/parametric/evolution/e-p-e-011.yaml",
+          "tasks/experiential/parametric/evolution/e-p-e-012.yaml"
+        ]
+      },
+      {
+        "query": "What did the agent learn from these experiences?",
+        "count": 11,
+        "files": [
+          "tasks/experiential/token-level/retrieval/e-t-r-006.yaml",
+          "tasks/experiential/token-level/retrieval/e-t-r-007.yaml",
+          "tasks/experiential/token-level/retrieval/e-t-r-008.yaml",
+          "tasks/experiential/token-level/retrieval/e-t-r-009.yaml",
+          "tasks/experiential/token-level/retrieval/e-t-r-010.yaml"
+        ]
+      },
+      {
+        "query": "How did the agent's understanding change?",
+        "count": 11,
+        "files": [
+          "tasks/factual/parametric/evolution/f-p-e-008.yaml",
+          "tasks/factual/parametric/evolution/f-p-e-009.yaml",
+          "tasks/factual/parametric/evolution/f-p-e-010.yaml",
+          "tasks/factual/parametric/evolution/f-p-e-011.yaml",
+          "tasks/factual/parametric/evolution/f-p-e-012.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's name, profession, city, and pet?",
+        "count": 11,
+        "files": [
+          "tasks/factual/token-level/retrieval/f-t-r-003.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-004.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-005.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-010.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-011.yaml"
+        ]
+      },
+      {
+        "query": "What pattern did the agent learn from the customer feedback data?",
+        "count": 10,
+        "files": [
+          "tasks/factual/parametric/formation/f-p-f-008.yaml",
+          "tasks/factual/parametric/formation/f-p-f-009.yaml",
+          "tasks/factual/parametric/formation/f-p-f-010.yaml",
+          "tasks/factual/parametric/formation/f-p-f-011.yaml",
+          "tasks/factual/parametric/formation/f-p-f-012.yaml"
+        ]
+      },
+      {
+        "query": "What is the updated information about Alice?",
+        "count": 10,
+        "files": [
+          "tasks/factual/token-level/evolution/f-t-e-003.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-009.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-010.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-011.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-012.yaml"
+        ]
+      },
+      {
+        "query": "What is the current status of the process?",
+        "count": 10,
+        "files": [
+          "tasks/working/token-level/evolution/w-t-e-008.yaml",
+          "tasks/working/token-level/evolution/w-t-e-009.yaml",
+          "tasks/working/token-level/evolution/w-t-e-010.yaml",
+          "tasks/working/token-level/evolution/w-t-e-011.yaml",
+          "tasks/working/token-level/evolution/w-t-e-012.yaml"
+        ]
+      },
+      {
+        "query": "What might be inferred about Bob's current emotional state?",
+        "count": 9,
+        "files": [
+          "tasks/factual/latent/formation/f-l-f-007.yaml",
+          "tasks/factual/latent/formation/f-l-f-008.yaml",
+          "tasks/factual/latent/formation/f-l-f-009.yaml",
+          "tasks/factual/latent/formation/f-l-f-010.yaml",
+          "tasks/factual/latent/formation/f-l-f-014.yaml"
+        ]
+      },
+      {
+        "query": "Can the robot fulfill the packing station request in one trip?",
+        "count": 8,
+        "files": [
+          "tasks/multimodal/embodied/m-embodied-001.yaml",
+          "tasks/multimodal/embodied/m-embodied-002.yaml",
+          "tasks/multimodal/embodied/m-embodied-003.yaml",
+          "tasks/multimodal/embodied/m-embodied-010.yaml",
+          "tasks/multimodal/embodied/m-embodied-011.yaml"
+        ]
+      },
+      {
+        "query": "What underlying issue is the user facing?",
+        "count": 6,
+        "files": [
+          "tasks/experiential/latent/formation/e-l-f-007.yaml",
+          "tasks/experiential/latent/formation/e-l-f-008.yaml",
+          "tasks/experiential/latent/formation/e-l-f-009.yaml",
+          "tasks/experiential/latent/formation/e-l-f-015.yaml",
+          "tasks/experiential/latent/formation/e-l-f-016.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent respond to support this user?",
+        "count": 6,
+        "files": [
+          "tasks/experiential/latent/retrieval/e-l-r-007.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-008.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-009.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-015.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-016.yaml"
+        ]
+      },
+      {
+        "query": "Based on learned patterns, how should the agent handle this question?",
+        "count": 6,
+        "files": [
+          "tasks/factual/parametric/retrieval/f-p-r-007.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-008.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-009.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-014.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-015.yaml"
+        ]
+      },
+      {
+        "query": "Does the team have enough SKU-101 to fulfill today's orders considering the reorder threshold?",
+        "count": 6,
+        "files": [
+          "tasks/multi-agent/shared-memory/ma-shmem-001.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-006.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-010.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-011.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-012.yaml"
+        ]
+      },
+      {
+        "query": "Can we book a 3pm meeting in room M3 with a projector?",
+        "count": 6,
+        "files": [
+          "tasks/multi-agent/shared-memory/ma-shmem-007.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-008.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-009.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-016.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-017.yaml"
+        ]
+      },
+      {
+        "query": "What were the test results for Michael Brown?",
+        "count": 6,
+        "files": [
+          "tasks/multimodal/audio/m-audio-007.yaml",
+          "tasks/multimodal/audio/m-audio-008.yaml",
+          "tasks/multimodal/audio/m-audio-009.yaml",
+          "tasks/multimodal/audio/m-audio-015.yaml",
+          "tasks/multimodal/audio/m-audio-016.yaml"
+        ]
+      },
+      {
+        "query": "What are the sprint 12 tasks shown on the whiteboard?",
+        "count": 6,
+        "files": [
+          "tasks/multimodal/cross-modal/m-cross-007.yaml",
+          "tasks/multimodal/cross-modal/m-cross-008.yaml",
+          "tasks/multimodal/cross-modal/m-cross-009.yaml",
+          "tasks/multimodal/cross-modal/m-cross-014.yaml",
+          "tasks/multimodal/cross-modal/m-cross-015.yaml"
+        ]
+      },
+      {
+        "query": "What is the status of each floor on the construction site?",
+        "count": 6,
+        "files": [
+          "tasks/multimodal/embodied/m-embodied-004.yaml",
+          "tasks/multimodal/embodied/m-embodied-005.yaml",
+          "tasks/multimodal/embodied/m-embodied-006.yaml",
+          "tasks/multimodal/embodied/m-embodied-014.yaml",
+          "tasks/multimodal/embodied/m-embodied-015.yaml"
+        ]
+      },
+      {
+        "query": "What action should the arm take for a blue square part?",
+        "count": 6,
+        "files": [
+          "tasks/multimodal/embodied/m-embodied-007.yaml",
+          "tasks/multimodal/embodied/m-embodied-008.yaml",
+          "tasks/multimodal/embodied/m-embodied-009.yaml",
+          "tasks/multimodal/embodied/m-embodied-017.yaml",
+          "tasks/multimodal/embodied/m-embodied-018.yaml"
+        ]
+      },
+      {
+        "query": "What are the Q4 metrics shown on the dashboard?",
+        "count": 6,
+        "files": [
+          "tasks/multimodal/visual/m-visual-007.yaml",
+          "tasks/multimodal/visual/m-visual-008.yaml",
+          "tasks/multimodal/visual/m-visual-009.yaml",
+          "tasks/multimodal/visual/m-visual-015.yaml",
+          "tasks/multimodal/visual/m-visual-016.yaml"
+        ]
+      },
+      {
+        "query": "What was the correct product price in March?",
+        "count": 6,
+        "files": [
+          "tasks/temporal/bitemporal/t-bitemp-007.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-008.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-009.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-015.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-016.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's consolidated learning path?",
+        "count": 6,
+        "files": [
+          "tasks/temporal/consolidation/t-consol-007.yaml",
+          "tasks/temporal/consolidation/t-consol-008.yaml",
+          "tasks/temporal/consolidation/t-consol-009.yaml",
+          "tasks/temporal/consolidation/t-consol-014.yaml",
+          "tasks/temporal/consolidation/t-consol-015.yaml"
+        ]
+      },
+      {
+        "query": "When was the first prototype delivered?",
+        "count": 6,
+        "files": [
+          "tasks/temporal/decay/t-decay-007.yaml",
+          "tasks/temporal/decay/t-decay-008.yaml",
+          "tasks/temporal/decay/t-decay-009.yaml",
+          "tasks/temporal/decay/t-decay-013.yaml",
+          "tasks/temporal/decay/t-decay-014.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's actual goal beyond the surface questions?",
+        "count": 6,
+        "files": [
+          "tasks/working/latent/formation/w-l-f-007.yaml",
+          "tasks/working/latent/formation/w-l-f-008.yaml",
+          "tasks/working/latent/formation/w-l-f-009.yaml",
+          "tasks/working/latent/formation/w-l-f-016.yaml",
+          "tasks/working/latent/formation/w-l-f-017.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's most important consideration?",
+        "count": 6,
+        "files": [
+          "tasks/working/latent/retrieval/w-l-r-001.yaml",
+          "tasks/working/latent/retrieval/w-l-r-007.yaml",
+          "tasks/working/latent/retrieval/w-l-r-010.yaml",
+          "tasks/working/latent/retrieval/w-l-r-011.yaml",
+          "tasks/working/latent/retrieval/w-l-r-012.yaml"
+        ]
+      },
+      {
+        "query": "What hobby does the user likely enjoy?",
+        "count": 5,
+        "files": [
+          "tasks/factual/latent/retrieval/f-l-r-001.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-009.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-011.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-012.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-013.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's full current phone number?",
+        "count": 5,
+        "files": [
+          "tasks/factual/token-level/evolution/f-t-e-004.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-005.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-006.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-007.yaml",
+          "tasks/factual/token-level/evolution/f-t-e-008.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's favorite book and preferred format?",
+        "count": 5,
+        "files": [
+          "tasks/factual/token-level/formation/f-t-f-004.yaml",
+          "tasks/factual/token-level/formation/f-t-f-005.yaml",
+          "tasks/factual/token-level/formation/f-t-f-006.yaml",
+          "tasks/factual/token-level/formation/f-t-f-007.yaml",
+          "tasks/factual/token-level/formation/f-t-f-008.yaml"
+        ]
+      },
+      {
+        "query": "Where does the user work, what is their role, and where is their office?",
+        "count": 5,
+        "files": [
+          "tasks/factual/token-level/retrieval/f-t-r-0010.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-006.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-007.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-008.yaml",
+          "tasks/factual/token-level/retrieval/f-t-r-009.yaml"
+        ]
+      },
+      {
+        "query": "What is hobby #3?",
+        "count": 5,
+        "files": [
+          "tasks/factual/token-level/retrieval/vcl-001.yaml",
+          "tasks/factual/token-level/retrieval/vcl-002.yaml",
+          "tasks/factual/token-level/retrieval/vcl-003.yaml",
+          "tasks/factual/token-level/retrieval/vcl-004.yaml",
+          "tasks/factual/token-level/retrieval/vcl-005.yaml"
+        ]
+      },
+      {
+        "query": "What is the overall Q3 performance recommendation?",
+        "count": 5,
+        "files": [
+          "tasks/multi-agent/shared/ma-shared-008.yaml",
+          "tasks/multi-agent/shared/ma-shared-009.yaml",
+          "tasks/multi-agent/shared/ma-shared-015.yaml",
+          "tasks/multi-agent/shared/ma-shared-016.yaml",
+          "tasks/multi-agent/shared/ma-shared-017.yaml"
+        ]
+      },
+      {
+        "query": "Where should Agent {target} ensure the customer data is stored?",
+        "count": 5,
+        "files": [
+          "tasks/multi-agent/transfer/ma-transfer-008.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-009.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-015.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-016.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-017.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's unstated priority in this session?",
+        "count": 5,
+        "files": [
+          "tasks/working/latent/formation/w-l-f-006.yaml",
+          "tasks/working/latent/formation/w-l-f-010.yaml",
+          "tasks/working/latent/formation/w-l-f-011.yaml",
+          "tasks/working/latent/formation/w-l-f-012.yaml",
+          "tasks/working/latent/formation/w-l-f-019.yaml"
+        ]
+      },
+      {
+        "query": "What type of solution would best fit the user?",
+        "count": 5,
+        "files": [
+          "tasks/working/latent/retrieval/w-l-r-008.yaml",
+          "tasks/working/latent/retrieval/w-l-r-009.yaml",
+          "tasks/working/latent/retrieval/w-l-r-016.yaml",
+          "tasks/working/latent/retrieval/w-l-r-017.yaml",
+          "tasks/working/latent/retrieval/w-l-r-018.yaml"
+        ]
+      },
+      {
+        "query": "What is the final shopping list?",
+        "count": 5,
+        "files": [
+          "tasks/working/token-level/evolution/w-t-e-003.yaml",
+          "tasks/working/token-level/evolution/w-t-e-004.yaml",
+          "tasks/working/token-level/evolution/w-t-e-005.yaml",
+          "tasks/working/token-level/evolution/w-t-e-006.yaml",
+          "tasks/working/token-level/evolution/w-t-e-007.yaml"
+        ]
+      },
+      {
+        "query": "What are the four things the user needs for their trip?",
+        "count": 5,
+        "files": [
+          "tasks/working/token-level/formation/w-t-f-004.yaml",
+          "tasks/working/token-level/formation/w-t-f-005.yaml",
+          "tasks/working/token-level/formation/w-t-f-006.yaml",
+          "tasks/working/token-level/formation/w-t-f-007.yaml",
+          "tasks/working/token-level/formation/w-t-f-008.yaml"
+        ]
+      },
+      {
+        "query": "What project is the user viewing on their dashboard?",
+        "count": 5,
+        "files": [
+          "tasks/working/token-level/retrieval/w-t-r-008.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-009.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-015.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-016.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-017.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's likely broader goal?",
+        "count": 4,
+        "files": [
+          "tasks/experiential/latent/formation/e-l-f-006.yaml",
+          "tasks/experiential/latent/formation/e-l-f-010.yaml",
+          "tasks/experiential/latent/formation/e-l-f-011.yaml",
+          "tasks/experiential/latent/formation/e-l-f-018.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent tailor their response?",
+        "count": 4,
+        "files": [
+          "tasks/experiential/latent/retrieval/e-l-r-006.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-010.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-011.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-018.yaml"
+        ]
+      },
+      {
+        "query": "What can be inferred about the weather where Alice is?",
+        "count": 4,
+        "files": [
+          "tasks/factual/latent/formation/f-l-f-006.yaml",
+          "tasks/factual/latent/formation/f-l-f-011.yaml",
+          "tasks/factual/latent/formation/f-l-f-012.yaml",
+          "tasks/factual/latent/formation/f-l-f-013.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's likely schedule challenge?",
+        "count": 4,
+        "files": [
+          "tasks/factual/latent/retrieval/f-l-r-014.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-015.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-016.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-017.yaml"
+        ]
+      },
+      {
+        "query": "What language should the agent use to communicate with user U-901?",
+        "count": 4,
+        "files": [
+          "tasks/multi-agent/shared/ma-shared-007.yaml",
+          "tasks/multi-agent/shared/ma-shared-010.yaml",
+          "tasks/multi-agent/shared/ma-shared-011.yaml",
+          "tasks/multi-agent/shared/ma-shared-018.yaml"
+        ]
+      },
+      {
+        "query": "What should Agent {target} do before scheduling the demo?",
+        "count": 4,
+        "files": [
+          "tasks/multi-agent/transfer/ma-transfer-007.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-010.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-011.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-018.yaml"
+        ]
+      },
+      {
+        "query": "What is Maria Garcia's rebooking request?",
+        "count": 4,
+        "files": [
+          "tasks/multimodal/audio/m-audio-006.yaml",
+          "tasks/multimodal/audio/m-audio-010.yaml",
+          "tasks/multimodal/audio/m-audio-011.yaml",
+          "tasks/multimodal/audio/m-audio-018.yaml"
+        ]
+      },
+      {
+        "query": "What is the architecture shown and what is the request flow?",
+        "count": 4,
+        "files": [
+          "tasks/multimodal/visual/m-visual-006.yaml",
+          "tasks/multimodal/visual/m-visual-010.yaml",
+          "tasks/multimodal/visual/m-visual-011.yaml",
+          "tasks/multimodal/visual/m-visual-018.yaml"
+        ]
+      },
+      {
+        "query": "Where did the user work in February and in May (after the correction)?",
+        "count": 4,
+        "files": [
+          "tasks/temporal/bitemporal/t-bitemp-006.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-010.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-011.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-018.yaml"
+        ]
+      },
+      {
+        "query": "How should database queries be constructed for security?",
+        "count": 4,
+        "files": [
+          "tasks/working/parametric/formation/w-p-f-009.yaml",
+          "tasks/working/parametric/formation/w-p-f-014.yaml",
+          "tasks/working/parametric/formation/w-p-f-015.yaml",
+          "tasks/working/parametric/formation/w-p-f-016.yaml"
+        ]
+      },
+      {
+        "query": "What files were changed in this PR?",
+        "count": 4,
+        "files": [
+          "tasks/working/token-level/formation/w-t-f-011.yaml",
+          "tasks/working/token-level/formation/w-t-f-012.yaml",
+          "tasks/working/token-level/formation/w-t-f-013.yaml",
+          "tasks/working/token-level/formation/w-t-f-014.yaml"
+        ]
+      },
+      {
+        "query": "What is the current sprint deadline and standup time?",
+        "count": 4,
+        "files": [
+          "tasks/working/token-level/retrieval/w-t-r-007.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-010.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-011.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-018.yaml"
+        ]
+      },
+      {
+        "query": "What is motivating the user's interests?",
+        "count": 3,
+        "files": [
+          "tasks/experiential/latent/formation/e-l-f-012.yaml",
+          "tasks/experiential/latent/formation/e-l-f-013.yaml",
+          "tasks/experiential/latent/formation/e-l-f-014.yaml"
+        ]
+      },
+      {
+        "query": "What approach should the agent take?",
+        "count": 3,
+        "files": [
+          "tasks/experiential/latent/retrieval/e-l-r-012.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-013.yaml",
+          "tasks/experiential/latent/retrieval/e-l-r-014.yaml"
+        ]
+      },
+      {
+        "query": "What might the user need help with for their trip?",
+        "count": 3,
+        "files": [
+          "tasks/factual/latent/retrieval/f-l-r-010.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-018.yaml",
+          "tasks/factual/latent/retrieval/f-l-r-019.yaml"
+        ]
+      },
+      {
+        "query": "How should the agent prioritize this email based on learned patterns?",
+        "count": 3,
+        "files": [
+          "tasks/factual/parametric/retrieval/f-p-r-006.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-010.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-017.yaml"
+        ]
+      },
+      {
+        "query": "What style of answer should the agent give based on learned user behavior?",
+        "count": 3,
+        "files": [
+          "tasks/factual/parametric/retrieval/f-p-r-011.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-012.yaml",
+          "tasks/factual/parametric/retrieval/f-p-r-013.yaml"
+        ]
+      },
+      {
+        "query": "What is Alice's profession, favorite color, and async communication preference?",
+        "count": 3,
+        "files": [
+          "tasks/factual/token-level/formation/f-t-f-003.yaml",
+          "tasks/factual/token-level/formation/f-t-f-009.yaml",
+          "tasks/factual/token-level/formation/f-t-f-015.yaml"
+        ]
+      },
+      {
+        "query": "What is Alice's profession, favorite color, and quiet office preference?",
+        "count": 3,
+        "files": [
+          "tasks/factual/token-level/formation/f-t-f-010.yaml",
+          "tasks/factual/token-level/formation/f-t-f-012.yaml",
+          "tasks/factual/token-level/formation/f-t-f-017.yaml"
+        ]
+      },
+      {
+        "query": "What recommendation should the system make based on shared knowledge?",
+        "count": 3,
+        "files": [
+          "tasks/multi-agent/shared/ma-shared-012.yaml",
+          "tasks/multi-agent/shared/ma-shared-013.yaml",
+          "tasks/multi-agent/shared/ma-shared-014.yaml"
+        ]
+      },
+      {
+        "query": "What is the current status of Thomas Lee's refund request?",
+        "count": 3,
+        "files": [
+          "tasks/multi-agent/shared-memory/ma-shmem-013.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-014.yaml",
+          "tasks/multi-agent/shared-memory/ma-shmem-015.yaml"
+        ]
+      },
+      {
+        "query": "Which API version should Agent {target} use?",
+        "count": 3,
+        "files": [
+          "tasks/multi-agent/transfer/ma-transfer-012.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-013.yaml",
+          "tasks/multi-agent/transfer/ma-transfer-014.yaml"
+        ]
+      },
+      {
+        "query": "What specific type of milk should the agent remember?",
+        "count": 3,
+        "files": [
+          "tasks/multimodal/audio/m-audio-012.yaml",
+          "tasks/multimodal/audio/m-audio-013.yaml",
+          "tasks/multimodal/audio/m-audio-014.yaml"
+        ]
+      },
+      {
+        "query": "Create a visual representation concept for the product launch target audience.",
+        "count": 3,
+        "files": [
+          "tasks/multimodal/cross-modal/m-cross-006.yaml",
+          "tasks/multimodal/cross-modal/m-cross-010.yaml",
+          "tasks/multimodal/cross-modal/m-cross-017.yaml"
+        ]
+      },
+      {
+        "query": "What needs to be picked up and from where?",
+        "count": 3,
+        "files": [
+          "tasks/multimodal/cross-modal/m-cross-011.yaml",
+          "tasks/multimodal/cross-modal/m-cross-012.yaml",
+          "tasks/multimodal/cross-modal/m-cross-013.yaml"
+        ]
+      },
+      {
+        "query": "What is on the sticky note?",
+        "count": 3,
+        "files": [
+          "tasks/multimodal/visual/m-visual-012.yaml",
+          "tasks/multimodal/visual/m-visual-013.yaml",
+          "tasks/multimodal/visual/m-visual-014.yaml"
+        ]
+      },
+      {
+        "query": "What was the actual Q2 revenue after the revision?",
+        "count": 3,
+        "files": [
+          "tasks/temporal/bitemporal/t-bitemp-012.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-013.yaml",
+          "tasks/temporal/bitemporal/t-bitemp-014.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's consolidated travel plan based on all sessions?",
+        "count": 3,
+        "files": [
+          "tasks/temporal/consolidation/t-consol-006.yaml",
+          "tasks/temporal/consolidation/t-consol-010.yaml",
+          "tasks/temporal/consolidation/t-consol-017.yaml"
+        ]
+      },
+      {
+        "query": "What tool has the user decided on for project management?",
+        "count": 3,
+        "files": [
+          "tasks/temporal/consolidation/t-consol-011.yaml",
+          "tasks/temporal/consolidation/t-consol-012.yaml",
+          "tasks/temporal/consolidation/t-consol-013.yaml"
+        ]
+      },
+      {
+        "query": "What was the user's skill level in Week 1?",
+        "count": 3,
+        "files": [
+          "tasks/temporal/decay/t-decay-006.yaml",
+          "tasks/temporal/decay/t-decay-011.yaml",
+          "tasks/temporal/decay/t-decay-012.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's underlying concern?",
+        "count": 3,
+        "files": [
+          "tasks/working/latent/formation/w-l-f-013.yaml",
+          "tasks/working/latent/formation/w-l-f-014.yaml",
+          "tasks/working/latent/formation/w-l-f-015.yaml"
+        ]
+      },
+      {
+        "query": "What is the user's primary concern?",
+        "count": 3,
+        "files": [
+          "tasks/working/latent/retrieval/w-l-r-013.yaml",
+          "tasks/working/latent/retrieval/w-l-r-014.yaml",
+          "tasks/working/latent/retrieval/w-l-r-015.yaml"
+        ]
+      },
+      {
+        "query": "What naming convention should the agent use for a new function?",
+        "count": 3,
+        "files": [
+          "tasks/working/parametric/formation/w-p-f-008.yaml",
+          "tasks/working/parametric/formation/w-p-f-010.yaml",
+          "tasks/working/parametric/formation/w-p-f-017.yaml"
+        ]
+      },
+      {
+        "query": "What HTTP method should be used to create a new resource?",
+        "count": 3,
+        "files": [
+          "tasks/working/parametric/formation/w-p-f-011.yaml",
+          "tasks/working/parametric/formation/w-p-f-012.yaml",
+          "tasks/working/parametric/formation/w-p-f-013.yaml"
+        ]
+      },
+      {
+        "query": "What is the source and target database version?",
+        "count": 3,
+        "files": [
+          "tasks/working/token-level/formation/w-t-f-010.yaml",
+          "tasks/working/token-level/formation/w-t-f-015.yaml",
+          "tasks/working/token-level/formation/w-t-f-016.yaml"
+        ]
+      },
+      {
+        "query": "What are the four requirements for the report?",
+        "count": 3,
+        "files": [
+          "tasks/working/token-level/retrieval/w-t-r-002.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-004.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-006.yaml"
+        ]
+      },
+      {
+        "query": "What version is currently in production?",
+        "count": 3,
+        "files": [
+          "tasks/working/token-level/retrieval/w-t-r-012.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-013.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-014.yaml"
+        ]
+      },
+      {
+        "query": "What is Alice's profession, favorite color, and pair programming preference?",
+        "count": 2,
+        "files": [
+          "tasks/factual/token-level/formation/f-t-f-011.yaml",
+          "tasks/factual/token-level/formation/f-t-f-016.yaml"
+        ]
+      },
+      {
+        "query": "What dog food does Max prefer and when was this information stored?",
+        "count": 2,
+        "files": [
+          "tasks/temporal/decay/t-decay-010.yaml",
+          "tasks/temporal/decay/t-decay-016.yaml"
+        ]
+      },
+      {
+        "query": "What are the four requirements for the script?",
+        "count": 2,
+        "files": [
+          "tasks/working/token-level/retrieval/w-t-r-003.yaml",
+          "tasks/working/token-level/retrieval/w-t-r-005.yaml"
+        ]
+      }
+    ],
+    "substring_queries": [],
+    "difficulty5_trivial": [
+      {
+        "file": "tasks/factual/token-level/retrieval/vcl-005.yaml",
+        "query": "What is hobby #3?",
+        "expected": [
+          "cooking"
+        ],
+        "context_length": 593
+      },
+      {
+        "file": "tasks/temporal/bitemporal/episode-001.yaml",
+        "query": "Where did the user work in February? What about in May?",
+        "expected": [
+          "Acme Corp",
+          "Beta Inc"
+        ],
+        "context_length": 511
+      }
+    ],
+    "context_outliers": [
+      {
+        "file": "tasks/experiential/latent/evolution/episode-001.yaml",
+        "context_length": 749,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/experiential/latent/formation/episode-001.yaml",
+        "context_length": 611,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/experiential/parametric/evolution/e-p-e-orig.yaml",
+        "context_length": 673,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/experiential/parametric/formation/e-p-f-orig.yaml",
+        "context_length": 536,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/experiential/parametric/retrieval/episode-001.yaml",
+        "context_length": 663,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/experiential/token-level/evolution/episode-001.yaml",
+        "context_length": 527,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/factual/latent/formation/episode-001.yaml",
+        "context_length": 564,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/factual/token-level/retrieval/vcl-005.yaml",
+        "context_length": 593,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/security/poisoning-001.yaml",
+        "context_length": 592,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/working/latent/evolution/episode-001.yaml",
+        "context_length": 600,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/working/latent/formation/w-l-f-001.yaml",
+        "context_length": 581,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/working/parametric/evolution/episode-001.yaml",
+        "context_length": 531,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/working/parametric/retrieval/episode-001.yaml",
+        "context_length": 538,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      },
+      {
+        "file": "tasks/working/parametric/retrieval/episode-002.yaml",
+        "context_length": 660,
+        "mean": 253.6,
+        "stdev": 86.6,
+        "direction": "long"
+      }
+    ],
+    "modality_mismatches": []
+  }
+}

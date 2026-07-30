@@ -2,14 +2,14 @@
 # Install: pip install -r requirements.txt
 
 # Core
-pyyaml>=6.0
+pyyaml==6.0.3
 
 # API client (choose one):
-openai>=1.0           # For OpenAI / LiteLLM / OpenRouter API
+openai==2.30.0           # For OpenAI / LiteLLM / OpenRouter API
 # litellm>=1.0        # Uncomment for direct litellm SDK usage (optional)
 
 # Testing
-pytest>=8.0
+pytest==8.4.2
 
 # Development
 # black, ruff, mypy  # Uncomment for linting

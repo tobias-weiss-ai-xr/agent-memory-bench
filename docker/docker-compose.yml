@@ -3,14 +3,28 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    network_mode: "none"
+    image: ambench:latest
+    entrypoint: ["python", "-m", "src.harness"]
+    command: ["--help"]
+    volumes:
+      - ../results:/app/results
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+      - LITELLM_API_KEY=${LITELLM_API_KEY:-}
+      - LITELLM_BASE_URL=${LITELLM_BASE_URL:-}
+      - AMBENCH_MODEL=${AMBENCH_MODEL:-gpt-4o-mini-2024-07-18}
+      - AMBENCH_SCORING=${AMBENCH_SCORING:-auto}
+    networks:
+      - external
+    # Security hardening
     read_only: true
     security_opt:
       - no-new-privileges:true
     cap_drop:
       - ALL
-    command: ["--mock"]
-    volumes:
-      - ../results:/results:rw
-    tmpfs:
-      - /tmp
+
+networks:
+  external:
+    driver: bridge

@@ -1,0 +1,27 @@
+episode:
+  id: MT-WORKING-T2
+  episode_id: MT-WORKING
+  cell: working/parametric/formation
+  turn: 2
+  modality: text
+  context: |
+    The team reports progress: Maria completed A-101. A-103 is now assigned to David. B-201 has started (assigned to Sarah).
+    C-301 review found issues and it has been moved back to in progress, assigned to the original author Tom.
+    A new task D-401 has been added to the backlog.
+  query: What are the updated task statuses?
+  expected:
+  - "A-101 done"
+  - "A-102 done"
+  - "A-103 in progress (David)"
+  - "B-201 in progress (Sarah)"
+  - "C-301 in progress (Tom)"
+  - "D-401 backlog"
+  alternatives:
+  - - "A-101: done, A-102: done, A-103: assigned to David (in progress), B-201: Sarah started it, C-301: Tom is reworking it, D-401: backlog"
+  difficulty: 2
+  tags:
+  - working
+  - parametric
+  - formation
+  - multi-turn
+  - project-tracking

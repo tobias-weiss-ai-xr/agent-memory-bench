@@ -31,7 +31,7 @@ episode:
   query: 'What is hobby #3?'
   expected:
   - cooking
-  difficulty: 5
+  difficulty: 4
   tags:
   - factual
   - token-level

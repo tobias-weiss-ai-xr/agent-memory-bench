@@ -182,9 +182,13 @@ class OpenAIClient:
         base_url: str,
         temperature: float = 0.0,
         extra_headers: Optional[Dict] = None,
+        max_tokens: int = 512,
+        seed: Optional[int] = None,
     ):
         self.model = model
         self.temperature = temperature
+        self.max_tokens = max_tokens
+        self.seed = seed
         self.base_url = base_url.rstrip("/")
         self.extra_headers = extra_headers or {}
 
@@ -203,8 +207,10 @@ class OpenAIClient:
                 model=self.model,
                 messages=messages,
                 temperature=self.temperature,
-                max_tokens=512,
+                max_tokens=self.max_tokens,
             )
+            if self.seed is not None:
+                kwargs["seed"] = self.seed
             if self.extra_headers:
                 kwargs["extra_headers"] = self.extra_headers
 
@@ -521,6 +527,94 @@ class ReportGenerator:
                 lines.append(f"- {err}")
         return "\n".join(lines)
 
+    @staticmethod
+    def to_care_markdown(runs, model: str, config: Dict) -> str:
+        """CaRE-protocol multi-metric report: mean ± std across repeated runs.
+
+        Standardises NFE (max_tokens), controls stochasticity (seed/temperature),
+        and reports multiple metrics (score, latency, tokens) with variance.
+        """
+        import statistics
+
+        n_runs = len(runs)
+        cells = sorted({r.cell for run in runs for r in run})
+        lines = [
+            "# AMBench — CaRE Evaluation Report",
+            "",
+            "Compute-aware, multi-metric, stochasticity-controlled evaluation "
+            "(protocol: docs/care-protocol.md).",
+            "",
+            f"**Model:** {model}",
+            f"**Runs:** {n_runs} (seeded)",
+            f"**NFE budget (max_tokens):** {config.get('max_tokens', 512)}",
+            f"**Temperature:** {config.get('temperature', 0.0)}",
+            f"**Seed base:** {config.get('seed', 'none')}",
+            "",
+            "| Metric | Mean ± Std |",
+            "|--------|-----------|",
+        ]
+
+        def stat(per_run):
+            vals = [v for v in per_run if v is not None]
+            if not vals:
+                return "—"
+            mean = statistics.mean(vals)
+            if len(vals) > 1:
+                std = statistics.stdev(vals)
+                return f"{mean:.3f} ± {std:.3f}"
+            return f"{mean:.3f}"
+
+        def mean_of_runs(metric_matrix):
+            per_run_means = []
+            for run_vals in metric_matrix:
+                vals = [v for v in run_vals if v is not None]
+                if vals:
+                    per_run_means.append(statistics.mean(vals))
+            if not per_run_means:
+                return "—"
+            mean = statistics.mean(per_run_means)
+            if len(per_run_means) > 1:
+                std = statistics.stdev(per_run_means)
+                return f"{mean:.3f} ± {std:.3f}"
+            return f"{mean:.3f}"
+
+        all_scores = [[r.score for r in run] for run in runs]
+        all_latency = [[r.latency_ms for r in run] for run in runs]
+        all_tokens = [[r.tokens_used for r in run] for run in runs]
+
+        lines.append(f"| Score | {mean_of_runs(all_scores)} |")
+        lines.append(f"| Latency (ms) | {mean_of_runs(all_latency)} |")
+        lines.append(f"| Tokens (NFE) | {mean_of_runs(all_tokens)} |")
+        lines.extend(
+            [
+                "",
+                "## Results by Cell (mean ± std across runs)",
+                "",
+                "| Cell | Score | Latency (ms) | Tokens |",
+                "|------|-------|-------------|--------|",
+            ]
+        )
+        for cell in cells:
+            def run_means(key):
+                return [
+                    statistics.mean([getattr(r, key) for r in run if r.cell == cell])
+                    for run in runs
+                    if [r for r in run if r.cell == cell]
+                ]
+
+            score_by_run = run_means("score")
+            lat_by_run = run_means("latency_ms")
+            tok_by_run = run_means("tokens_used")
+            lines.append(f"| {cell} | {stat(score_by_run)} | {stat(lat_by_run)} | {stat(tok_by_run)} |")
+        lines.append("")
+        lines.append("## Reproducibility")
+        lines.append("")
+        lines.append(f"- Scoring: `{config.get('scoring', 'auto')}`")
+        lines.append(f"- NFE budget standardised at `max_tokens={config.get('max_tokens', 512)}`")
+        lines.append(f"- Stochasticity controlled via seed base `{config.get('seed', 'none')}` and temperature `{config.get('temperature', 0.0)}`")
+        lines.append(f"- Multi-metric reporting: score, latency, tokens (NFE)")
+        return "\n".join(lines)
+
 
 # =============================================================
 # CLI
@@ -584,6 +678,8 @@ def build_client(args):
         base_url=base_url,
         temperature=args.temperature,
         extra_headers=extra_headers,
+        max_tokens=args.max_tokens,
+        seed=args.seed,
     )
 
 
@@ -615,6 +711,24 @@ def main():
         type=float,
         default=0.0,
         help="Sampling temperature (default: 0.0)",
+    )
+    parser.add_argument(
+        "--max-tokens",
+        type=int,
+        default=512,
+        help="Standardised NFE (generation budget) per task (CaRE protocol, default: 512)",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Sampling seed for deterministic runs (CaRE protocol stochasticity control)",
+    )
+    parser.add_argument(
+        "--runs",
+        type=int,
+        default=1,
+        help="Number of repeated runs for variance reporting (CaRE protocol, default: 1)",
     )
     parser.add_argument(
         "--mock",
@@ -758,6 +872,15 @@ def main():
 
     runner = TaskRunner(client, judge_client=judge_client, scoring=args.scoring)
 
+    def make_runner(seed=None):
+        if seed is not None:
+            args.seed = seed
+        c = build_client(args)
+        jc = c
+        if args.judge_model:
+            jc = build_client(args)
+        return TaskRunner(c, judge_client=jc, scoring=args.scoring)
+
     # --- Memory Isolation Protocol ---
     # Inspired by MemoryAgentBench: run twice (with/without memory)
     # to isolate the memory system's contribution vs raw LLM reasoning.
@@ -840,7 +963,31 @@ def main():
     results = []
     dual_results = []
 
-    if args.multi_turn:
+    # --- CaRE protocol: repeated seeded runs for variance reporting ---
+    care_runs = []
+    care_seed_base = args.seed if args.seed is not None else 42
+    if args.runs > 1 and not args.multi_turn and not args.dual_run:
+        log.info(f"CaRE mode: {args.runs} seeded runs for variance reporting")
+        for run_idx in range(args.runs):
+            seed = care_seed_base + run_idx
+            log.info(f"--- CaRE run {run_idx + 1}/{args.runs} (seed {seed}) ---")
+            run_runner = make_runner(seed=seed)
+            run_results = []
+            for i, ep in enumerate(tasks):
+                eid = ep.get("id", f"task-{i}")
+                cell = ep.get("cell", "unknown")
+                log.info(f"[{i + 1}/{len(tasks)}] {eid} ({cell})")
+                result = run_runner.run_task(ep)
+                run_results.append(result)
+                status = "✓" if result.score >= 0.5 else "✗"
+                if result.error:
+                    log.warning(f"  {status} ERROR: {result.error[:80]}")
+                else:
+                    log.info(f"  {status} score={result.score:.2f} ({result.latency_ms:.0f}ms, {result.tokens_used}tok)")
+            care_runs.append(run_results)
+        results = care_runs[0]  # primary run for legacy report
+
+    if not care_runs and args.multi_turn:
         # Group tasks by episode_id
         from collections import OrderedDict
 
@@ -968,25 +1115,29 @@ def main():
     else:
         mt_report = None
 
-    for i, ep in enumerate(tasks):
-        eid = ep.get("id", f"task-{i}")
-        cell = ep.get("cell", "unknown")
+    if care_runs:
+        # CaRE runs already executed above — skip the single-run loop
+        pass
+    else:
+        for i, ep in enumerate(tasks):
+            eid = ep.get("id", f"task-{i}")
+            cell = ep.get("cell", "unknown")
 
-        if args.multi_turn:
-            # Already handled above
-            continue
-
-        if args.dual_run:
-            baseline_key = f"{eid}-baseline"
-            memory_key = f"{eid}-memory"
-            baseline_done = args.resume and baseline_key in completed_ids
-            memory_done = args.resume and memory_key in completed_ids
-
-            if baseline_done and memory_done:
-                log.info(
-                    f"[{i + 1}/{len(tasks)}] {eid} ({cell}) — both runs completed, skipping"
-                )
+            if args.multi_turn:
+                # Already handled above
                 continue
+
+            if args.dual_run:
+                baseline_key = f"{eid}-baseline"
+                memory_key = f"{eid}-memory"
+                baseline_done = args.resume and baseline_key in completed_ids
+                memory_done = args.resume and memory_key in completed_ids
+
+                if baseline_done and memory_done:
+                    log.info(
+                        f"[{i + 1}/{len(tasks)}] {eid} ({cell}) — both runs completed, skipping"
+                    )
+                    continue
 
             log.info(f"[{i + 1}/{len(tasks)}] {eid} ({cell})")
 
@@ -1021,24 +1172,24 @@ def main():
                 _save_resume_entry(baseline_key, baseline_result)
             if not memory_done:
                 _save_resume_entry(memory_key, memory_result)
-        else:
-            if args.resume and eid in completed_ids:
-                log.info(
-                    f"[{i + 1}/{len(tasks)}] {eid} ({cell}) — already completed, skipping"
-                )
-                continue
-
-            log.info(f"[{i + 1}/{len(tasks)}] {eid} ({cell})")
-            result = runner.run_task(ep)
-            results.append(result)
-            status = "✓" if result.score >= 0.5 else "✗"
-            if result.error:
-                log.warning(f"  {status} ERROR: {result.error[:80]}")
             else:
-                log.info(
-                    f"  {status} score={result.score:.2f} ({result.latency_ms:.0f}ms, {result.tokens_used}tok)"
-                )
-            _save_resume_entry(eid, result)
+                if args.resume and eid in completed_ids:
+                    log.info(
+                        f"[{i + 1}/{len(tasks)}] {eid} ({cell}) — already completed, skipping"
+                    )
+                    continue
+
+                log.info(f"[{i + 1}/{len(tasks)}] {eid} ({cell})")
+                result = runner.run_task(ep)
+                results.append(result)
+                status = "✓" if result.score >= 0.5 else "✗"
+                if result.error:
+                    log.warning(f"  {status} ERROR: {result.error[:80]}")
+                else:
+                    log.info(
+                        f"  {status} score={result.score:.2f} ({result.latency_ms:.0f}ms, {result.tokens_used}tok)"
+                    )
+                _save_resume_entry(eid, result)
 
     # Generate report
     config = {
@@ -1048,6 +1199,9 @@ def main():
         "litellm": args.litellm,
         "scoring": args.scoring,
         "baseline_score": baseline_score,
+        "max_tokens": args.max_tokens,
+        "seed": care_seed_base,
+        "runs": args.runs,
     }
 
     # Multi-turn report
@@ -1172,9 +1326,15 @@ def main():
         )
         log.info(f"JSON: {args.output}")
 
+        # CaRE markdown: variance-aware multi-metric report
         if args.markdown:
-            args.markdown.write_text(ReportGenerator.to_markdown(report))
-            log.info(f"Markdown: {args.markdown}")
+            if care_runs:
+                args.markdown.write_text(ReportGenerator.to_care_markdown(care_runs, args.model, config))
+                log.info(f"Markdown (CaRE): {args.markdown}")
+            else:
+                args.markdown.write_text(ReportGenerator.to_markdown(report))
+                log.info(f"Markdown: {args.markdown}")
+
 
     if report.failed > report.total_tasks * 0.5:
         log.warning(f"High failure rate: {report.failed}/{report.total_tasks} failed")
